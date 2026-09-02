@@ -7,7 +7,7 @@ var current_state:State
 var prev_state:State
 
 var cur_state_name;#远程调试方便
-var gameInputControl:GameInputControl;
+
 @export var is_debug:bool=false
 ##state_machine的初始化函数
 ##[br]
@@ -23,35 +23,34 @@ func init2():
 		start_state.enter()
 		current_state = start_state	
 
-func init1(obj: CharacterBody2D, animation_player:AnimationPlayer=null, gameInputControl: GameInputControl = null) -> void:
+func init1(obj: CharacterBody2D, animation_player:AnimationPlayer=null) -> void:
 	if is_debug:	
 		state_changed.connect(func(pre,cur):
 			print("%s->%s"%[pre.name,cur.name]))
 	self.obj = obj
-	self.gameInputControl=gameInputControl
-	if gameInputControl:
-		gameInputControl.obj=obj
-	set_all_children_init(get_children(), obj, animation_player,gameInputControl)
+
+
+	set_all_children_init(get_children(), obj, animation_player)
 	var start_state = state_map.get(init_state.to_lower())
 	
 	if(start_state):
 		start_state.enter()
 		current_state = start_state
 	
-func set_all_children_init(children, parent: CharacterBody2D, animation_player:AnimationPlayer, gameInputControl: GameInputControl) -> void:
+func set_all_children_init(children, parent: CharacterBody2D, animation_player:AnimationPlayer) -> void:
 	for child in children:
 		if child is State:
 
 			child.obj = parent
 			child.state_machine = self
 			child.animation_player = animation_player
-			child.gameInputControl =  gameInputControl
+
 			
 			child.finished.connect(func(next_state_name):
 				change_state(next_state_name))
 			state_map.set(child.name.to_lower(), child)
 		elif child.get_child_count() > 0:
-			set_all_children_init(child.get_children(), parent, animation_player,gameInputControl)
+			set_all_children_init(child.get_children(), parent, animation_player)
 func insert_with_exit_enter():
 	pass
 
