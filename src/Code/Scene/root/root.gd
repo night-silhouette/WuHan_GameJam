@@ -5,23 +5,17 @@ extends Node
 var current_ui : Node
 var current_sence :Node
 
-func change_scence(next_sence:int)->void:
-
-	var next_path : String
-	match next_sence:
-		"start":
-			next_path = "res://game_scene/main/start_scence.tscn"
-	var index : int = 0
-	await _goto_scene(next_path,index)
-
-func change_ui(next_sence:int)->void:
+func _ready() -> void:
+	SignalBus.ChangeSence.connect(ChangeScence)
+	SignalBus.ChangeUi.connect(ChangeUi)
 	
-	var next_path : String
-	match next_sence:
-		"start":
-			next_path = "res://game_scene/main/start_scence.tscn"
+func ChangeScence(next_sence:String)->void:
+	var index: int = 0
+	await _goto_scene(next_sence,index)
+
+func ChangeUi(next_sence:String)->void:
 	var index: int = 1
-	await _goto_scene(next_path,index)
+	await _goto_scene(next_sence,index)
 
 func _goto_scene(path: String,index:int) -> void:
 	var root_node:Node;
