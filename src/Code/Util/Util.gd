@@ -18,6 +18,9 @@ func area2d_connect_click(area2d:Area2D,callback:Callable)->void:
 		)
 	
 	
+
+
+
 	
 #tween_fast_to_slow($Sprite2D, "modulate:a", 0.0, 1.0, func():
 	#print("淡出动画播完了！")
