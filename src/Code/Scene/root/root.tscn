@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://co7l2jv04at8s"]
+[gd_scene load_steps=2 format=3 uid="uid://co7l2jv04at8s"]
 
 [ext_resource type="Script" uid="uid://im7ndhxvkijr" path="res://Code/Scene/root/root.gd" id="1_3fusu"]
-[ext_resource type="Script" uid="uid://54ow5e311llg" path="res://Code/Util/text_fix.gd" id="2_86jnv"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_3fusu")
@@ -13,23 +12,3 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="LabelFix" type="Label" parent="."]
-offset_left = 77.0
-offset_top = 48.0
-offset_right = 148.0
-offset_bottom = 98.0
-theme_override_font_sizes/font_size = 10
-autowrap_mode = 3
-script = ExtResource("2_86jnv")
-metadata/_custom_type_script = "uid://54ow5e311llg"
-
-[node name="LabelFix2" type="Label" parent="."]
-offset_left = 61.0
-offset_top = 57.0
-offset_right = 134.0
-offset_bottom = 107.0
-theme_override_font_sizes/font_size = 10
-autowrap_mode = 3
-script = ExtResource("2_86jnv")
-metadata/_custom_type_script = "uid://54ow5e311llg"
