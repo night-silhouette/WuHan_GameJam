@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://co7l2jv04at8s"]
+
+[ext_resource type="Script" uid="uid://im7ndhxvkijr" path="res://Code/Scene/root/root.gd" id="1_3fusu"]
+
+[node name="Root" type="Node"]
+script = ExtResource("1_3fusu")
+
+[node name="Sence_root" type="Node2D" parent="."]
+
+[node name="Ui_root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
