@@ -15,6 +15,12 @@ run/main_scene="uid://co7l2jv04at8s"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Const="*res://Code/Global/Const.gd"
+SignalBus="*res://Code/Global/SignalBus.gd"
+Util="*res://Code/Util/Util.gd"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=1
