@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxiv36pyqhs1t"
-path="res://.godot/imported/文本框.jpg-18d896da299853316ad6ed82f4e395ca.ctex"
+uid="uid://u3qhoo1j8xwx"
+path="res://.godot/imported/文本框 暗.png-5754dc21f2f93524f1bf5e34b56d15a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/文本框.jpg"
-dest_files=["res://.godot/imported/文本框.jpg-18d896da299853316ad6ed82f4e395ca.ctex"]
+source_file="res://Asset/文本框 暗.png"
+dest_files=["res://.godot/imported/文本框 暗.png-5754dc21f2f93524f1bf5e34b56d15a1.ctex"]
 
 [params]
 

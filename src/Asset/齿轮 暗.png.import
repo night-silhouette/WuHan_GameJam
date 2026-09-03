@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpgnko02odq5f"
-path="res://.godot/imported/齿轮 常态.jpg-afbc417195bb02e7f3f9a390a540b605.ctex"
+uid="uid://b6q00u3axldpv"
+path="res://.godot/imported/齿轮 暗.png-c43c2332ad9839a73b5ffef686a95f70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/齿轮 常态.jpg"
-dest_files=["res://.godot/imported/齿轮 常态.jpg-afbc417195bb02e7f3f9a390a540b605.ctex"]
+source_file="res://Asset/齿轮 暗.png"
+dest_files=["res://.godot/imported/齿轮 暗.png-c43c2332ad9839a73b5ffef686a95f70.ctex"]
 
 [params]
 

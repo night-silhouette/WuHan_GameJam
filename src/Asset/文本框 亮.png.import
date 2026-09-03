@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm2xik4ef2ae7"
-path="res://.godot/imported/齿轮 亮.jpg-d4bdf6a9d7d8186c9ab1e7318ceb19d4.ctex"
+uid="uid://dcf8hkagwfgm0"
+path="res://.godot/imported/文本框 亮.png-db75319124ad7b5c4fb1c6e8c14041e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/齿轮 亮.jpg"
-dest_files=["res://.godot/imported/齿轮 亮.jpg-d4bdf6a9d7d8186c9ab1e7318ceb19d4.ctex"]
+source_file="res://Asset/文本框 亮.png"
+dest_files=["res://.godot/imported/文本框 亮.png-db75319124ad7b5c4fb1c6e8c14041e7.ctex"]
 
 [params]
 
