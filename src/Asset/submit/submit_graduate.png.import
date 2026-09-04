@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qcc4a4pa0uvf"
-valid=false
+uid="uid://bbxscp7i3oa3c"
+path="res://.godot/imported/submit_graduate.png-a22f2b98528392c3be5b1ef465d0429c.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Asset/plants/flower.PNG"
+source_file="res://Asset/submit/submit_graduate.png"
+dest_files=["res://.godot/imported/submit_graduate.png-a22f2b98528392c3be5b1ef465d0429c.ctex"]
 
 [params]
 

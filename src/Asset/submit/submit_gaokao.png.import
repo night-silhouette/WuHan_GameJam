@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccj1pnqwss5sq"
-valid=false
+uid="uid://cfhiunrua6qlx"
+path="res://.godot/imported/submit_gaokao.png-464f67430a86fdaeb1c5a794b34cad80.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Asset/growth stage/apple tree_1.PNG"
+source_file="res://Asset/submit/submit_gaokao.png"
+dest_files=["res://.godot/imported/submit_gaokao.png-464f67430a86fdaeb1c5a794b34cad80.ctex"]
 
 [params]
 
