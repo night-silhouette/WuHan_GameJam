@@ -36,9 +36,16 @@ func get_value_upgrade_cost(good: int) -> float:
 
 	return 9.95 * pow(4.275, level)
 	
-	
+##获取概述
 func GetPlantNum():
-	pass
+	var index =  randf()
+	var dic = get_quantity_probability()
+	if index < dic.get("one"):
+		return 1;
+	elif index < dic.get("one")+dic.get("two"):
+		return 2;
+	else :
+		return 3;
 	
 	
 ##概率	
