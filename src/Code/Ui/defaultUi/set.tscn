@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://d23qv4f2hxh10"]
+
+[ext_resource type="Texture2D" uid="uid://col80b84q4n70" path="res://Asset/齿轮 常态.png" id="1_aax0s"]
+[ext_resource type="Texture2D" uid="uid://b6q00u3axldpv" path="res://Asset/齿轮 暗.png" id="2_j6vi5"]
+[ext_resource type="Texture2D" uid="uid://bumqe4gnnv1ms" path="res://Asset/齿轮 亮.PNG" id="3_yy1rq"]
+
+[node name="Set" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25737867, 0.25737867)
+texture_normal = ExtResource("1_aax0s")
+texture_pressed = ExtResource("2_j6vi5")
+texture_hover = ExtResource("3_yy1rq")

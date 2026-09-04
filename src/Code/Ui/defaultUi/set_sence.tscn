@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdx60vhi6kw12"]
+
+[ext_resource type="Texture2D" uid="uid://dcf8hkagwfgm0" path="res://Asset/文本框 亮.png" id="1_ekp3r"]
+
+[node name="Set_sence" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 673.0
+offset_top = -49.000004
+offset_right = 2673.0
+offset_bottom = 1951.0
+scale = Vector2(0.28029698, 0.35200617)
+texture = ExtResource("1_ekp3r")
