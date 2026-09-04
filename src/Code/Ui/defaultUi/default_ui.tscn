@@ -29,7 +29,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PressedButton" parent="." instance=ExtResource("1_8ahs4")]
-visible = false
 layout_mode = 0
 offset_left = 1058.0001
 offset_top = 78.0
@@ -41,6 +40,8 @@ BUTTON_HOVER = ExtResource("3_fxsdc")
 BUTTON_PRESS = ExtResource("4_kdk03")
 
 [node name="Button" parent="PressedButton" index="0"]
+position = Vector2(310.47745, -216.07314)
+scale = Vector2(0.63473797, 0.63473797)
 texture = ExtResource("2_6jal1")
 
 [node name="CollisionShape2D" parent="PressedButton/Area2D" index="0"]
@@ -51,15 +52,14 @@ shape = SubResource("CircleShape2D_knooe")
 
 [node name="TextureRect" parent="." instance=ExtResource("1_oxkao")]
 layout_mode = 0
-offset_left = 925.0
-offset_top = 389.00003
-offset_right = 2925.0
-offset_bottom = 2389.0
-scale = Vector2(0.13880536, 0.13880536)
+offset_left = 410.99994
+offset_top = 264.0
+offset_right = 2411.0
+offset_bottom = 2264.0
+scale = Vector2(0.24679227, 0.078409486)
 flip_v = true
 
 [node name="Set_sence" parent="." instance=ExtResource("6_fxsdc")]
-visible = false
 layout_mode = 1
 
 [editable path="PressedButton"]

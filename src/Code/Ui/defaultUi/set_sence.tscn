@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdx60vhi6kw12"]
+[gd_scene load_steps=5 format=3 uid="uid://bdx60vhi6kw12"]
 
 [ext_resource type="Script" uid="uid://dlfuekbmnlbac" path="res://Code/Ui/defaultUi/mask.gd" id="1_0rniy"]
 [ext_resource type="Texture2D" uid="uid://dcf8hkagwfgm0" path="res://Asset/文本框 亮.png" id="1_ekp3r"]
+[ext_resource type="PackedScene" uid="uid://b63javh7i4kdf" path="res://Code/Scene/Component/PressedButton.tscn" id="3_fk4rr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hpqs"]
+font_size = 161
+font_color = Color(0, 0, 0, 1)
 
 [node name="Set_sence" type="Control"]
 layout_mode = 3
@@ -36,3 +41,25 @@ offset_bottom = 2087.122
 scale = Vector2(0.26462045, 0.33231905)
 mouse_filter = 0
 texture = ExtResource("1_ekp3r")
+
+[node name="PressedButton" parent="." instance=ExtResource("3_fk4rr")]
+layout_mode = 0
+offset_left = 883.0
+offset_top = 526.0
+offset_right = 883.0
+offset_bottom = 526.0
+scale = Vector2(0.27397522, 0.27397522)
+
+[node name="CollisionShape2D" parent="PressedButton/Area2D" index="0"]
+visible = false
+
+[node name="Label" type="Label" parent="PressedButton"]
+layout_mode = 0
+offset_left = -343.28558
+offset_top = -106.4451
+offset_right = 502.95282
+offset_bottom = 127.5549
+text = "退出游戏"
+label_settings = SubResource("LabelSettings_0hpqs")
+
+[editable path="PressedButton"]
