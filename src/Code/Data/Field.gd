@@ -34,7 +34,7 @@ func _updateUnlockedPlots() -> void:
 		for y:int in range(MAX_GRID_SIZE):
 			var cropPlot = FarmGrid[x][y]
 			if x < currentSize and y < currentSize:
-				cropPlot.isUnlocked = true
+				cropPlot.IsUnlocked = true
 
 # 扩展农田（例如从 2x2 变成 3x3）
 func ExpandFarm() -> void:
