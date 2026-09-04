@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://in21y1hjfl3k"
-path="res://.godot/imported/watering can_release.PNG-36666801ac567bb270c4805dfbc5adc2.ctex"
+uid="uid://c4da2jq5twjpy"
+path="res://.godot/imported/flower.PNG-a4cef65164485c904461508a81ca90e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/farming tool2/watering can_release.PNG"
-dest_files=["res://.godot/imported/watering can_release.PNG-36666801ac567bb270c4805dfbc5adc2.ctex"]
+source_file="res://Asset/plants/flower.PNG"
+dest_files=["res://.godot/imported/flower.PNG-a4cef65164485c904461508a81ca90e3.ctex"]
 
 [params]
 
