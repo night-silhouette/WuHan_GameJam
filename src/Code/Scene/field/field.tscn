@@ -12,11 +12,12 @@ anchors_preset = 0
 script = ExtResource("1_rts7j")
 
 [node name="Farmland" type="Sprite2D" parent="."]
-position = Vector2(2, 8)
+position = Vector2(49.000004, 51.000004)
 scale = Vector2(0.08165708, 0.08165708)
 texture = ExtResource("1_uo4ho")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(48, 39)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.9296026, 7.4931374)
