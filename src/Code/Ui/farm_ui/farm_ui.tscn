@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://blpfdd3p6udlo"]
+
+[ext_resource type="Texture2D" uid="uid://bc3xnaqx1a2y6" path="res://Asset/tree_origin.png" id="1_4grmo"]
+[ext_resource type="Texture2D" uid="uid://cjw3j0uwh7d5q" path="res://Asset/tree_UI.png" id="2_h4m0b"]
+
+[node name="Farm_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TreeOrigin" type="Sprite2D" parent="."]
+position = Vector2(519, 395)
+texture = ExtResource("1_4grmo")
+
+[node name="TreeUi" type="Sprite2D" parent="."]
+position = Vector2(105.000015, 558)
+scale = Vector2(0.42604968, 0.42604968)
+texture = ExtResource("2_h4m0b")
