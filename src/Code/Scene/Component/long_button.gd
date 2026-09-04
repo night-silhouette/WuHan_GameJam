@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 @onready var Area: Area2D = $Area2D
 @onready var button: Sprite2D = $Button
 
@@ -12,5 +12,3 @@ func _ready() -> void:
 	Area.mouse_exited.connect(func():Util.SetNodeTexture(button,BUTTON_NORMAL))
 	Util.Area2dConnectClick(Area,func():Util.SetNodeTexture(button,BUTTON_PRESS))
 	Util.Area2dConnectRelease(Area,func():Util.SetNodeTexture(button,BUTTON_HOVER))
-	
-	
