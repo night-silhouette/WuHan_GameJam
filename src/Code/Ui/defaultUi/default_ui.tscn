@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://uebcixs8ihh2"]
+[gd_scene load_steps=9 format=3 uid="uid://uebcixs8ihh2"]
 
+[ext_resource type="PackedScene" uid="uid://b63javh7i4kdf" path="res://Code/Scene/Component/PressedButton.tscn" id="1_8ahs4"]
+[ext_resource type="Script" uid="uid://bxfva8mixgft" path="res://Code/Ui/defaultUi/default_ui.gd" id="1_kdk03"]
 [ext_resource type="PackedScene" uid="uid://c5t7uu7tctyoq" path="res://Code/Scene/Component/Message.tscn" id="1_oxkao"]
+[ext_resource type="Texture2D" uid="uid://cbqasu1m84vg8" path="res://Asset/gear.png" id="2_6jal1"]
+[ext_resource type="Texture2D" uid="uid://d2iqfxtaptnh4" path="res://Asset/gear_hover.PNG" id="3_fxsdc"]
+[ext_resource type="Texture2D" uid="uid://b5dvkvgeqviob" path="res://Asset/gear_press.png" id="4_kdk03"]
+[ext_resource type="PackedScene" uid="uid://bdx60vhi6kw12" path="res://Code/Ui/defaultUi/set_sence.tscn" id="6_fxsdc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_knooe"]
+radius = 526.7953
 
 [node name="defaultUI" type="Control"]
 layout_mode = 3
@@ -9,6 +18,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kdk03")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PressedButton" parent="." instance=ExtResource("1_8ahs4")]
+visible = false
+layout_mode = 0
+offset_left = 1058.0001
+offset_top = 78.0
+offset_right = 1058.0001
+offset_bottom = 78.0
+scale = Vector2(0.099845745, 0.092561245)
+BUTTON_NORMAL = ExtResource("2_6jal1")
+BUTTON_HOVER = ExtResource("3_fxsdc")
+BUTTON_PRESS = ExtResource("4_kdk03")
+
+[node name="Button" parent="PressedButton" index="0"]
+texture = ExtResource("2_6jal1")
+
+[node name="CollisionShape2D" parent="PressedButton/Area2D" index="0"]
+visible = false
+position = Vector2(114.9632, -113.49449)
+scale = Vector2(0.9578269, 0.95803124)
+shape = SubResource("CircleShape2D_knooe")
 
 [node name="TextureRect" parent="." instance=ExtResource("1_oxkao")]
 layout_mode = 0
@@ -18,3 +57,9 @@ offset_right = 2925.0
 offset_bottom = 2389.0
 scale = Vector2(0.13880536, 0.13880536)
 flip_v = true
+
+[node name="Set_sence" parent="." instance=ExtResource("6_fxsdc")]
+visible = false
+layout_mode = 1
+
+[editable path="PressedButton"]

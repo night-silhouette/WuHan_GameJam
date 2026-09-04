@@ -13,7 +13,6 @@ offset_left = 591.0
 offset_top = 318.0
 offset_right = 591.0
 offset_bottom = 318.0
-scale = Vector2(0.26095304, 0.47579393)
 script = ExtResource("1_k41xa")
 
 [node name="Button" type="Sprite2D" parent="."]
