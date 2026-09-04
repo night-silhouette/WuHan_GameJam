@@ -2,12 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beyrjq1606b58"
+uid="uid://cy65bwyfku2j5"
 valid=false
 
 [deps]
 
-source_file="res://Asset/plants/flower.PNG"
+source_file="res://Asset/cursor.PNG"
 
 [params]
 

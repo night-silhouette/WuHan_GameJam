@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://u8wvw864746n"]
+[gd_scene load_steps=12 format=3 uid="uid://u8wvw864746n"]
 
 [ext_resource type="Script" uid="uid://dquy3rkhag2fs" path="res://Code/Scene/main/main.gd" id="1_t1d86"]
 [ext_resource type="Texture2D" uid="uid://butyo15tk147q" path="res://Asset/farming tools1/shovel.png" id="2_7306w"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bx18lhs2jyf5j" path="res://Code/Scene/main/sickle.gd" id="5_7n87i"]
 [ext_resource type="Texture2D" uid="uid://b8l3impqutbn3" path="res://Asset/farming tools1/watering can.png" id="5_h3kfu"]
 [ext_resource type="Script" uid="uid://sj5os8hv4g81" path="res://Code/Scene/main/watering_can.gd" id="7_h3kfu"]
+[ext_resource type="PackedScene" uid="uid://e7131ivktpr0" path="res://Code/Scene/field/FieldAll.tscn" id="8_h3kfu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v55ur"]
 size = Vector2(452.87674, 572.0552)
@@ -56,3 +57,7 @@ script = ExtResource("7_h3kfu")
 position = Vector2(109.034164, 62.305214)
 scale = Vector2(0.9999996, 0.9999996)
 shape = SubResource("RectangleShape2D_irxf4")
+
+[node name="FieldAll" parent="." instance=ExtResource("8_h3kfu")]
+position = Vector2(337.00003, 144.00002)
+scale = Vector2(0.68807954, 0.68807954)
