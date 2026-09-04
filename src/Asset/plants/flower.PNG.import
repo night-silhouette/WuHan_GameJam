@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qcc4a4pa0uvf"
-valid=false
+uid="uid://c1vt6j6be3o0a"
+path="res://.godot/imported/flower.png-fe682481749336ac23b24158ced07f04.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Asset/plants/flower.PNG"
+source_file="res://Asset/plants/flower.png"
+dest_files=["res://.godot/imported/flower.png-fe682481749336ac23b24158ced07f04.ctex"]
 
 [params]
 

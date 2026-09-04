@@ -15,6 +15,7 @@ var map:Dictionary={
 
 
 @export var CropId:Const.CropId
+@onready var area_2d: Area2D = $Area2D
 
 		
 
@@ -26,4 +27,8 @@ func _ready() -> void:
 	gravity_scale = 0.0
 	linear_damp = 4.0
 	
+	area_2d.mouse_entered.connect(func():
+		GameData.Invent.AddItem(CropId,1)
+		queue_free()
+		)
  

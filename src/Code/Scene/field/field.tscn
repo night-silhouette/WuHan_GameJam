@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bwkxo3x3qcqsf" path="res://Asset/toolbar.PNG" id="3_hgfuk"]
 [ext_resource type="Texture2D" uid="uid://bpv7jnfrvtqv1" path="res://Asset/plants/mushroom.png" id="4_22gak"]
 [ext_resource type="Script" uid="uid://d3sosll607880" path="res://Code/Scene/field/toolbar.gd" id="4_lm8bb"]
-[ext_resource type="Texture2D" uid="uid://qcc4a4pa0uvf" path="res://Asset/plants/flower.PNG" id="5_lm8bb"]
+[ext_resource type="Texture2D" uid="uid://c1vt6j6be3o0a" path="res://Asset/plants/flower.PNG" id="5_lm8bb"]
 [ext_resource type="Texture2D" uid="uid://dqkddcl0tssmx" path="res://Asset/plants/apple.png" id="6_eooqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rts7j"]
@@ -84,3 +84,7 @@ scale = Vector2(0.9570042, 0.9570042)
 position = Vector2(-7804.95, 198.73718)
 scale = Vector2(1.0000006, 1.0000006)
 shape = SubResource("RectangleShape2D_eooqv")
+
+[node name="Plant" type="Sprite2D" parent="."]
+position = Vector2(52, 36)
+scale = Vector2(0.104067236, 0.104067236)

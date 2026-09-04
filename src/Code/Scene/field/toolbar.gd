@@ -16,16 +16,19 @@ func _ready() -> void:
 	
 	Util.Area2dConnectClick(m,func():
 		GameData.F.GetPlot(par.x,par.y).CropId=Const.CropId.Mushroom
+		GameData.F.GetPlot(par.x,par.y).growthProgress=0
 		par.barFlag=false
 		visible=par.barFlag
 		)
 	Util.Area2dConnectClick(f,func():
 		GameData.F.GetPlot(par.x,par.y).CropId=Const.CropId.Flower
+		GameData.F.GetPlot(par.x,par.y).growthProgress=0
 		par.barFlag=false
 		visible=par.barFlag
 		)
 	Util.Area2dConnectClick(a,func():
 		GameData.F.GetPlot(par.x,par.y).CropId=Const.CropId.Apple
+		GameData.F.GetPlot(par.x,par.y).growthProgress=0
 		par.barFlag=false
 		visible=par.barFlag
 		)

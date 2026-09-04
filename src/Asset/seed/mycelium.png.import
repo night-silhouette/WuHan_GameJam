@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q3hju68j2o1w"
-path="res://.godot/imported/mushroom_02.png-08aa3e5035562be3e82270946855a7e6.ctex"
+uid="uid://oykr2dddwntw"
+path="res://.godot/imported/mycelium.png-a6669bfae9b4f4f35c4cd14e92c7dc9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/growth stage/mushroom_02.png"
-dest_files=["res://.godot/imported/mushroom_02.png-08aa3e5035562be3e82270946855a7e6.ctex"]
+source_file="res://Asset/seed/mycelium.png"
+dest_files=["res://.godot/imported/mycelium.png-a6669bfae9b4f4f35c4cd14e92c7dc9a.ctex"]
 
 [params]
 

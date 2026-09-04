@@ -15,7 +15,7 @@ var cursor_textures: Dictionary = {}
 func _ready() -> void:
 	var target_size = Vector2i(32, 32)
 	
-	cursor_textures[ToolMode.NORMAL] = null
+	cursor_textures[ToolMode.NORMAL] = load_and_resize_cursor("res://Asset/cursor.png", target_size)
 	cursor_textures[ToolMode.SHOVEL] = load_and_resize_cursor("res://Asset/farming tools1/shovel.png", target_size)
 	cursor_textures[ToolMode.SICKLE] = load_and_resize_cursor("res://Asset/farming tools1/sickle.PNG", target_size)
 	cursor_textures[ToolMode.WATERING_CAN] = load_and_resize_cursor("res://Asset/farming tools1/watering can.png", target_size)
