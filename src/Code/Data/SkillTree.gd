@@ -36,7 +36,8 @@ func get_value_upgrade_cost(good: int) -> float:
 
 	return 9.95 * pow(4.275, level)
 	
-##获取概述
+	
+##获取数量
 func GetPlantNum():
 	var index =  randf()
 	var dic = get_quantity_probability()
@@ -88,13 +89,15 @@ func upgrade_quantity() -> Dictionary:
 
 
 
-##水壶
-func get_watering_speed() -> float:
+##水壶速度
+func GetWateringSpeed() -> float:
 	return pow(2.0, 0.25 * watering_level)
 	
-func get_watering_range() -> int:
+##水壶大小
+func GetWateringRange() -> int:
 	return min(watering_level + 1, 7)
 	
+
 func get_watering_upgrade_cost() -> float:
 	return 497.3 * pow(2.2, watering_level)
 	
@@ -105,14 +108,15 @@ func upgrade_watering() -> Dictionary:
 
 	return {
 		"level": watering_level,
-		"speed": get_watering_speed(),
-		"range": get_watering_range(),
+		"speed": GetWateringSpeed(),
+		"range": GetWateringRange(),
 		"next_cost": get_watering_upgrade_cost()
 	}
 	
-	
-func get_field_count(good: int) -> int:
+##获取田地数量
+func GetFieldCount(good: int) -> int:
 	return field_level[good] * field_level[good]
+	
 	
 func get_field_upgrade_cost(good: int) -> float:
 	var level : int = field_level[good]
@@ -135,30 +139,33 @@ func upgrade_field(good: int) -> Dictionary:
 	return {
 		"level": field_level[good],
 		"size": field_level[good],
-		"count": get_field_count(good),
+		"count": GetFieldCount(good),
 		"next_cost": get_field_upgrade_cost(good)
 	}
 	
 	
 	
-func get_rot_upgrade_cost(good: int) -> float:
+	
+func GetRotUpgradeCost(good: int) -> float:
 	var level :int = rot_level[good]
 
 	return 49.7 * pow(1.5, level)
+	
 	
 func get_rot_multiplier(good: int) -> float:
 	return pow(0.9, rot_level[good])
 	
 func upgrade_rot_resistance(good: int) -> Dictionary:
-	var cost := get_rot_upgrade_cost(good)
+	var cost := GetRotUpgradeCost(good)
 
 	rot_level[good] += 1
 
 	return {
 		"level": rot_level[good],
 		"rot_multiplier": get_rot_multiplier(good),
-		"next_cost": get_rot_upgrade_cost(good)
+		"next_cost": GetRotUpgradeCost(good)
 	}
+
 
 func get_rot_interval(stage: int) -> float:
 	match stage:
@@ -188,5 +195,3 @@ func get_rot_rate(good: int, stage: int) -> float:
 		* get_rot_multiplier(good)
 	)
 	
-	
-		
