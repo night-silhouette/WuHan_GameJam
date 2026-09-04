@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5t7uu7tctyoq"]
 
-[ext_resource type="Texture2D" uid="uid://dxiv36pyqhs1t" path="res://Asset/文本框.jpg" id="1_i0enu"]
+[ext_resource type="Texture2D" uid="uid://u3qhoo1j8xwx" path="res://Asset/文本框 暗.png" id="1_2a22i"]
 [ext_resource type="Script" uid="uid://54ow5e311llg" path="res://Code/Util/text_fix.gd" id="2_2a22i"]
 [ext_resource type="Script" uid="uid://bqejncgpkepfj" path="res://Code/Scene/Component/message.gd" id="2_44v6c"]
 
 [node name="TextureRect" type="TextureRect"]
 offset_right = 1080.0
 offset_bottom = 1080.0
-texture = ExtResource("1_i0enu")
+texture = ExtResource("1_2a22i")
 script = ExtResource("2_44v6c")
 
 [node name="LabelFix" type="Label" parent="."]
 layout_mode = 0
-offset_left = 143.0
-offset_top = 179.0
-offset_right = 763.0
-offset_bottom = 885.0
+offset_left = 230.0
+offset_top = 304.0
+offset_right = 1418.0
+offset_bottom = 1697.0
 script = ExtResource("2_2a22i")
 auto_text = "hello word"
 metadata/_custom_type_script = "uid://54ow5e311llg"
