@@ -8,9 +8,15 @@ class_name FieldPerform
 @export var level:int=0
 @export var cropId:Const.CropId=Const.CropId.Nil
 
+
+@onready var toolbar: Sprite2D = $Toolbar
+
+
+var barFlag=false
 func _ready() -> void:
 	Util.Area2dConnectClick(area_2d,func():
 		if Mouse.mos==Mouse.ToolMode.SHOVEL:
-			print(123)
+			barFlag=!barFlag
+			toolbar.visible=barFlag
 		)
 		
