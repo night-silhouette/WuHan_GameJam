@@ -1,10 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://co7l2jv04at8s"]
+[gd_scene load_steps=2 format=3 uid="uid://co7l2jv04at8s"]
 
 [ext_resource type="Script" uid="uid://im7ndhxvkijr" path="res://Code/Scene/root/root.gd" id="1_3fusu"]
-[ext_resource type="PackedScene" uid="uid://b63javh7i4kdf" path="res://Code/Scene/Component/PressedButton.tscn" id="2_86jnv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_86jnv"]
-size = Vector2(1029.4587, 266.917)
 
 [node name="Root" type="Node"]
 script = ExtResource("1_3fusu")
@@ -17,15 +13,4 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PressedButton" parent="." node_paths=PackedStringArray("collision_node") instance=ExtResource("2_86jnv")]
-offset_left = 673.0
-offset_top = 265.00006
-offset_right = 673.0
-offset_bottom = 265.00006
-scale = Vector2(0.22221924, 0.20070988)
-collision_node = NodePath("CollisionShape2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PressedButton"]
-position = Vector2(-1.5183105, 16.93628)
-scale = Vector2(0.99999964, 0.9999997)
-shape = SubResource("RectangleShape2D_86jnv")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
