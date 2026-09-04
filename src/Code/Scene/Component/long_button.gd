@@ -2,9 +2,9 @@ extends Node2D
 @onready var Area: Area2D = $Area2D
 @onready var button: Sprite2D = $Button
 
-const BUTTON_NORMAL: Texture2D = preload("uid://dqb2aqy18mg6j")
-const BUTTON_HOVER: Texture2D = preload("uid://d0yx1oj0ky1eo")
-const BUTTON_PRESS: Texture2D = preload("uid://bebkf3y2ggt4q")
+@export var BUTTON_NORMAL: Texture2D = preload("uid://dqb2aqy18mg6j")
+@export var BUTTON_HOVER: Texture2D = preload("uid://d0yx1oj0ky1eo")
+@export var BUTTON_PRESS: Texture2D = preload("uid://bebkf3y2ggt4q")
 
 
 func _ready() -> void:
