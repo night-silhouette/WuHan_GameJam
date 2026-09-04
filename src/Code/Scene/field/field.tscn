@@ -9,6 +9,7 @@ size = Vector2(1471.4478, 1392.9773)
 [node name="Field" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 1
 script = ExtResource("1_rts7j")
 
 [node name="Farmland" type="Sprite2D" parent="."]

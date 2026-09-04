@@ -10,7 +10,7 @@ class_name FieldPerform
 
 func _ready() -> void:
 	Util.Area2dConnectClick(area_2d,func():
-		
-		print(123)
+		if Mouse.mos==Mouse.ToolMode.SHOVEL:
+			print(123)
 		)
 		
