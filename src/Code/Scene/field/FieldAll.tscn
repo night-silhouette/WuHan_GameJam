@@ -1,0 +1,264 @@
+[gd_scene load_steps=3 format=3 uid="uid://e7131ivktpr0"]
+
+[ext_resource type="Script" uid="uid://nm36q0unp1d3" path="res://Code/Scene/field/field_all.gd" id="1_6a7nt"]
+[ext_resource type="PackedScene" uid="uid://bf4dvmrxmrg3j" path="res://Code/Scene/field/field.tscn" id="2_dstjv"]
+
+[node name="FieldAll" type="Node2D"]
+script = ExtResource("1_6a7nt")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 42.0
+offset_right = 753.0
+offset_bottom = 696.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 7
+
+[node name="Field" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field2" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field3" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field4" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field5" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field6" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field7" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field8" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field9" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field10" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field11" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field12" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field13" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field14" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field15" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field16" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field17" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field18" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field19" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field20" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field21" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field22" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field23" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field24" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field25" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field26" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field27" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field28" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field29" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field30" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field31" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field32" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field33" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field34" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field35" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field36" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field37" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field38" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field39" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field40" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field41" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field42" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field43" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field44" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field45" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field46" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field47" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field48" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Field49" parent="GridContainer" instance=ExtResource("2_dstjv")]
+custom_minimum_size = Vector2(95, 90)
+layout_mode = 2
+size_flags_horizontal = 4

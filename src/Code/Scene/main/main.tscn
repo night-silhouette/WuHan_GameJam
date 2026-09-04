@@ -1,6 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://u8wvw864746n"]
+[gd_scene load_steps=12 format=3 uid="uid://u8wvw864746n"]
 
 [ext_resource type="Script" uid="uid://dquy3rkhag2fs" path="res://Code/Scene/main/main.gd" id="1_t1d86"]
+[ext_resource type="Texture2D" uid="uid://butyo15tk147q" path="res://Asset/farming tools1/shovel.png" id="2_7306w"]
+[ext_resource type="Script" uid="uid://dyj4i35itvegi" path="res://Code/Scene/main/shovel.gd" id="3_68hxa"]
+[ext_resource type="Texture2D" uid="uid://dcgdxl6jl0cus" path="res://Asset/farming tools1/sickle.PNG" id="4_7n87i"]
+[ext_resource type="Script" uid="uid://bx18lhs2jyf5j" path="res://Code/Scene/main/sickle.gd" id="5_7n87i"]
+[ext_resource type="Texture2D" uid="uid://b8l3impqutbn3" path="res://Asset/farming tools1/watering can.png" id="5_h3kfu"]
+[ext_resource type="Script" uid="uid://sj5os8hv4g81" path="res://Code/Scene/main/watering_can.gd" id="7_h3kfu"]
+[ext_resource type="PackedScene" uid="uid://e7131ivktpr0" path="res://Code/Scene/field/FieldAll.tscn" id="8_h3kfu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v55ur"]
+size = Vector2(452.87674, 572.0552)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtb7a"]
+size = Vector2(880.7525, 1066.053)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irxf4"]
+size = Vector2(1022.7489, 1065.5841)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_t1d86")
+
+[node name="Shovel" type="Sprite2D" parent="."]
+position = Vector2(71.00001, 174.00002)
+scale = Vector2(0.12586205, 0.12586205)
+texture = ExtResource("2_7306w")
+script = ExtResource("3_68hxa")
+
+[node name="Area2D" type="Area2D" parent="Shovel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shovel/Area2D"]
+position = Vector2(-27.808289, -7.9453125)
+shape = SubResource("RectangleShape2D_v55ur")
+
+[node name="Sickle" type="Sprite2D" parent="."]
+position = Vector2(67, 285)
+scale = Vector2(0.0667997, 0.067857124)
+texture = ExtResource("4_7n87i")
+script = ExtResource("5_7n87i")
+
+[node name="Area2D" type="Area2D" parent="Sickle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sickle/Area2D"]
+position = Vector2(23.697754, -31.973633)
+shape = SubResource("RectangleShape2D_qtb7a")
+
+[node name="WateringCan" type="Sprite2D" parent="."]
+position = Vector2(64, 392)
+scale = Vector2(0.064200036, 0.06420004)
+texture = ExtResource("5_h3kfu")
+script = ExtResource("7_h3kfu")
+
+[node name="Area2D" type="Area2D" parent="WateringCan"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WateringCan/Area2D"]
+position = Vector2(109.034164, 62.305214)
+scale = Vector2(0.9999996, 0.9999996)
+shape = SubResource("RectangleShape2D_irxf4")
+
+[node name="FieldAll" parent="." instance=ExtResource("8_h3kfu")]
+position = Vector2(337.00003, 144.00002)
+scale = Vector2(0.68807954, 0.68807954)

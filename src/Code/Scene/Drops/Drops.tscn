@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhma1jsxh2bcr"]
+
+[ext_resource type="Script" uid="uid://ci8ktygxevuxq" path="res://Code/Scene/Drops/drops.gd" id="1_aik5k"]
+[ext_resource type="Texture2D" uid="uid://dqkddcl0tssmx" path="res://Asset/plants/apple.png" id="2_h8hw6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fy0vu"]
+radius = 280.95908
+
+[node name="Drops" type="RigidBody2D"]
+position = Vector2(192, 102)
+scale = Vector2(0.36758623, 0.36758623)
+script = ExtResource("1_aik5k")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(280, 175)
+scale = Vector2(0.11305497, 0.11305497)
+texture = ExtResource("2_h8hw6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(280.00003, 186)
+scale = Vector2(0.23251234, 0.23251234)
+shape = SubResource("CircleShape2D_fy0vu")

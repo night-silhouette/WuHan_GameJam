@@ -7,6 +7,7 @@ var FarmGrid: Array[Array] = [] # 存储 Array[Array[Crop]]
 
 # 当前解锁的大小，初始为 2 (即 2x2)
 var currentSize: int = 2:
+	
 	set(value):
 		currentSize = clampi(value, 2, MAX_GRID_SIZE)
 		_updateUnlockedPlots()
@@ -33,7 +34,7 @@ func _updateUnlockedPlots() -> void:
 		for y:int in range(MAX_GRID_SIZE):
 			var cropPlot = FarmGrid[x][y]
 			if x < currentSize and y < currentSize:
-				cropPlot.isUnlocked = true
+				cropPlot.IsUnlocked = true
 
 # 扩展农田（例如从 2x2 变成 3x3）
 func ExpandFarm() -> void:
@@ -55,3 +56,8 @@ func ForEachUnlockedCrop(callback: Callable) -> void:
 			var cropPlot: Crop = FarmGrid[x][y]
 			if cropPlot and cropPlot.IsUnlocked:
 				callback.call(cropPlot)
+				
+				
+
+	
+	

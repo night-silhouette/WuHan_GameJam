@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf4dvmrxmrg3j"]
+
+[ext_resource type="Script" uid="uid://5ysu3xowrsgf" path="res://Code/Scene/field/field.gd" id="1_rts7j"]
+[ext_resource type="Texture2D" uid="uid://cxd358kbpn8xn" path="res://Asset/farmland.PNG" id="1_uo4ho"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rts7j"]
+size = Vector2(1471.4478, 1392.9773)
+
+[node name="Field" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rts7j")
+
+[node name="Farmland" type="Sprite2D" parent="."]
+position = Vector2(2, 8)
+scale = Vector2(0.08165708, 0.08165708)
+texture = ExtResource("1_uo4ho")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.9296026, 7.4931374)
+scale = Vector2(0.065337546, 0.065337546)
+shape = SubResource("RectangleShape2D_rts7j")
