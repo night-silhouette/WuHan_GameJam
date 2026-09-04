@@ -58,9 +58,6 @@ func ForEachUnlockedCrop(callback: Callable) -> void:
 				callback.call(cropPlot)
 				
 				
-func Harvest(x:int,y:int,num:int)->void:
-	var c:Crop=GetPlot(x,y)
-	c.ReSet()
-	GameData.Invent.AddItem(c.Level,num)
+
 	
 	
