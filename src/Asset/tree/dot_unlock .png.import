@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s3eka6h4ub0s"
-path="res://.godot/imported/flower_2.PNG-ed6f5abfeb7efede8f07ff1886ad1a86.ctex"
+uid="uid://b6v7euagufudq"
+path="res://.godot/imported/dot_unlock .png-305cdbece4a4a3f22bacc673a2e6dde0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/growth stage/flower_2.PNG"
-dest_files=["res://.godot/imported/flower_2.PNG-ed6f5abfeb7efede8f07ff1886ad1a86.ctex"]
+source_file="res://Asset/tree/dot_unlock .png"
+dest_files=["res://.godot/imported/dot_unlock .png-305cdbece4a4a3f22bacc673a2e6dde0.ctex"]
 
 [params]
 

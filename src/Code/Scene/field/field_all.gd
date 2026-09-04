@@ -23,12 +23,12 @@ func SizeChange(s:int)->void:
 	var tempList:Array[FieldPerform]=[]
 	var children=grid_container.get_children()
 	for child in children:
-		Util.Revive(child)
+		child.visible=true
 	var i=0
 	for child in children:
 		i+=1
 		if i>s*s:
-			Util.FakeDeath(child)
+			child.visible=false
 			continue
 		tempList.append(child)
 		

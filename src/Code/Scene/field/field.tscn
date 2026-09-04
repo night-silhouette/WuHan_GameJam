@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf4dvmrxmrg3j"]
+[gd_scene load_steps=8 format=3 uid="uid://bf4dvmrxmrg3j"]
 
 [ext_resource type="Script" uid="uid://5ysu3xowrsgf" path="res://Code/Scene/field/field.gd" id="1_rts7j"]
 [ext_resource type="Texture2D" uid="uid://cxd358kbpn8xn" path="res://Asset/farmland.PNG" id="1_uo4ho"]
+[ext_resource type="Texture2D" uid="uid://bwkxo3x3qcqsf" path="res://Asset/toolbar.PNG" id="3_hgfuk"]
+[ext_resource type="Texture2D" uid="uid://bpv7jnfrvtqv1" path="res://Asset/plants/mushroom.png" id="4_22gak"]
+[ext_resource type="Texture2D" uid="uid://qcc4a4pa0uvf" path="res://Asset/plants/flower.PNG" id="5_lm8bb"]
+[ext_resource type="Texture2D" uid="uid://dqkddcl0tssmx" path="res://Asset/plants/apple.png" id="6_eooqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rts7j"]
 size = Vector2(1471.4478, 1392.9773)
@@ -9,6 +13,7 @@ size = Vector2(1471.4478, 1392.9773)
 [node name="Field" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 1
 script = ExtResource("1_rts7j")
 
 [node name="Farmland" type="Sprite2D" parent="."]
@@ -23,3 +28,29 @@ position = Vector2(48, 39)
 position = Vector2(0.9296026, 7.4931374)
 scale = Vector2(0.065337546, 0.065337546)
 shape = SubResource("RectangleShape2D_rts7j")
+
+[node name="Toolbar" type="Sprite2D" parent="."]
+visible = false
+z_index = 100
+position = Vector2(50.999992, -44)
+rotation = 1.5659895
+scale = Vector2(0.0798367, 0.0798367)
+texture = ExtResource("3_hgfuk")
+
+[node name="Mushroom" type="Sprite2D" parent="Toolbar"]
+position = Vector2(6.0386353, -1256.1349)
+rotation = -1.5659895
+scale = Vector2(0.5959211, 0.5959211)
+texture = ExtResource("4_22gak")
+
+[node name="Flower" type="Sprite2D" parent="Toolbar"]
+position = Vector2(-0.31726074, 66.11243)
+rotation = -1.5659895
+scale = Vector2(0.58336514, 0.58336514)
+texture = ExtResource("5_lm8bb")
+
+[node name="Apple" type="Sprite2D" parent="Toolbar"]
+position = Vector2(-6.0374146, 1256.1349)
+rotation = -1.5659895
+scale = Vector2(0.7244313, 0.7244313)
+texture = ExtResource("6_eooqv")

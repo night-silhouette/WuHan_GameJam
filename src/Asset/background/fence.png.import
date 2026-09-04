@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc3xnaqx1a2y6"
-path="res://.godot/imported/tree_origin.png-9ff2a586172442dc81f9fc020498c7f5.ctex"
+uid="uid://ddh2fnnrke3nk"
+path="res://.godot/imported/fence.png-1cffa82d898c21812900bc29a591380b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/tree_origin.png"
-dest_files=["res://.godot/imported/tree_origin.png-9ff2a586172442dc81f9fc020498c7f5.ctex"]
+source_file="res://Asset/background/fence.png"
+dest_files=["res://.godot/imported/fence.png-1cffa82d898c21812900bc29a591380b.ctex"]
 
 [params]
 

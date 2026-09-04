@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc78xk33amlju"
-valid=false
+uid="uid://dlfyb5osqt17j"
+path="res://.godot/imported/music.png-d6e395b2818cf1564accbf9df5349685.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Asset/growth stage/mushroom_0.PNG"
+source_file="res://Asset/music.png"
+dest_files=["res://.godot/imported/music.png-d6e395b2818cf1564accbf9df5349685.ctex"]
 
 [params]
 

@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc78xk33amlju"
-valid=false
+uid="uid://di0wctkluhjaj"
+path="res://.godot/imported/branch_1.png-e5fbb6dc2bbc15f735a515df89db0eeb.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Asset/growth stage/mushroom_0.PNG"
+source_file="res://Asset/tree/branch_1.png"
+dest_files=["res://.godot/imported/branch_1.png-e5fbb6dc2bbc15f735a515df89db0eeb.ctex"]
 
 [params]
 
