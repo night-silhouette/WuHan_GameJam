@@ -12,4 +12,5 @@ enum CropId {
 
 
 const GrowthSpeed:int=100#一秒增加几个的意思#这是基数，是不变的
-const GrowthLevel:int=1000 #涨到1000停止#这是基数，是不变的
+const GrowthLevel:int=1500 #涨到1000停止#这是基数，是不变的
+const WateringBaseSpeed:int=3

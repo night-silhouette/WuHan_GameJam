@@ -8,6 +8,6 @@ func _ready() -> void:
 	SignalBus.DataChange.connect(_refresh)
 		
 func _refresh() :
-	Apple_ui.update(Util.FormatNumber(GameData.Invent.items.get(0)))
-	Flower_ui.update(Util.FormatNumber(GameData.Invent.items.get(1)))
-	Mushroom_ui.update(Util.FormatNumber(GameData.Invent.items.get(2)))
+	Apple_ui.update(Util.FormatNumber(GameData.Invent.items.get(Const.CropId.Apple)))
+	Flower_ui.update(Util.FormatNumber(GameData.Invent.items.get(Const.CropId.Flower)))
+	Mushroom_ui.update(Util.FormatNumber(GameData.Invent.items.get(Const.CropId.Mushroom)))

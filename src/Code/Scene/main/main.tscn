@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://u8wvw864746n"]
+[gd_scene load_steps=21 format=3 uid="uid://u8wvw864746n"]
 
 [ext_resource type="Script" uid="uid://dquy3rkhag2fs" path="res://Code/Scene/main/main.gd" id="1_t1d86"]
 [ext_resource type="Texture2D" uid="uid://butyo15tk147q" path="res://Asset/farming tools1/shovel.png" id="2_7306w"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://ddh2fnnrke3nk" path="res://Asset/background/fence.png" id="11_l2avk"]
 [ext_resource type="Script" uid="uid://200ssnu72tmt" path="res://Code/Scene/main/x.gd" id="11_r05wm"]
 [ext_resource type="Texture2D" uid="uid://bvitdl8uvr3r3" path="res://Asset/background/grass.png" id="12_xvedc"]
+[ext_resource type="Texture2D" uid="uid://clq0m0q6k7vdo" path="res://Asset/frame_havest.png" id="16_d1tkf"]
+[ext_resource type="Script" uid="uid://urfjly2chhex" path="res://Code/Scene/main/tool_frame.gd" id="17_swvh5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irxf4"]
 size = Vector2(1022.7489, 1065.5841)
@@ -27,7 +29,9 @@ size = Vector2(420.1435, 373.42505)
 
 [node name="Main" type="Node2D"]
 z_index = -1
+position = Vector2(1, 0)
 script = ExtResource("1_t1d86")
+metadata/_edit_lock_ = true
 
 [node name="FieldAll" parent="." instance=ExtResource("8_h3kfu")]
 z_index = 1
@@ -42,8 +46,8 @@ texture = ExtResource("3_v55ur")
 script = ExtResource("4_r05wm")
 
 [node name="WateringCan" type="Sprite2D" parent="Toolbar"]
-position = Vector2(-9.642883, 1002.8701)
-scale = Vector2(0.61908, 0.61908007)
+position = Vector2(-38.57199, 993.2268)
+scale = Vector2(0.5939158, 0.5939159)
 texture = ExtResource("5_h3kfu")
 script = ExtResource("7_h3kfu")
 
@@ -65,6 +69,12 @@ script = ExtResource("5_7n87i")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Toolbar/Sickle/Area2D"]
 position = Vector2(23.697754, -31.973633)
 shape = SubResource("RectangleShape2D_qtb7a")
+
+[node name="Label" type="Label" parent="Toolbar/Sickle"]
+offset_left = -0.00022842601
+offset_top = 0.00044973285
+offset_right = 39.99977
+offset_bottom = 24.00045
 
 [node name="Shovel" type="Sprite2D" parent="Toolbar"]
 position = Vector2(57.858093, -1099.3005)
@@ -95,6 +105,7 @@ position = Vector2(-0.0001411438, 2717.261)
 shape = SubResource("RectangleShape2D_v55ur")
 
 [node name="Background" type="Sprite2D" parent="."]
+z_index = -10
 position = Vector2(576.5013, 324.0632)
 scale = Vector2(0.5994779, 0.599883)
 texture = ExtResource("10_ymkik")
@@ -112,4 +123,10 @@ z_index = 3
 position = Vector2(584, 322.99237)
 scale = Vector2(0.63700885, 0.6036897)
 texture = ExtResource("12_xvedc")
-metadata/_edit_lock_ = true
+
+[node name="toolFrame" type="Sprite2D" parent="."]
+z_index = 7
+position = Vector2(116, -52)
+scale = Vector2(0.33771977, 0.33771977)
+texture = ExtResource("16_d1tkf")
+script = ExtResource("17_swvh5")

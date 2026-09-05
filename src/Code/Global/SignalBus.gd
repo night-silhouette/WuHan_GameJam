@@ -48,3 +48,6 @@ signal DataChange()
 
 
 #endregion
+
+
+var IsWatering:int=false

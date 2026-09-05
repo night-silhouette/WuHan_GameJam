@@ -37,7 +37,7 @@ func SetNodeTexture(node: Node, new_texture: Texture2D) -> void:
 #)
 
 #callback是补间动画结束触发的回调	
-func TweenFastToSlow(obj,prop,value,time,callback=func():pass):
+func TweenFastToSlow(obj,prop:String,value,time,callback=func():pass):
 	var tween=create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_CUBIC)	
@@ -46,7 +46,7 @@ func TweenFastToSlow(obj,prop,value,time,callback=func():pass):
 	return tween#tween的引用没有了之后,tween.finished.connect(callback)这个的信号也会随之free,所以可以大胆的对这个tween.kill()
 
 # callback是补间动画结束触发的回调	
-func TweenSlowToFast(obj, prop, value, time, callback = func(): pass):
+func TweenSlowToFast(obj, prop:String, value, time, callback = func(): pass):
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_CUBIC)	
@@ -86,7 +86,38 @@ func FormatNumber(num: float) -> String:
 			s = s.left(s.length() - 2)
 		return s + suffixes[idx]	
 	
+
+
+class AreaHoldHelper extends Node:
+	var area: Area2D
+	var press_callback: Callable
+	var release_callback: Callable
+	var is_inside := false
+	var is_holding := false
 	
+	func _init(p_area: Area2D, p_press_cb: Callable, p_release_cb: Callable) -> void:
+		area = p_area
+		press_callback = p_press_cb
+		release_callback = p_release_cb
+		
+	func _ready() -> void:
+		area.mouse_entered.connect(func(): is_inside = true)
+		area.mouse_exited.connect(func(): is_inside = false)
+		
+	func _input(event: InputEvent) -> void:
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed and is_inside:
+				is_holding = true
+				if press_callback.is_valid():
+					press_callback.call()
+			elif not event.pressed and is_holding:
+				is_holding = false
+				if release_callback.is_valid():
+					release_callback.call()
+
+func Area2dConnectHold(area2d: Area2D, press_callback: Callable, release_callback: Callable = Callable()) -> void:
+	var helper = AreaHoldHelper.new(area2d, press_callback, release_callback)
+	area2d.add_child(helper)
 	
 	
 	

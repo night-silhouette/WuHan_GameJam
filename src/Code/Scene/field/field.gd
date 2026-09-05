@@ -33,9 +33,42 @@ var PlantMap:Dictionary={
 	Vector2(Const.CropId.Apple,1):preload("uid://b0tvrn6yxr58c"),
 	Vector2(Const.CropId.Apple,2):preload("uid://ff05i6h3snsj")
 }
+@onready var water_spritesheet: Sprite2D = $WaterSpritesheet
+@onready var pool_spritesheet: Sprite2D = $PoolSpritesheet
+
+
+@onready var frame_havest: Sprite2D = $FrameHavest
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+var FrameVisible:bool=false:
+	set(value):
+		FrameVisible=value
+		frame_havest.visible=value
+		
 
 
 var barFlag=false
+
+#------------------------------------------------------------------------------------------------------------------------#
+
+func sickle():
+	if IfCanDrop():
+		GameData.F.GetPlot(x,y).growthProgress=0
+		spawn_drop_items(SkillTree.GetPlantNum())
+
+func Watering1():
+	water_spritesheet.visible=true
+	pool_spritesheet.visible=true
+	animation_player.play("洒水")
+	SignalBus.IsWatering=true
+func Watering2():
+	water_spritesheet.visible=false
+	pool_spritesheet.visible=false
+	animation_player.stop()
+	SignalBus.IsWatering=false
+
+#------------------------------------------------------------------------------------------------------------------------#
+
 func _ready() -> void:
 	Util.Area2dConnectClick(area_2d,func():
 		if Mouse.mos==Mouse.ToolMode.SHOVEL:
@@ -43,13 +76,29 @@ func _ready() -> void:
 			toolbar.visible=barFlag
 			return
 		if Mouse.mos==Mouse.ToolMode.SICKLE:
-			if IfCanDrop():
-			
-				spawn_drop_items(1)
+			sickle()
 		)
+	
+		
+	area_2d.mouse_entered.connect(func():
+		FrameVisible=true
+		)
+	area_2d.mouse_exited.connect(func():
+		FrameVisible=false
+		)
+		
+	Util.Area2dConnectHold(area_2d,func():
+		if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
+				Watering1(),
+		func():
+			if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
+				Watering2())
+				
 		
 func IfCanDrop()->bool:
 	if cropId==Const.CropId.Nil:
+		return false
+	if level!=2:
 		return false
 	return true
 
