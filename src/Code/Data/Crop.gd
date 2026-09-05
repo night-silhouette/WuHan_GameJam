@@ -8,6 +8,8 @@ var growthProgress: float = 0.0: # 生长进度
 	set(value):
 		growthProgress=value
 		@warning_ignore("integer_division")
+		if value<Const.GrowthLevel/2:
+			Level=0
 		if Const.GrowthLevel>value and value>Const.GrowthLevel/2:
 			Level=1
 		if Const.GrowthLevel<=value:

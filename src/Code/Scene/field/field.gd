@@ -25,7 +25,7 @@ const DROPS = preload("uid://dhma1jsxh2bcr")
 var PlantMap:Dictionary={
 	Vector2(Const.CropId.Flower,0):preload("uid://m3cc7oqutc2g"),
 	Vector2(Const.CropId.Flower,1):preload("uid://m5yae1wbh0xx"),
-	Vector2(Const.CropId.Flower,2):preload("uid://dls2fp76dgj8f"),
+	Vector2(Const.CropId.Flower,2):preload("uid://cwhbfu7javom4"),
 	Vector2(Const.CropId.Mushroom,0):preload("uid://b701tv106h8vm"),
 	Vector2(Const.CropId.Mushroom,1):preload("uid://dsdwcpdus72aq"),
 	Vector2(Const.CropId.Mushroom,2):preload("uid://q3hju68j2o1w"),
