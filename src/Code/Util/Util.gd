@@ -55,7 +55,36 @@ func TweenSlowToFast(obj, prop, value, time, callback = func(): pass):
 	return tween
 	
 	
-	
+# 大数字简洁格式化
+# 小于 1K 显示普通数字；从 K 开始缩写，输出 1K、1M、1B、1T 这种干净形式
+func FormatNumber(num: float) -> String:
+	# 从 K(10^3) 开始；之后每 1000 倍进一位：K M B T Qa Qi Sx Sp ...
+	var suffixes := ["K", "M", "B", "T", "Qa", "Qi", "Sx", "Sp"]
+	var value := num
+	var divisor := 1_000.0
+
+	# K 之前直接显示普通数字
+	if value < divisor:
+		# 整数就不带小数点
+		if value == floor(value):
+			return str(int(value))
+		return str(value)
+
+	var idx := 0
+	while value >= divisor * 1000.0 and idx < suffixes.size() - 1:
+		divisor *= 1000.0
+		idx += 1
+
+	var result := value / divisor
+
+	# 干净显示：整除就不带小数，否则最多保留一位小数并去掉末尾的 .0
+	if result == floor(result):
+		return "%d%s" % [int(result), suffixes[idx]]
+	else:
+		var s := "%.1f" % result
+		if s.ends_with(".0"):
+			s = s.left(s.length() - 2)
+		return s + suffixes[idx]	
 	
 	
 	

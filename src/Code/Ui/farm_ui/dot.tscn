@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=3 uid="uid://btuvxmhx7brid"]
+
+[ext_resource type="Texture2D" uid="uid://dh1l66atwqq64" path="res://Asset/tree/dot.png" id="1_8hp2t"]
+[ext_resource type="Texture2D" uid="uid://b6v7euagufudq" path="res://Asset/tree/dot_unlock .png" id="2_viuf3"]
+[ext_resource type="Script" uid="uid://bvsv8ubrfioac" path="res://Code/Ui/farm_ui/dot.gd" id="3_viuf3"]
+[ext_resource type="Texture2D" uid="uid://bdusetolh8wfk" path="res://Asset/textbox.png" id="4_abave"]
+[ext_resource type="Texture2D" uid="uid://cjpbekq30qxm5" path="res://Asset/textbox_hover.png" id="5_8iq5c"]
+[ext_resource type="Texture2D" uid="uid://bwkxo3x3qcqsf" path="res://Asset/toolbar.PNG" id="7_rdori"]
+[ext_resource type="Texture2D" uid="uid://dqkddcl0tssmx" path="res://Asset/plants/apple.png" id="8_k35yy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8iq5c"]
+font_size = 131
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e4ltv"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+texture_normal = ExtResource("2_viuf3")
+texture_pressed = ExtResource("1_8hp2t")
+script = ExtResource("3_viuf3")
+
+[node name="Textbox" type="TextureRect" parent="."]
+self_modulate = Color(0.9297146, 0.9297147, 0.9297146, 1)
+layout_mode = 0
+offset_left = 174.99998
+offset_top = 12.999998
+offset_right = 1655.0
+offset_bottom = 1733.0
+scale = Vector2(0.13299944, 0.13299944)
+mouse_filter = 2
+texture = ExtResource("4_abave")
+
+[node name="TextboxHover" type="TextureRect" parent="Textbox"]
+layout_mode = 0
+offset_left = 0.00012207031
+offset_top = 421.05444
+offset_right = 1480.0001
+offset_bottom = 2141.0544
+mouse_filter = 2
+texture = ExtResource("5_8iq5c")
+metadata/_edit_lock_ = true
+
+[node name="level" type="Label" parent="Textbox"]
+layout_mode = 0
+offset_left = 125.24336
+offset_top = 117.41566
+offset_right = 792.87585
+offset_bottom = 295.98517
+scale = Vector2(1.7630947, 1.784607)
+label_settings = SubResource("LabelSettings_8iq5c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="skill_des" type="Label" parent="Textbox"]
+layout_mode = 0
+offset_left = 97.74473
+offset_top = 533.8369
+offset_right = 765.37726
+offset_bottom = 1321.6973
+scale = Vector2(1.7630947, 1.784607)
+label_settings = SubResource("LabelSettings_8iq5c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Toolbar" type="TextureRect" parent="."]
+self_modulate = Color(0.8474744, 0.84747446, 0.84747446, 1)
+layout_mode = 0
+offset_left = 18.999994
+offset_top = 125.0
+offset_right = 999.0
+offset_bottom = 3735.0
+scale = Vector2(0.057658773, 0.014441271)
+texture = ExtResource("7_rdori")
+
+[node name="unit" type="TextureRect" parent="."]
+modulate = Color(0.78352344, 0.7835234, 0.7835234, 1)
+layout_mode = 0
+offset_left = 85.0
+offset_top = 123.00001
+offset_right = 1085.0
+offset_bottom = 1313.0
+scale = Vector2(0.045719415, 0.045719415)
+texture = ExtResource("8_k35yy")
+
+[node name="num" type="Label" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 119.0
+offset_right = 61.0
+offset_bottom = 167.0
+scale = Vector2(1.2983118, 1.2983118)
+text = "70M"
+label_settings = SubResource("LabelSettings_e4ltv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="light" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("1_8hp2t")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

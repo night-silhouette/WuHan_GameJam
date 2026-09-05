@@ -1,14 +1,29 @@
+extends  Node
 const GOODS_COUNT := 3
-
+var tree_level = 0;
 # 初始等级
 var value_level := [0, 0, 0]
-var field_level := [1, 1, 1]
+var field_level := 1
 var rot_level := [0, 0, 0]
 
 # 共享等级
 var quantity_level := 0
 var watering_level := 0
+var havesting_level := 0
+var planting_level := 0
 
+var auto_water := false
+var auto_havest := false
+var auto_plant := false
+
+var apple = false
+var flower = false
+var mashroom = false
+
+
+var auto_water_cost = 5000000
+var auto_plant_cost = 10000
+var auto_havest_cost= 100000
 ##获取价值
 func GetValue(CropId: int) -> float:
 	
@@ -24,15 +39,16 @@ func GetValue(CropId: int) -> float:
 	
 
 func upgrade_value(good: int) -> float:
-	var cost := get_value_upgrade_cost(good)
+	var cost := get_value_upgrade_cost(good-1)
 
-	value_level[good] += 1
+	value_level[good-1] += 1
 
 	return GetValue(good)
 	
+	
 ##获取升级费用
 func get_value_upgrade_cost(good: int) -> float:
-	var level :int = value_level[good]
+	var level :int = value_level[good-1]
 
 	return 9.95 * pow(4.275, level)
 	
@@ -113,20 +129,37 @@ func upgrade_watering() -> Dictionary:
 		"next_cost": get_watering_upgrade_cost()
 	}
 	
+
+##扩大种田数
+func GetPalentRange() -> int:
+	return min(planting_level + 1, 7)
+	
+
+func get_palent_upgrade_cost() -> float:
+	return 497.3 * pow(2.2, planting_level)/5
+
+##收割范围	
+func GetHavestRange() -> int:
+	return min(havesting_level + 1, 7)
+	
+
+func get_havest_upgrade_cost() -> float:
+	return 497.3 * pow(2.2, planting_level)/3
+	
 ##获取田地数量
-func GetFieldCount(good: int) -> int:
-	return field_level[good] * field_level[good]
+func GetFieldCount() -> int:
+	return field_level * field_level
 	
 	
-func get_field_upgrade_cost(good: int) -> float:
-	var level : int = field_level[good]
+func get_field_upgrade_cost() -> float:
+	var level : int = field_level
 
 	return 99.5 * pow(2.8, level - 1)
 	
-func upgrade_field(good: int) -> Dictionary:
-	var cost := get_field_upgrade_cost(good)
+func upgrade_field() -> Dictionary:
+	var cost := get_field_upgrade_cost()
 
-	if field_level[good] >= 7:
+	if field_level >= 7:
 		return {
 			"level": 7,
 			"size": 7,
@@ -134,34 +167,35 @@ func upgrade_field(good: int) -> Dictionary:
 			"next_cost": INF
 		}
 
-	field_level[good] += 1
+	field_level += 1
 
 	return {
-		"level": field_level[good],
-		"size": field_level[good],
-		"count": GetFieldCount(good),
-		"next_cost": get_field_upgrade_cost(good)
+		"level": field_level,
+		"size": field_level,
+		"count": GetFieldCount(),
+		"next_cost": get_field_upgrade_cost()
 	}
 	
 	
 	
 	
 func GetRotUpgradeCost(good: int) -> float:
-	var level :int = rot_level[good]
+	var level :int = rot_level[good-1]
 
 	return 49.7 * pow(1.5, level)
 	
 	
+	
 func get_rot_multiplier(good: int) -> float:
-	return pow(0.9, rot_level[good])
+	return pow(0.9, rot_level[good-1])
 	
 func upgrade_rot_resistance(good: int) -> Dictionary:
 	var cost := GetRotUpgradeCost(good)
 
-	rot_level[good] += 1
+	rot_level[good-1] += 1
 
 	return {
-		"level": rot_level[good],
+		"level": rot_level[good-1],
 		"rot_multiplier": get_rot_multiplier(good),
 		"next_cost": GetRotUpgradeCost(good)
 	}

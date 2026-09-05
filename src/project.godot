@@ -25,6 +25,7 @@ SignalBus="*res://Code/Global/SignalBus.gd"
 Util="*res://Code/Util/Util.gd"
 GameData="*res://Code/Global/GameData.gd"
 Mouse="*res://Code/Global/mouse.gd"
+SkillTree="*res://Code/Data/SkillTree.gd"
 
 [debug]
 
@@ -39,3 +40,7 @@ gdscript/warnings/return_value_discarded=1
 [gui]
 
 theme/custom_font="uid://bbo1p0cp00e6h"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
