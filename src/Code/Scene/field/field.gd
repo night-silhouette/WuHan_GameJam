@@ -34,8 +34,10 @@ var PlantMap:Dictionary={
 	Vector2(Const.CropId.Apple,2):preload("uid://ff05i6h3snsj")
 }
 
+@onready var waterdrop_spritesheet: Sprite2D = $WaterdropSpritesheet
 
 @onready var frame_havest: Sprite2D = $FrameHavest
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var FrameVisible:bool=false:
 	set(value):
@@ -67,11 +69,15 @@ func _ready() -> void:
 		
 	Util.Area2dConnectHold(area_2d,func():
 		if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
+			waterdrop_spritesheet.visible=true
+			animation_player.play("洒水")
 			SignalBus.IsWatering=true,
 		func():
 			if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
+				waterdrop_spritesheet.visible=false
+				animation_player.stop()
 				SignalBus.IsWatering=false)
-		
+				
 		
 func IfCanDrop()->bool:
 	if cropId==Const.CropId.Nil:
