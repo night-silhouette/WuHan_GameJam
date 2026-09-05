@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqb2aqy18mg6j" path="res://Asset/button .png" id="2_0wwe3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k41xa"]
-size = Vector2(1057.6619, 258.5154)
+size = Vector2(308.823, 258.5154)
 
 [node name="PressedButton" type="Control"]
 layout_mode = 3
