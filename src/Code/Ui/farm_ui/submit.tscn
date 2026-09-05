@@ -53,31 +53,31 @@ texture = ExtResource("4_uwdqm")
 [node name="unit" type="TextureRect" parent="Control"]
 modulate = Color(0.78352344, 0.7835234, 0.7835234, 1)
 layout_mode = 0
-offset_left = 315.0
+offset_left = 307.0
 offset_top = 298.00003
-offset_right = 1315.0
+offset_right = 1307.0
 offset_bottom = 1488.0
-scale = Vector2(0.062269114, 0.062269114)
+scale = Vector2(0.05551285, 0.05551285)
 texture = ExtResource("5_o51pj")
 
 [node name="unit2" type="TextureRect" parent="Control"]
 modulate = Color(0.78352344, 0.7835234, 0.7835234, 1)
 layout_mode = 0
-offset_left = 380.0
+offset_left = 372.0
 offset_top = 330.00003
-offset_right = 1380.0
+offset_right = 1372.0
 offset_bottom = 1520.0
-scale = Vector2(0.0867138, 0.0867138)
+scale = Vector2(0.07730526, 0.07730526)
 texture = ExtResource("6_ncq6d")
 
 [node name="unit3" type="TextureRect" parent="Control"]
 modulate = Color(0.78352344, 0.7835234, 0.7835234, 1)
 layout_mode = 0
-offset_left = 381.0
+offset_left = 373.0
 offset_top = 258.0
-offset_right = 1671.0
+offset_right = 1663.0
 offset_bottom = 1498.0
-scale = Vector2(0.0564145, 0.0564145)
+scale = Vector2(0.050293464, 0.050293464)
 texture = ExtResource("7_trncn")
 
 [node name="Label" type="Label" parent="Control"]

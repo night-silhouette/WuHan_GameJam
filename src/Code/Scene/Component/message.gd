@@ -5,11 +5,12 @@ var labfix : = LabelFix
 func _ready() -> void:
 	SignalBus.MessagePopu.connect(MessagePopu)
 	modulate.a = 0;
+	$".".position.y = 460
 
 func MessagePopu(message:String):
 	labfix.auto_text = message;
-	Util.TweenFastToSlow(self,"modulate:a",1,0.25,func(): Util.setTime(1,func(): pass))
+	Util.TweenFastToSlow(self,"position:y",265,0.25,tween_ani)
 
 func tween_ani():
-	Util.setTime(1,func():Util.TweenSlowToFast(self,"modulate:a",0,0.25,func(): pass))
+	Util.setTime(3,func():Util.TweenSlowToFast(self,"position:y",265,0.25,func(): pass))
 	
