@@ -1,13 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://d23qv4f2hxh10"]
+[gd_scene load_steps=5 format=3 uid="uid://d23qv4f2hxh10"]
 
-[ext_resource type="Texture2D" uid="uid://col80b84q4n70" path="res://Asset/齿轮 常态.png" id="1_aax0s"]
-[ext_resource type="Texture2D" uid="uid://b6q00u3axldpv" path="res://Asset/齿轮 暗.png" id="2_j6vi5"]
-[ext_resource type="Texture2D" uid="uid://bumqe4gnnv1ms" path="res://Asset/齿轮 亮.PNG" id="3_yy1rq"]
+[ext_resource type="Script" uid="uid://cmit2vvmfbmr2" path="res://Code/Ui/defaultUi/set.gd" id="1_12bsl"]
+[ext_resource type="Texture2D" uid="uid://cbqasu1m84vg8" path="res://Asset/gear.png" id="1_ua50r"]
+[ext_resource type="Texture2D" uid="uid://d2iqfxtaptnh4" path="res://Asset/gear_hover.PNG" id="3_j6vi5"]
+[ext_resource type="Texture2D" uid="uid://b5dvkvgeqviob" path="res://Asset/gear_press.png" id="4_yy1rq"]
 
 [node name="Set" type="TextureButton"]
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.25737867, 0.25737867)
-texture_normal = ExtResource("1_aax0s")
-texture_pressed = ExtResource("2_j6vi5")
-texture_hover = ExtResource("3_yy1rq")
+scale = Vector2(1.7709876, 1.7709876)
+script = ExtResource("1_12bsl")
+normal = ExtResource("1_ua50r")
+hover = ExtResource("3_j6vi5")
+press = ExtResource("4_yy1rq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(21.456951, 15.810386)
+scale = Vector2(-0.037727725, -0.037727725)
+texture = ExtResource("1_ua50r")

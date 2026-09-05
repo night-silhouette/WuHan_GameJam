@@ -10,6 +10,7 @@ initial_ui = "uid://blpfdd3p6udlo"
 [node name="Sence_root" type="Node2D" parent="."]
 
 [node name="Ui_root" type="Control" parent="."]
+z_index = 21
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

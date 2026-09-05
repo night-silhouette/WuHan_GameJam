@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://47xcidhbguon"]
+[gd_scene load_steps=5 format=3 uid="uid://47xcidhbguon"]
 
 [ext_resource type="Script" uid="uid://dc4fqa0iixxg3" path="res://Code/Ui/farm_ui/tree.gd" id="1_qritd"]
 [ext_resource type="Texture2D" uid="uid://dm0rinrhn1ytq" path="res://Asset/tree/tree_6.png" id="2_qritd"]
+[ext_resource type="Texture2D" uid="uid://ddeom82umg3gu" path="res://Asset/tree/tree_1.png" id="2_yr246"]
 [ext_resource type="PackedScene" uid="uid://btuvxmhx7brid" path="res://Code/Ui/farm_ui/dot.tscn" id="5_qjk4c"]
 
 [node name="tree" type="Control"]
@@ -16,8 +17,17 @@ offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.0616475, 1.0927745)
-mouse_filter = 1
 script = ExtResource("1_qritd")
+free_mode = true
+
+[node name="Tree1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 42.38695
+offset_top = -43.924892
+offset_right = 1962.387
+offset_bottom = 1036.0751
+scale = Vector2(0.59960765, 0.59960765)
+texture = ExtResource("2_yr246")
 
 [node name="Tree6" type="TextureRect" parent="."]
 layout_mode = 1
