@@ -7,7 +7,6 @@ extends Resource
 	Const.CropId.Apple: 0,
 	Const.CropId.Mushroom: 0
 }
-
 # 添加物品
 func AddItem(itemId: int, amount: int = 1) -> void:
 	if items.has(itemId):

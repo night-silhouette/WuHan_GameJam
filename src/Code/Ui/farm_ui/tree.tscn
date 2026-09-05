@@ -15,7 +15,7 @@ offset_right = -60.0
 offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.0641301, 1.0953299)
+scale = Vector2(1.0616475, 1.0927745)
 mouse_filter = 1
 script = ExtResource("1_qritd")
 
