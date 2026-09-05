@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bflc80k5cx7ny" path="res://Code/Scene/Component/back.tscn" id="8_0fehq"]
 [ext_resource type="PackedScene" uid="uid://clk0mr7wijo8j" path="res://Code/Ui/farm_ui/submit.tscn" id="8_vjcro"]
 [ext_resource type="PackedScene" uid="uid://b6qihdxaxdu3u" path="res://Code/Ui/farm_ui/goods_ui.tscn" id="8_xcc2n"]
-[ext_resource type="PackedScene" path="res://Code/Ui/farm_ui/x_button.tscn" id="9_ta4oh"]
+[ext_resource type="PackedScene" uid="uid://8g5net32v5tm" path="res://Code/Ui/farm_ui/x_button.tscn" id="9_ta4oh"]
 [ext_resource type="Texture2D" uid="uid://bpv7jnfrvtqv1" path="res://Asset/plants/mushroom.png" id="12_5ad3e"]
 [ext_resource type="Texture2D" uid="uid://cko1iv2l8d2cu" path="res://Asset/tree/tree_UI.png" id="14_tnk2j"]
 

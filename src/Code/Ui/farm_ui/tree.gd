@@ -87,7 +87,7 @@ func init_dots() -> void:
 		s.value_level[2], tex_mushroom, s.get_value_upgrade_cost(Const.CropId.Mushroom))
 
 	auto_havest.set_dot_data("自动收割", 1 if s.auto_havest else 0, tex_mushroom, s.auto_havest_cost)
-	auto_plant.set_dot_data("自动种植", 1 if s.auto_plant else 0, tex_flower, s.auto_plant_cost)
+	auto_plant.set_dot_data("自动拾取", 1 if s.auto_plant else 0, tex_flower, s.auto_plant_cost)
 	auto_water.set_dot_data("自动浇水", 1 if s.auto_water else 0, tex_apple, s.auto_water_cost)
 	auto_water.unit2.texture = tex_flower
 	auto_water.unit2.visible = true
@@ -161,7 +161,7 @@ func refresh_dots() -> void:
 	_set_light(havest, s.havesting_level != 0)
 	_set_light(plant, s.planting_level != 0)
 	_set_light(quantity, s.quantity_level != 0)
-	_set_light(field, s.field_level != 0)
+	_set_light(field, s.field_level != 1)
 	_set_light(apple_rot, s.rot_level[1] != 0)
 	_set_light(flower_rot, s.rot_level[0] != 0)
 	_set_light(mashroom_rot, s.rot_level[2] != 0)

@@ -20,13 +20,9 @@ scale = Vector2(1.0616475, 1.0927745)
 script = ExtResource("1_qritd")
 free_mode = true
 
-[node name="Tree1" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 42.38695
-offset_top = -43.924892
-offset_right = 1962.387
-offset_bottom = 1036.0751
-scale = Vector2(0.59960765, 0.59960765)
+[node name="Tree1" type="Sprite2D" parent="."]
+position = Vector2(616.96564, 254.39833)
+scale = Vector2(0.6474474, 0.6474474)
 texture = ExtResource("2_yr246")
 
 [node name="Tree6" type="TextureRect" parent="."]
@@ -41,6 +37,7 @@ offset_bottom = 443.96338
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5698295, 0.54664844)
+mouse_filter = 2
 texture = ExtResource("2_qritd")
 
 [node name="apple" parent="." instance=ExtResource("5_qjk4c")]
