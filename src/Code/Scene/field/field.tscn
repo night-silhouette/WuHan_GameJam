@@ -129,6 +129,10 @@ layout_mode = 3
 anchors_preset = 0
 mouse_filter = 1
 script = ExtResource("1_rts7j")
+x = null
+y = null
+level = null
+cropId = null
 
 [node name="Farmland" type="Sprite2D" parent="."]
 position = Vector2(49.000004, 51.000004)

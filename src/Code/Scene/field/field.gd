@@ -51,6 +51,12 @@ var barFlag=false
 
 #------------------------------------------------------------------------------------------------------------------------#
 
+signal SignSickle
+signal SignEntering
+signal SignExit
+signal SignWatering1
+signal SignWatering2
+
 func sickle():
 	if IfCanDrop():
 		GameData.F.GetPlot(x,y).growthProgress=0
@@ -77,21 +83,26 @@ func _ready() -> void:
 			return
 		if Mouse.mos==Mouse.ToolMode.SICKLE:
 			sickle()
+			SignSickle.emit()
 		)
 	
 		
 	area_2d.mouse_entered.connect(func():
+		SignEntering.emit()
 		FrameVisible=true
 		)
 	area_2d.mouse_exited.connect(func():
+		SignExit.emit()
 		FrameVisible=false
 		)
 		
 	Util.Area2dConnectHold(area_2d,func():
 		if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
+				SignWatering1.emit()
 				Watering1(),
 		func():
 			if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
+				SignWatering2.emit()
 				Watering2())
 				
 		

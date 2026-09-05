@@ -5,10 +5,10 @@ var Size:int:
 	set(value):
 		Size=value
 		SizeChange(Size)
+		
 var FieldActiveList:Array[FieldPerform]
 
-func _ready() -> void:
-	Size=2
+
 	
 func _process(delta: float) -> void:
 	if GameData.F.currentSize!=Size:
@@ -41,8 +41,28 @@ func SizeChange(s:int)->void:
 		f.y=j/s
 		j+=1
 
+func RangeOp(Obj:Vector2,ex:int)->Array[Vector2]:
+	var res:Array[Vector2]=[]
+	var s:=GameData.F.currentSize
+	for i in range(-ex,ex+1):
+		for j in range(-ex,ex+1):
+			if i+Obj.x<0||i+Obj.x>Size:
+				continue
+			if j+Obj.y<0||j+Obj.y>Size:
+				continue
+			if i==0&&j==0:
+				continue
+			res.push_back(Vector2(i+Obj.x,j+Obj.y))
+	return res
 	
-		
-		
-		
-		
+	
+func _ready() -> void:
+	Size=2
+	
+	#var children=grid_container.get_children()
+	#for child:FieldPerform in children:
+		#child.SignEntering.connect(func():)
+		#child.SignExit.connect(func():)
+		#child.SignSickle.connect(func():)
+		#child.SignWatering1.connect(func():)
+		#child.SignWatering2.connect(func():)

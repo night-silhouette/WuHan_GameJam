@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://blpfdd3p6udlo"]
+[gd_scene load_steps=16 format=3 uid="uid://blpfdd3p6udlo"]
 
 [ext_resource type="PackedScene" uid="uid://u8wvw864746n" path="res://Code/Scene/main/main.tscn" id="1_h4m0b"]
 [ext_resource type="PackedScene" uid="uid://47xcidhbguon" path="res://Code/Ui/farm_ui/tree.tscn" id="1_ps6g6"]
@@ -12,7 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://mb306perjogh" path="res://Asset/back_hover.png" id="6_0fehq"]
 [ext_resource type="Texture2D" uid="uid://d3pre7y74pp8w" path="res://Asset/submit/submit_baby .png" id="6_vjcro"]
 [ext_resource type="Texture2D" uid="uid://b42ny0vdju87e" path="res://Asset/back_press.png" id="7_cxs3k"]
-[ext_resource type="PackedScene" path="res://Code/Ui/farm_ui/goods_ui.tscn" id="8_xcc2n"]
+[ext_resource type="PackedScene" uid="uid://b6qihdxaxdu3u" path="res://Code/Ui/farm_ui/goods_ui.tscn" id="8_xcc2n"]
+[ext_resource type="Texture2D" uid="uid://bpv7jnfrvtqv1" path="res://Asset/plants/mushroom.png" id="12_5ad3e"]
 [ext_resource type="Texture2D" uid="uid://cko1iv2l8d2cu" path="res://Asset/tree/tree_UI.png" id="14_tnk2j"]
 
 [node name="Farm_UI" type="Control"]
@@ -74,7 +75,11 @@ offset_top = -3.0
 offset_right = -66.111084
 offset_bottom = -455.82437
 scale = Vector2(0.29204464, 0.29204464)
-texture1 = ExtResource("2_b65w0")
+
+[node name="Apple" type="Sprite2D" parent="Control"]
+position = Vector2(116.420654, 99.299904)
+scale = Vector2(0.108196296, 0.108196296)
+texture = ExtResource("2_b65w0")
 
 [node name="Control2" parent="." instance=ExtResource("8_xcc2n")]
 layout_mode = 1
@@ -82,7 +87,11 @@ offset_left = 644.0
 offset_right = 139.16138
 offset_bottom = -445.9761
 scale = Vector2(0.29204464, 0.29204464)
-texture1 = ExtResource("3_xcc2n")
+
+[node name="Flower" type="Sprite2D" parent="Control2"]
+position = Vector2(123.2688, 95.87575)
+scale = Vector2(0.16268109, 0.16268109)
+texture = ExtResource("3_xcc2n")
 
 [node name="Control3" parent="." instance=ExtResource("8_xcc2n")]
 layout_mode = 1
@@ -90,6 +99,11 @@ offset_left = 839.0
 offset_right = 330.7373
 offset_bottom = -452.82437
 scale = Vector2(0.29204464, 0.29204464)
+
+[node name="Mushroom" type="Sprite2D" parent="Control3"]
+position = Vector2(133.54126, 95.875755)
+scale = Vector2(0.09152203, 0.09152203)
+texture = ExtResource("12_5ad3e")
 
 [node name="Submit" type="Sprite2D" parent="."]
 z_index = 3
