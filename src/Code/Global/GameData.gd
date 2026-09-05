@@ -4,7 +4,7 @@ extends Node
 
 var F:Field
 var Invent:Inventory
-var GameState :int = 0;
+var GameState :int = 1;
 
 func _ready() -> void:
 	F=Field.new()

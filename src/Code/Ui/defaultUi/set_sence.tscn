@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdx60vhi6kw12"]
+[gd_scene load_steps=7 format=3 uid="uid://bdx60vhi6kw12"]
 
 [ext_resource type="Script" uid="uid://dlfuekbmnlbac" path="res://Code/Ui/defaultUi/mask.gd" id="1_0rniy"]
+[ext_resource type="Script" uid="uid://dto3xdefmsbid" path="res://Code/Ui/defaultUi/set_sence.gd" id="1_2mbjn"]
 [ext_resource type="Texture2D" uid="uid://dcf8hkagwfgm0" path="res://Asset/文本框 亮.png" id="1_ekp3r"]
-[ext_resource type="PackedScene" uid="uid://b63javh7i4kdf" path="res://Code/Scene/Component/PressedButton.tscn" id="3_fk4rr"]
+[ext_resource type="PackedScene" uid="uid://o1tbccs42pjl" path="res://Code/Ui/long_button.tscn" id="1_fk4rr"]
+[ext_resource type="FontFile" uid="uid://bbo1p0cp00e6h" path="res://Asset/ZhengGeDianHei-16.ttf" id="4_0hpqs"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_0hpqs"]
-font_size = 161
+[sub_resource type="LabelSettings" id="LabelSettings_2mbjn"]
+font = ExtResource("4_0hpqs")
 font_color = Color(0, 0, 0, 1)
 
 [node name="Set_sence" type="Control"]
@@ -15,9 +17,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2mbjn")
 metadata/_edit_lock_ = true
 
 [node name="mask" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,6 +33,7 @@ offset_bottom = -777.99994
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3.3992603, 3.3992603)
+mouse_filter = 2
 color = Color(0.49411765, 0.49411765, 0.49411765, 0.1882353)
 script = ExtResource("1_0rniy")
 
@@ -42,24 +47,38 @@ scale = Vector2(0.26462045, 0.33231905)
 mouse_filter = 0
 texture = ExtResource("1_ekp3r")
 
-[node name="PressedButton" parent="." instance=ExtResource("3_fk4rr")]
+[node name="long_button" parent="." instance=ExtResource("1_fk4rr")]
 layout_mode = 0
-offset_left = 883.0
-offset_top = 526.0
-offset_right = 883.0
-offset_bottom = 526.0
-scale = Vector2(0.27397522, 0.27397522)
+offset_left = 724.00006
+offset_top = 406.0
+offset_right = 835.67773
+offset_bottom = 433.703
+scale = Vector2(2.7428489, 2.7428489)
 
-[node name="CollisionShape2D" parent="PressedButton/Area2D" index="0"]
-visible = false
-
-[node name="Label" type="Label" parent="PressedButton"]
+[node name="Label" type="Label" parent="long_button"]
 layout_mode = 0
-offset_left = -343.28558
-offset_top = -106.4451
-offset_right = 502.95282
-offset_bottom = 127.5549
+offset_right = 111.562805
+offset_bottom = 24.0
 text = "退出游戏"
-label_settings = SubResource("LabelSettings_0hpqs")
+label_settings = SubResource("LabelSettings_2mbjn")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[editable path="PressedButton"]
+[node name="long_button3" parent="." instance=ExtResource("1_fk4rr")]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 150.00002
+offset_right = 835.6777
+offset_bottom = 177.70302
+scale = Vector2(2.7428489, 2.7428489)
+
+[node name="Label" type="Label" parent="long_button3"]
+layout_mode = 0
+offset_right = 111.562805
+offset_bottom = 24.0
+text = "保存"
+label_settings = SubResource("LabelSettings_2mbjn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="long_button" to="." method="_on_long_button_button_down"]

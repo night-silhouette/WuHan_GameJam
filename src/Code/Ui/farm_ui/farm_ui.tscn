@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://blpfdd3p6udlo"]
+[gd_scene load_steps=15 format=3 uid="uid://blpfdd3p6udlo"]
 
 [ext_resource type="PackedScene" uid="uid://47xcidhbguon" path="res://Code/Ui/farm_ui/tree.tscn" id="1_ps6g6"]
 [ext_resource type="Script" uid="uid://c5xnowyw283mu" path="res://Code/Ui/farm_ui/farm_ui.gd" id="1_vjcro"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b6qihdxaxdu3u" path="res://Code/Ui/farm_ui/goods_ui.tscn" id="8_xcc2n"]
 [ext_resource type="PackedScene" uid="uid://8g5net32v5tm" path="res://Code/Ui/farm_ui/x_button.tscn" id="9_ta4oh"]
 [ext_resource type="Texture2D" uid="uid://bpv7jnfrvtqv1" path="res://Asset/plants/mushroom.png" id="12_5ad3e"]
+[ext_resource type="PackedScene" uid="uid://bdx60vhi6kw12" path="res://Code/Ui/defaultUi/set_sence.tscn" id="13_muo37"]
+[ext_resource type="Script" uid="uid://vrnowqmkv5yw" path="res://Code/Ui/farm_ui/control_4.gd" id="13_tnk2j"]
 [ext_resource type="Texture2D" uid="uid://cko1iv2l8d2cu" path="res://Asset/tree/tree_UI.png" id="14_tnk2j"]
 
 [node name="Farm_UI" type="Control"]
@@ -90,6 +92,7 @@ offset_bottom = 423.99997
 scale = Vector2(0.5081293, 0.5081293)
 
 [node name="x_button" parent="." instance=ExtResource("9_ta4oh")]
+visible = false
 layout_mode = 0
 offset_left = 918.0
 offset_top = 236.00002
@@ -118,6 +121,16 @@ texture = ExtResource("14_tnk2j")
 anchors_preset = 0
 offset_right = 1155.0
 offset_bottom = 646.0
+mouse_filter = 2
+script = ExtResource("13_tnk2j")
 
+[node name="Set_sence" parent="." instance=ExtResource("13_muo37")]
+layout_mode = 1
+offset_left = 516.0
+offset_top = 1.0
+offset_right = 516.0
+offset_bottom = 1.0
+
+[connection signal="button_down" from="Set" to="." method="_on_set_button_down"]
 [connection signal="button_down" from="x_button" to="." method="_on_x_button_button_down"]
 [connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]

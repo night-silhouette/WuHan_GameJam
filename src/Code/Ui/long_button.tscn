@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://o1tbccs42pjl"]
+
+[ext_resource type="Script" uid="uid://cs1gwrrl5kg0r" path="res://long_button.gd" id="1_x10jk"]
+[ext_resource type="Texture2D" uid="uid://dqb2aqy18mg6j" path="res://Asset/button .png" id="2_13gdg"]
+[ext_resource type="Texture2D" uid="uid://d0yx1oj0ky1eo" path="res://Asset/button_hover.png" id="3_pvi16"]
+[ext_resource type="Texture2D" uid="uid://bebkf3y2ggt4q" path="res://Asset/button_press.png" id="4_dd4u2"]
+
+[node name="long_button" type="TextureButton"]
+offset_left = -1.9999695
+offset_top = -4.0
+offset_right = 109.677704
+offset_bottom = 23.702993
+scale = Vector2(6.9306593, 6.9306593)
+script = ExtResource("1_x10jk")
+normal = ExtResource("2_13gdg")
+hover = ExtResource("3_pvi16")
+press = ExtResource("4_dd4u2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(60.45601, 9.955763)
+scale = Vector2(0.10293458, 0.10293458)
+texture = ExtResource("2_13gdg")

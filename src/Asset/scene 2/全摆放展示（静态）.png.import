@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwqdcb2qd4w6f"
-valid=false
+uid="uid://dgt8py6682cto"
+path="res://.godot/imported/全摆放展示（静态）.png-f5aba25da814d88e84bb91b696e3fdb6.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Asset/textbox2.PNG"
+source_file="res://Asset/scene 2/全摆放展示（静态）.png"
+dest_files=["res://.godot/imported/全摆放展示（静态）.png-f5aba25da814d88e84bb91b696e3fdb6.ctex"]
 
 [params]
 

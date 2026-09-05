@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqokpqgdqyaad"
-valid=false
+uid="uid://irn6k7qce5re"
+path="res://.godot/imported/textbox4.png-d15d6f6d2cadcef1da03cfc4c6123ac0.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Asset/textbox3.png"
+source_file="res://Asset/textbox4.png"
+dest_files=["res://.godot/imported/textbox4.png-d15d6f6d2cadcef1da03cfc4c6123ac0.ctex"]
 
 [params]
 

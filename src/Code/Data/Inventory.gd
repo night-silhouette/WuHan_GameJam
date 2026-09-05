@@ -28,7 +28,7 @@ func RemoveItem(itemId: int, amount: int = 1) -> void:
 	print("背包更新，当前物品: ", items)
 
 func UpdateRot(delta: float) -> void:
-	var stage: int = GameData.game_stage  # 当前游戏阶段 1/2/3
+	var stage: int = GameData.GameState  # 当前游戏阶段 1/2/3
 	rot_timer += delta
 
 	# 没到当前阶段的腐烂间隔

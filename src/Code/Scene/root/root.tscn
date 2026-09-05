@@ -11,7 +11,7 @@ initial_ui = "uid://blpfdd3p6udlo"
 [node name="Sence_root" type="Node2D" parent="."]
 
 [node name="Ui_root" type="Control" parent="."]
-z_index = 21
+z_index = 1000
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
