@@ -61,8 +61,42 @@ func _ready() -> void:
 	
 	var children=grid_container.get_children()
 	for child:FieldPerform in children:
-		child.SignEntering.connect(func(obj:FieldPerform):pass)
-		child.SignExit.connect(func(obj:FieldPerform):pass)
+		child.SignEntering.connect(func(obj:FieldPerform):
+			if Mouse.mos==Mouse.ToolMode.SICKLE:
+				var OpList:=RangeOp(Vector2(obj.x,obj.y),SkillTree.GetHavestRange()-1)
+				for c:FieldPerform in FieldActiveList:
+					var pos:=Vector2(c.x,c.y)
+					if pos in OpList:
+						c.FrameVisible=true	
+			if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
+				var OpList:=RangeOp(Vector2(obj.x,obj.y),SkillTree.GetWateringRange()-1)
+				for c:FieldPerform in FieldActiveList:
+					var pos:=Vector2(c.x,c.y)
+					if pos in OpList:
+						c.FrameVisible=true	
+			
+			)
+			
+			
+		child.SignExit.connect(func(obj:FieldPerform):
+			if Mouse.mos==Mouse.ToolMode.SICKLE:
+				var OpList:=RangeOp(Vector2(obj.x,obj.y),SkillTree.GetHavestRange()-1)
+				for c:FieldPerform in FieldActiveList:
+					var pos:=Vector2(c.x,c.y)
+					if pos in OpList:
+						c.FrameVisible=false	
+			
+			if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
+				var OpList:=RangeOp(Vector2(obj.x,obj.y),SkillTree.GetWateringRange()-1)
+				for c:FieldPerform in FieldActiveList:
+					var pos:=Vector2(c.x,c.y)
+					if pos in OpList:
+						c.FrameVisible=false	
+			
+			
+			
+			
+			)
 		
 		child.SignSickle.connect(func(obj:FieldPerform):
 			var OpList:=RangeOp(Vector2(obj.x,obj.y),SkillTree.GetHavestRange()-1)
