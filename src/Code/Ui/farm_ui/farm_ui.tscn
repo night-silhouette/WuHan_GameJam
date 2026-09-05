@@ -1,18 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://blpfdd3p6udlo"]
+[gd_scene load_steps=10 format=3 uid="uid://blpfdd3p6udlo"]
 
-[ext_resource type="PackedScene" uid="uid://u8wvw864746n" path="res://Code/Scene/main/main.tscn" id="1_h4m0b"]
 [ext_resource type="PackedScene" uid="uid://47xcidhbguon" path="res://Code/Ui/farm_ui/tree.tscn" id="1_ps6g6"]
 [ext_resource type="Script" uid="uid://c5xnowyw283mu" path="res://Code/Ui/farm_ui/farm_ui.gd" id="1_vjcro"]
-[ext_resource type="Texture2D" uid="uid://dqkddcl0tssmx" path="res://Asset/plants/apple.png" id="2_b65w0"]
 [ext_resource type="PackedScene" uid="uid://d23qv4f2hxh10" path="res://Code/Ui/defaultUi/set.tscn" id="2_hejn8"]
-[ext_resource type="Texture2D" uid="uid://c1vt6j6be3o0a" path="res://Asset/plants/flower.png" id="3_xcc2n"]
-[ext_resource type="PackedScene" uid="uid://b63javh7i4kdf" path="res://Code/Scene/Component/PressedButton.tscn" id="4_b65w0"]
+[ext_resource type="PackedScene" uid="uid://bflc80k5cx7ny" path="res://Code/Scene/Component/back.tscn" id="3_xcc2n"]
+[ext_resource type="PackedScene" uid="uid://8g5net32v5tm" path="res://Code/Ui/farm_ui/x_button.tscn" id="5_0fehq"]
 [ext_resource type="Texture2D" uid="uid://cyoy86fb5t664" path="res://Asset/submit/submit.png" id="5_cxs3k"]
-[ext_resource type="Texture2D" uid="uid://b3857oe4v8lv4" path="res://Asset/back.png" id="5_xcc2n"]
-[ext_resource type="Texture2D" uid="uid://mb306perjogh" path="res://Asset/back_hover.png" id="6_0fehq"]
 [ext_resource type="Texture2D" uid="uid://d3pre7y74pp8w" path="res://Asset/submit/submit_baby .png" id="6_vjcro"]
-[ext_resource type="Texture2D" uid="uid://b42ny0vdju87e" path="res://Asset/back_press.png" id="7_cxs3k"]
-[ext_resource type="PackedScene" path="res://Code/Ui/farm_ui/goods_ui.tscn" id="8_xcc2n"]
+[ext_resource type="PackedScene" uid="uid://b6qihdxaxdu3u" path="res://Code/Ui/farm_ui/goods_ui.tscn" id="8_xcc2n"]
 [ext_resource type="Texture2D" uid="uid://cko1iv2l8d2cu" path="res://Asset/tree/tree_UI.png" id="14_tnk2j"]
 
 [node name="Farm_UI" type="Control"]
@@ -24,48 +19,34 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_vjcro")
-
-[node name="Main" parent="." instance=ExtResource("1_h4m0b")]
-position = Vector2(-1, 0)
-scale = Vector2(1.002514, 0.9945074)
+metadata/_edit_lock_ = true
 
 [node name="Set" parent="." instance=ExtResource("2_hejn8")]
 layout_mode = 0
-offset_left = 1057.0001
-offset_top = -15.0
-offset_right = 3057.0
-offset_bottom = 1985.0
-scale = Vector2(0.05679288, 0.05679288)
-metadata/_edit_lock_ = true
+offset_left = 1078.0
+offset_top = 6.0
+offset_right = 1482.9785
+offset_bottom = 410.9803
+scale = Vector2(0.15503809, 0.15503809)
+
+[node name="back" parent="." instance=ExtResource("3_xcc2n")]
+layout_mode = 0
 
 [node name="tree" parent="." instance=ExtResource("1_ps6g6")]
-visible = false
 layout_mode = 1
-offset_left = 68.0
-offset_top = 129.0
-offset_right = 68.0
-offset_bottom = 129.0
+offset_left = 67.0
+offset_top = 142.0
+offset_right = 67.0
+offset_bottom = 142.0
 scale = Vector2(0.85869986, 0.85869986)
 
-[node name="PressedButton" parent="." instance=ExtResource("4_b65w0")]
+[node name="x_button" parent="tree" instance=ExtResource("5_0fehq")]
 layout_mode = 0
-offset_left = 51.000004
-offset_top = 46.0
-offset_right = 51.000004
-offset_bottom = 46.0
-scale = Vector2(0.25257197, 0.25257197)
-BUTTON_NORMAL = ExtResource("5_xcc2n")
-BUTTON_HOVER = ExtResource("6_0fehq")
-BUTTON_PRESS = ExtResource("7_cxs3k")
-
-[node name="Button" parent="PressedButton" index="0"]
-position = Vector2(25.001442, 17.858204)
-scale = Vector2(11.952751, 11.952751)
-texture = ExtResource("5_xcc2n")
-
-[node name="CollisionShape2D" parent="PressedButton/Area2D" index="0"]
-position = Vector2(11.877777, 12.500732)
-scale = Vector2(0.99999964, 0.99999976)
+offset_left = 999.185
+offset_top = 79.18948
+offset_right = 1039.1849
+offset_bottom = 119.18948
+scale = Vector2(1.365058, 1.365058)
 
 [node name="Control" parent="." instance=ExtResource("8_xcc2n")]
 layout_mode = 1
@@ -74,7 +55,6 @@ offset_top = -3.0
 offset_right = -66.111084
 offset_bottom = -455.82437
 scale = Vector2(0.29204464, 0.29204464)
-texture1 = ExtResource("2_b65w0")
 
 [node name="Control2" parent="." instance=ExtResource("8_xcc2n")]
 layout_mode = 1
@@ -82,7 +62,6 @@ offset_left = 644.0
 offset_right = 139.16138
 offset_bottom = -445.9761
 scale = Vector2(0.29204464, 0.29204464)
-texture1 = ExtResource("3_xcc2n")
 
 [node name="Control3" parent="." instance=ExtResource("8_xcc2n")]
 layout_mode = 1
@@ -103,9 +82,18 @@ position = Vector2(1048.0322, 545.30273)
 scale = Vector2(0.6109255, 0.6109255)
 texture = ExtResource("6_vjcro")
 
-[node name="TreeUi" type="Sprite2D" parent="."]
-position = Vector2(77, 582)
-scale = Vector2(0.31438136, 0.31438136)
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 517.0
+offset_right = 41.0
+offset_bottom = 557.0
+scale = Vector2(3.4796166, 3.2587547)
+
+[node name="TreeUi" type="Sprite2D" parent="TextureButton"]
+position = Vector2(29.60096, 14.729546)
+scale = Vector2(0.1231857, 0.1231857)
 texture = ExtResource("14_tnk2j")
 
-[editable path="PressedButton"]
+[connection signal="button_down" from="tree/x_button" to="." method="_on_x_button_button_down"]
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
