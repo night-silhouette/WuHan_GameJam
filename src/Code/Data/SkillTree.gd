@@ -17,8 +17,19 @@ var auto_havest := false
 var auto_plant := false
 
 var apple = false
-var flower = false
-var mashroom = false
+signal f
+var flower = false:
+	set(value):
+		flower=value
+		if flower==true:
+			f.emit()
+			
+signal m	
+var mashroom = false:
+	set(value):
+		mashroom=value
+		if mashroom==true:
+			m.emit()
 
 
 var auto_water_cost = 5000000

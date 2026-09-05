@@ -51,11 +51,11 @@ var barFlag=false
 
 #------------------------------------------------------------------------------------------------------------------------#
 
-signal SignSickle
-signal SignEntering
-signal SignExit
-signal SignWatering1
-signal SignWatering2
+signal SignSickle(S:FieldPerform)
+signal SignEntering(S:FieldPerform)
+signal SignExit(S:FieldPerform)
+signal SignWatering1(S:FieldPerform)
+signal SignWatering2(S:FieldPerform)
 
 func sickle():
 	if IfCanDrop():
@@ -63,10 +63,12 @@ func sickle():
 		spawn_drop_items(SkillTree.GetPlantNum())
 
 func Watering1():
+
 	water_spritesheet.visible=true
 	pool_spritesheet.visible=true
 	animation_player.play("洒水")
 	SignalBus.IsWatering=true
+	
 func Watering2():
 	water_spritesheet.visible=false
 	pool_spritesheet.visible=false
@@ -83,26 +85,26 @@ func _ready() -> void:
 			return
 		if Mouse.mos==Mouse.ToolMode.SICKLE:
 			sickle()
-			SignSickle.emit()
+			SignSickle.emit(self)
 		)
 	
 		
 	area_2d.mouse_entered.connect(func():
-		SignEntering.emit()
+		SignEntering.emit(self)
 		FrameVisible=true
 		)
 	area_2d.mouse_exited.connect(func():
-		SignExit.emit()
+		SignExit.emit(self)
 		FrameVisible=false
 		)
 		
 	Util.Area2dConnectHold(area_2d,func():
 		if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
-				SignWatering1.emit()
+				SignWatering1.emit(self)
 				Watering1(),
 		func():
 			if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
-				SignWatering2.emit()
+				SignWatering2.emit(self)
 				Watering2())
 				
 		

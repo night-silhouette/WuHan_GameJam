@@ -12,6 +12,8 @@ func _ready() -> void:
 	Invent=Inventory.new()
 	Invent.LoadGame()
 	
+	#//技能树点出田扩容
+	SkillTree.filed_expand.connect(func():F.ExpandFarm())
 		
 		
 		
