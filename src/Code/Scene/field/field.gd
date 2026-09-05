@@ -23,15 +23,15 @@ const DROPS = preload("uid://dhma1jsxh2bcr")
 @onready var toolbar: Sprite2D = $Toolbar
 
 var PlantMap:Dictionary={
-	Vector2(Const.CropId.Flower,0):preload("uid://m3cc7oqutc2g"),
-	Vector2(Const.CropId.Flower,1):preload("uid://m5yae1wbh0xx"),
-	Vector2(Const.CropId.Flower,2):preload("uid://cwhbfu7javom4"),
-	Vector2(Const.CropId.Mushroom,0):preload("uid://b701tv106h8vm"),
-	Vector2(Const.CropId.Mushroom,1):preload("uid://dsdwcpdus72aq"),
-	Vector2(Const.CropId.Mushroom,2):preload("uid://q3hju68j2o1w"),
-	Vector2(Const.CropId.Apple,0):preload("uid://bqakxj76bb0vh"),
-	Vector2(Const.CropId.Apple,1):preload("uid://t57cyyxxnyc7"),
-	Vector2(Const.CropId.Apple,2):preload("uid://caokmrtnbnwj7")
+	Vector2(Const.CropId.Flower,0):preload("uid://811wul2q57b4"),
+	Vector2(Const.CropId.Flower,1):preload("uid://dsav1g82wiqcf"),
+	Vector2(Const.CropId.Flower,2):preload("uid://ckcrx38ft38u8"),
+	Vector2(Const.CropId.Mushroom,0):preload("uid://bbt1sli76udgj"),
+	Vector2(Const.CropId.Mushroom,1):preload("uid://bgsrxj5wdakbp"),
+	Vector2(Const.CropId.Mushroom,2):preload("uid://dakha6n5od1k8"),
+	Vector2(Const.CropId.Apple,0):preload("uid://dv2hfwi4gny0f"),
+	Vector2(Const.CropId.Apple,1):preload("uid://b0tvrn6yxr58c"),
+	Vector2(Const.CropId.Apple,2):preload("uid://ff05i6h3snsj")
 }
 
 

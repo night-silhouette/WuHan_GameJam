@@ -86,5 +86,5 @@ scale = Vector2(1.0000006, 1.0000006)
 shape = SubResource("RectangleShape2D_eooqv")
 
 [node name="Plant" type="Sprite2D" parent="."]
-position = Vector2(52, 36)
+position = Vector2(50.000004, 32)
 scale = Vector2(0.104067236, 0.104067236)
