@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://blpfdd3p6udlo"]
+[gd_scene load_steps=12 format=3 uid="uid://blpfdd3p6udlo"]
 
 [ext_resource type="PackedScene" uid="uid://u8wvw864746n" path="res://Code/Scene/main/main.tscn" id="1_h4m0b"]
 [ext_resource type="PackedScene" uid="uid://47xcidhbguon" path="res://Code/Ui/farm_ui/tree.tscn" id="1_ps6g6"]
@@ -6,13 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dqkddcl0tssmx" path="res://Asset/plants/apple.png" id="2_b65w0"]
 [ext_resource type="PackedScene" uid="uid://d23qv4f2hxh10" path="res://Code/Ui/defaultUi/set.tscn" id="2_hejn8"]
 [ext_resource type="Texture2D" uid="uid://c1vt6j6be3o0a" path="res://Asset/plants/flower.png" id="3_xcc2n"]
-[ext_resource type="PackedScene" uid="uid://b63javh7i4kdf" path="res://Code/Scene/Component/PressedButton.tscn" id="4_b65w0"]
 [ext_resource type="Texture2D" uid="uid://cyoy86fb5t664" path="res://Asset/submit/submit.png" id="5_cxs3k"]
-[ext_resource type="Texture2D" uid="uid://b3857oe4v8lv4" path="res://Asset/back.png" id="5_xcc2n"]
-[ext_resource type="Texture2D" uid="uid://mb306perjogh" path="res://Asset/back_hover.png" id="6_0fehq"]
 [ext_resource type="Texture2D" uid="uid://d3pre7y74pp8w" path="res://Asset/submit/submit_baby .png" id="6_vjcro"]
-[ext_resource type="Texture2D" uid="uid://b42ny0vdju87e" path="res://Asset/back_press.png" id="7_cxs3k"]
 [ext_resource type="PackedScene" uid="uid://c0o2rhl6f8wx1" path="res://Code/Ui/farm_ui/goods_ui.tscn" id="8_xcc2n"]
+[ext_resource type="PackedScene" uid="uid://bflc80k5cx7ny" path="res://Code/Scene/Component/back.tscn" id="11_vjcro"]
 [ext_resource type="Texture2D" uid="uid://cko1iv2l8d2cu" path="res://Asset/tree/tree_UI.png" id="14_tnk2j"]
 
 [node name="Farm_UI" type="Control"]
@@ -46,26 +43,6 @@ offset_top = 129.0
 offset_right = 68.0
 offset_bottom = 129.0
 scale = Vector2(0.85869986, 0.85869986)
-
-[node name="PressedButton" parent="." instance=ExtResource("4_b65w0")]
-layout_mode = 0
-offset_left = 51.000004
-offset_top = 46.0
-offset_right = 51.000004
-offset_bottom = 46.0
-scale = Vector2(0.25257197, 0.25257197)
-BUTTON_NORMAL = ExtResource("5_xcc2n")
-BUTTON_HOVER = ExtResource("6_0fehq")
-BUTTON_PRESS = ExtResource("7_cxs3k")
-
-[node name="Button" parent="PressedButton" index="0"]
-position = Vector2(25.001442, 17.858204)
-scale = Vector2(11.952751, 11.952751)
-texture = ExtResource("5_xcc2n")
-
-[node name="CollisionShape2D" parent="PressedButton/Area2D" index="0"]
-position = Vector2(12.500977, 12.500732)
-scale = Vector2(0.99999964, 0.99999976)
 
 [node name="Control" parent="." instance=ExtResource("8_xcc2n")]
 layout_mode = 1
@@ -104,4 +81,5 @@ position = Vector2(77, 582)
 scale = Vector2(0.31438136, 0.31438136)
 texture = ExtResource("14_tnk2j")
 
-[editable path="PressedButton"]
+[node name="back" parent="." instance=ExtResource("11_vjcro")]
+layout_mode = 0

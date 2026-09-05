@@ -319,6 +319,7 @@ func _on_field_button_down() -> void:
 		GameData.Invent.RemoveItem(1, cost)
 		GameData.Invent.RemoveItem(2, cost)
 		SkillTree.upgrade_field()
+		SkillTree.filed_expand.emit()
 	else:
 		SignalBus.MessagePopu.emit("缺少了什么")
 	init_dots()

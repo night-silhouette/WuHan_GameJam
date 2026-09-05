@@ -5,6 +5,7 @@ extends Control
 
 func _ready() -> void:
 	_refresh()
+	SignalBus.DataChange.connect(_refresh)
 		
 func _refresh() :
 	Apple_ui.update(Util.FormatNumber(GameData.Invent.items.get(0)))
