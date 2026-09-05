@@ -28,7 +28,7 @@ func _ready() -> void:
 	linear_damp = 4.0
 	
 	area_2d.mouse_entered.connect(func():
-		GameData.Invent.AddItem(CropId,1)
+		GameData.Invent.AddItem(CropId,SkillTree.GetValue(CropId))
 		queue_free()
 		)
  

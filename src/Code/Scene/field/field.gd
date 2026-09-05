@@ -48,6 +48,27 @@ var FrameVisible:bool=false:
 
 
 var barFlag=false
+
+#------------------------------------------------------------------------------------------------------------------------#
+
+func sickle():
+	if IfCanDrop():
+		GameData.F.GetPlot(x,y).growthProgress=0
+		spawn_drop_items(SkillTree.GetPlantNum())
+
+func Watering1():
+	water_spritesheet.visible=true
+	pool_spritesheet.visible=true
+	animation_player.play("洒水")
+	SignalBus.IsWatering=true
+func Watering2():
+	water_spritesheet.visible=false
+	pool_spritesheet.visible=false
+	animation_player.stop()
+	SignalBus.IsWatering=false
+
+#------------------------------------------------------------------------------------------------------------------------#
+
 func _ready() -> void:
 	Util.Area2dConnectClick(area_2d,func():
 		if Mouse.mos==Mouse.ToolMode.SHOVEL:
@@ -55,9 +76,7 @@ func _ready() -> void:
 			toolbar.visible=barFlag
 			return
 		if Mouse.mos==Mouse.ToolMode.SICKLE:
-			if IfCanDrop():
-				GameData.F.GetPlot(x,y).growthProgress=0
-				spawn_drop_items(1)
+			sickle()
 		)
 	
 		
@@ -70,16 +89,10 @@ func _ready() -> void:
 		
 	Util.Area2dConnectHold(area_2d,func():
 		if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
-			water_spritesheet.visible=true
-			pool_spritesheet.visible=true
-			animation_player.play("洒水")
-			SignalBus.IsWatering=true,
+				Watering1(),
 		func():
 			if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
-				water_spritesheet.visible=false
-				pool_spritesheet.visible=false
-				animation_player.stop()
-				SignalBus.IsWatering=false)
+				Watering2())
 				
 		
 func IfCanDrop()->bool:
