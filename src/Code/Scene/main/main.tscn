@@ -29,7 +29,9 @@ size = Vector2(420.1435, 373.42505)
 
 [node name="Main" type="Node2D"]
 z_index = -1
+position = Vector2(1, 0)
 script = ExtResource("1_t1d86")
+metadata/_edit_lock_ = true
 
 [node name="FieldAll" parent="." instance=ExtResource("8_h3kfu")]
 z_index = 1
@@ -124,9 +126,8 @@ texture = ExtResource("12_xvedc")
 metadata/_edit_lock_ = true
 
 [node name="toolFrame" type="Sprite2D" parent="."]
-visible = false
 z_index = 7
-position = Vector2(121, 439)
+position = Vector2(116, -52)
 scale = Vector2(0.33771977, 0.33771977)
 texture = ExtResource("16_d1tkf")
 script = ExtResource("17_swvh5")

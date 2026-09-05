@@ -33,8 +33,9 @@ var PlantMap:Dictionary={
 	Vector2(Const.CropId.Apple,1):preload("uid://b0tvrn6yxr58c"),
 	Vector2(Const.CropId.Apple,2):preload("uid://ff05i6h3snsj")
 }
+@onready var water_spritesheet: Sprite2D = $WaterSpritesheet
+@onready var pool_spritesheet: Sprite2D = $PoolSpritesheet
 
-@onready var waterdrop_spritesheet: Sprite2D = $WaterdropSpritesheet
 
 @onready var frame_havest: Sprite2D = $FrameHavest
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -69,12 +70,14 @@ func _ready() -> void:
 		
 	Util.Area2dConnectHold(area_2d,func():
 		if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
-			waterdrop_spritesheet.visible=true
+			water_spritesheet.visible=true
+			pool_spritesheet.visible=true
 			animation_player.play("洒水")
 			SignalBus.IsWatering=true,
 		func():
 			if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
-				waterdrop_spritesheet.visible=false
+				water_spritesheet.visible=false
+				pool_spritesheet.visible=false
 				animation_player.stop()
 				SignalBus.IsWatering=false)
 				
