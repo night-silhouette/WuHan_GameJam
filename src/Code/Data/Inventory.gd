@@ -13,6 +13,7 @@ func AddItem(itemId: int, amount: int = 1) -> void:
 		items[itemId] += amount
 	else:
 		items[itemId] = amount
+	SignalBus.DataChange.emit()
 	print("背包更新，当前物品: ", items)
 
 # 减少物品
@@ -21,6 +22,7 @@ func RemoveItem(itemId: int, amount: int = 1) -> void:
 		items[itemId] -= amount
 		if items[itemId] < 0:
 			items[itemId] = 0
+	SignalBus.DataChange.emit()
 	print("背包更新，当前物品: ", items)
 
 # 存盘（保存当前资源实例到本地文件）

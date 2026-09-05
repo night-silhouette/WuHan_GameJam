@@ -10,8 +10,7 @@ signal MessagePopu(message:String)
 
 signal HoverOnly()
 
-
-
+signal DataChange()
 
 
 

@@ -3,7 +3,7 @@ const GOODS_COUNT := 3
 var tree_level = 0;
 # 初始等级
 var value_level := [0, 0, 0]
-var field_level := 0
+var field_level := 1
 var rot_level := [0, 0, 0]
 
 # 共享等级
@@ -24,6 +24,8 @@ var mashroom = false
 var auto_water_cost = 5000000
 var auto_plant_cost = 10000
 var auto_havest_cost= 100000
+
+signal filed_expand()
 ##获取价值
 func GetValue(CropId: int) -> float:
 	
@@ -168,7 +170,7 @@ func upgrade_field() -> Dictionary:
 		}
 
 	field_level += 1
-
+	
 	return {
 		"level": field_level,
 		"size": field_level,

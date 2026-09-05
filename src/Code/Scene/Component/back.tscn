@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bflc80k5cx7ny"]
+
+[ext_resource type="Texture2D" uid="uid://b3857oe4v8lv4" path="res://Asset/back.png" id="1_83c2r"]
+[ext_resource type="Script" uid="uid://dciiy0xqgist1" path="res://Code/Scene/Component/back.gd" id="1_serr8"]
+[ext_resource type="Texture2D" uid="uid://mb306perjogh" path="res://Asset/back_hover.png" id="3_jol01"]
+[ext_resource type="Texture2D" uid="uid://b42ny0vdju87e" path="res://Asset/back_press.png" id="4_otah0"]
+
+[node name="back" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_serr8")
+normal = ExtResource("1_83c2r")
+hover = ExtResource("3_jol01")
+press = ExtResource("4_otah0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(22, 21)
+rotation = -0.0025083108
+scale = Vector2(1.8024528, 1.8024528)
+texture = ExtResource("1_83c2r")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
