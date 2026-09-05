@@ -1,0 +1,183 @@
+[gd_scene load_steps=4 format=3 uid="uid://47xcidhbguon"]
+
+[ext_resource type="Texture2D" uid="uid://b53htqpcxgbr6" path="res://Asset/tree/tree _background.png" id="1_5xxss"]
+[ext_resource type="Script" uid="uid://dc4fqa0iixxg3" path="res://Code/Ui/farm_ui/tree.gd" id="1_qritd"]
+[ext_resource type="PackedScene" uid="uid://btuvxmhx7brid" path="res://Code/Ui/farm_ui/dot.tscn" id="5_qjk4c"]
+
+[node name="tree" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -34.0
+offset_right = -91.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1213342, 1.1542112)
+mouse_filter = 1
+script = ExtResource("1_qritd")
+
+[node name="TreeBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 45.0
+offset_right = 2038.0
+offset_bottom = 1125.0
+scale = Vector2(0.4878609, 0.4878609)
+texture = ExtResource("1_5xxss")
+
+[node name="apple" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 534.00006
+offset_top = 501.00003
+offset_right = 678.00006
+offset_bottom = 654.0
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="flower" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 534.00006
+offset_top = 501.00003
+offset_right = 678.00006
+offset_bottom = 654.0
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="mashroom" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 534.00006
+offset_top = 501.00003
+offset_right = 678.00006
+offset_bottom = 654.0
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="apple_value" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 534.00006
+offset_top = 501.00003
+offset_right = 678.00006
+offset_bottom = 654.0
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="flower_value" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 443.00003
+offset_top = 365.00003
+offset_right = 587.0
+offset_bottom = 518.0
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="mashroom_value" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 572.00006
+offset_top = 370.0
+offset_right = 716.00006
+offset_bottom = 523.0
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="auto_havest" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 716.0
+offset_top = 328.0
+offset_right = 860.0
+offset_bottom = 481.0
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="auto_plant" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 327.00003
+offset_top = 318.0
+offset_right = 471.00003
+offset_bottom = 471.0
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="auto_water" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 327.00003
+offset_top = 318.0
+offset_right = 471.00003
+offset_bottom = 471.0
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="water" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 502.00006
+offset_top = 292.0
+offset_right = 646.00006
+offset_bottom = 445.0
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="havest" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 597.00006
+offset_top = 312.00003
+offset_right = 741.00006
+offset_bottom = 465.00003
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="plant" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 597.00006
+offset_top = 312.00003
+offset_right = 741.00006
+offset_bottom = 465.00003
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="quantity" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 597.00006
+offset_top = 312.00003
+offset_right = 741.00006
+offset_bottom = 465.00003
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="field" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 597.00006
+offset_top = 312.00003
+offset_right = 741.00006
+offset_bottom = 465.00003
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="apple_rot" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 597.00006
+offset_top = 312.00003
+offset_right = 741.00006
+offset_bottom = 465.00003
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="flower_rot" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 597.00006
+offset_top = 312.00003
+offset_right = 741.00006
+offset_bottom = 465.00003
+scale = Vector2(0.3210393, 0.3210393)
+
+[node name="mashroom_rot" parent="." instance=ExtResource("5_qjk4c")]
+layout_mode = 0
+offset_left = 597.00006
+offset_top = 312.00003
+offset_right = 741.00006
+offset_bottom = 465.00003
+scale = Vector2(0.3210393, 0.3210393)
+
+[connection signal="button_down" from="apple" to="." method="_on_apple_button_down"]
+[connection signal="button_down" from="flower" to="." method="_on_flower_button_down"]
+[connection signal="button_down" from="mashroom" to="." method="_on_mashroom_button_down"]
+[connection signal="button_down" from="apple_value" to="." method="_on_apple_value_button_down"]
+[connection signal="button_down" from="flower_value" to="." method="_on_flower_value_button_down"]
+[connection signal="button_down" from="mashroom_value" to="." method="_on_mashroom_value_button_down"]
+[connection signal="button_down" from="auto_havest" to="." method="_on_auto_havest_button_down"]
+[connection signal="button_down" from="auto_plant" to="." method="_on_auto_plant_button_down"]
+[connection signal="button_down" from="auto_water" to="." method="_on_auto_water_button_down"]
+[connection signal="button_down" from="water" to="." method="_on_water_button_down"]
+[connection signal="button_down" from="havest" to="." method="_on_havest_button_down"]
+[connection signal="button_down" from="plant" to="." method="_on_plant_button_down"]
+[connection signal="button_down" from="quantity" to="." method="_on_quantity_button_down"]
+[connection signal="button_down" from="field" to="." method="_on_field_button_down"]
+[connection signal="button_down" from="apple_rot" to="." method="_on_apple_rot_button_down"]
+[connection signal="button_down" from="flower_rot" to="." method="_on_flower_rot_button_down"]
+[connection signal="button_down" from="mashroom_rot" to="." method="_on_mashroom_rot_button_down"]
