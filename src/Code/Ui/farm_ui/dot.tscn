@@ -87,6 +87,28 @@ offset_bottom = 1313.0
 scale = Vector2(0.045719415, 0.045719415)
 texture = ExtResource("8_k35yy")
 
+[node name="unit2" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.78352344, 0.7835234, 0.7835234, 1)
+layout_mode = 0
+offset_left = 125.000015
+offset_top = 147.0
+offset_right = 1125.0
+offset_bottom = 1337.0
+scale = Vector2(0.045719415, 0.045719415)
+texture = ExtResource("8_k35yy")
+
+[node name="unit3" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.78352344, 0.7835234, 0.7835234, 1)
+layout_mode = 0
+offset_left = 122.00001
+offset_top = 94.0
+offset_right = 1122.0
+offset_bottom = 1284.0
+scale = Vector2(0.045719415, 0.045719415)
+texture = ExtResource("8_k35yy")
+
 [node name="num" type="Label" parent="."]
 layout_mode = 0
 offset_left = 21.0

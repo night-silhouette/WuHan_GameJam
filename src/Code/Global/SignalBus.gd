@@ -8,7 +8,7 @@ signal ChangeUi(next_path:String)
 ##message弹出
 signal MessagePopu(message:String)
 
-
+signal HoverOnly()
 
 
 

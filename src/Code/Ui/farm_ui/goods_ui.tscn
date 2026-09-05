@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0o2rhl6f8wx1"]
+
+[ext_resource type="Texture2D" uid="uid://bpv7jnfrvtqv1" path="res://Asset/plants/mushroom.png" id="1_n0ttw"]
+[ext_resource type="Script" uid="uid://ds8cfsibpjk6d" path="res://Code/Ui/farm_ui/goods_ui.gd" id="1_ya53k"]
+[ext_resource type="Texture2D" uid="uid://clq0m0q6k7vdo" path="res://Asset/frame_havest.png" id="2_ya53k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2oxoe"]
+font_size = 121
+
+[node name="Goods_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_ya53k")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.15376997, 0.15376997)
+texture = ExtResource("1_n0ttw")
+
+[node name="FrameHavest" type="Sprite2D" parent="."]
+position = Vector2(419.00003, 107.00001)
+scale = Vector2(1.6641229, 0.6538962)
+texture = ExtResource("2_ya53k")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 16.0
+offset_right = 625.0
+offset_bottom = 192.0
+text = "7M"
+label_settings = SubResource("LabelSettings_2oxoe")
