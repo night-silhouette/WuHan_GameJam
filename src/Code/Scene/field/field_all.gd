@@ -59,10 +59,26 @@ func RangeOp(Obj:Vector2,ex:int)->Array[Vector2]:
 func _ready() -> void:
 	Size=2
 	
-	#var children=grid_container.get_children()
-	#for child:FieldPerform in children:
-		#child.SignEntering.connect(func():)
-		#child.SignExit.connect(func():)
-		#child.SignSickle.connect(func():)
-		#child.SignWatering1.connect(func():)
-		#child.SignWatering2.connect(func():)
+	var children=grid_container.get_children()
+	for child:FieldPerform in children:
+		child.SignEntering.connect(func(obj:FieldPerform):pass)
+		child.SignExit.connect(func(obj:FieldPerform):pass)
+		
+		child.SignSickle.connect(func(obj:FieldPerform):
+			var OpList:=RangeOp(Vector2(obj.x,obj.y),SkillTree.GetHavestRange()-1)
+			for c:FieldPerform in FieldActiveList:
+				var pos:=Vector2(c.x,c.y)
+				if pos in OpList:
+					c.sickle()
+					
+			
+			)
+		child.SignWatering1.connect(func(obj:FieldPerform):pass)
+		child.SignWatering2.connect(func(obj:FieldPerform):pass)
+		
+		
+		
+		
+		
+		
+		

@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://bf4dvmrxmrg3j"]
+[gd_scene load_steps=17 format=3 uid="uid://bf4dvmrxmrg3j"]
 
 [ext_resource type="Script" uid="uid://5ysu3xowrsgf" path="res://Code/Scene/field/field.gd" id="1_rts7j"]
 [ext_resource type="Texture2D" uid="uid://cxd358kbpn8xn" path="res://Asset/farmland.PNG" id="1_uo4ho"]
 [ext_resource type="Texture2D" uid="uid://bwkxo3x3qcqsf" path="res://Asset/toolbar.PNG" id="3_hgfuk"]
 [ext_resource type="Script" uid="uid://d3sosll607880" path="res://Code/Scene/field/toolbar.gd" id="4_lm8bb"]
 [ext_resource type="Texture2D" uid="uid://bbt1sli76udgj" path="res://Asset/stages/mushroom_0-export.png" id="5_22gak"]
+[ext_resource type="Script" uid="uid://cucwdw3ab8wti" path="res://Code/Scene/field/control.gd" id="5_lhv6h"]
 [ext_resource type="Texture2D" uid="uid://c71ytq01ps0gp" path="res://Asset/seed/flowerseed_00.png" id="6_lm8bb"]
 [ext_resource type="Texture2D" uid="uid://ra1o7tr8hfbv" path="res://Asset/seed/apple seed.png" id="7_eooqv"]
+[ext_resource type="Script" uid="uid://dmkcg4syhwxcs" path="res://Code/Scene/field/control_3.gd" id="8_8dmq5"]
 [ext_resource type="Texture2D" uid="uid://clq0m0q6k7vdo" path="res://Asset/frame_havest.png" id="8_lm8bb"]
 [ext_resource type="Texture2D" uid="uid://dnup4p7y1edke" path="res://Asset/water spritesheet.png" id="9_wybve"]
 [ext_resource type="Texture2D" uid="uid://dncqc87rrna38" path="res://Asset/pool spritesheet.png" id="10_lhv6h"]
@@ -129,10 +131,6 @@ layout_mode = 3
 anchors_preset = 0
 mouse_filter = 1
 script = ExtResource("1_rts7j")
-x = null
-y = null
-level = null
-cropId = null
 
 [node name="Farmland" type="Sprite2D" parent="."]
 position = Vector2(49.000004, 51.000004)
@@ -157,10 +155,12 @@ texture = ExtResource("3_hgfuk")
 script = ExtResource("4_lm8bb")
 
 [node name="Control" type="TextureButton" parent="Toolbar"]
+visible = false
 offset_left = -442.7872
 offset_top = -1693.0999
 offset_right = 449.02518
 offset_bottom = -837.97314
+script = ExtResource("5_lhv6h")
 
 [node name="Mushroom" type="Sprite2D" parent="Toolbar/Control"]
 position = Vector2(423.81735, 427.91162)
@@ -181,10 +181,12 @@ scale = Vector2(0.6424708, 0.6424708)
 texture = ExtResource("7_eooqv")
 
 [node name="Control3" type="TextureButton" parent="Toolbar"]
+visible = false
 offset_left = -511.31467
 offset_top = -465.90927
 offset_right = 364.36105
 offset_bottom = 383.27036
+script = ExtResource("8_8dmq5")
 
 [node name="Flower" type="Sprite2D" parent="Toolbar/Control3"]
 position = Vector2(486.32404, 453.26337)
