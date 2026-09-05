@@ -73,6 +73,29 @@ func RangeOp(Obj:Vector2,size:int)->Array[Vector2]:
 		return res
 	
 func _ready() -> void:
+	
+	SkillTree.havest.connect(func():
+		while true:
+			await get_tree().create_timer(3.0).timeout
+			for c:FieldPerform in FieldActiveList:
+				c.sickle()
+		
+		
+		)
+	SkillTree.water.connect(func():
+		while true:
+			await get_tree().create_timer(3.0).timeout
+			for c:FieldPerform in FieldActiveList:
+				c.Watering1()
+			await get_tree().create_timer(3.0).timeout
+			for c:FieldPerform in FieldActiveList:
+				c.Watering2()
+		
+		)
+	
+	
+	
+	
 	Size=2
 	
 	var children=grid_container.get_children()
@@ -141,6 +164,7 @@ func _ready() -> void:
 			
 			
 			)
+		
 		
 		
 		

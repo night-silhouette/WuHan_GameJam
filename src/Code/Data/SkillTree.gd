@@ -12,8 +12,20 @@ var watering_level := 0
 var havesting_level := 0
 var planting_level := 0
 
-var auto_water := false
-var auto_havest := false
+
+signal	water
+var auto_water := false:
+	set(value):
+		auto_water=value
+		if auto_water==true:
+			water.emit()
+
+signal havest
+var auto_havest := false:
+	set(value):
+		auto_havest=value
+		if auto_havest==true:
+			havest.emit()
 
 signal pick
 var auto_plant := false:

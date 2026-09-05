@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqkddcl0tssmx" path="res://Asset/plants/apple.png" id="2_h8hw6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fy0vu"]
-radius = 329.72
+radius = 338.84
 
 [node name="Drops" type="RigidBody2D"]
 scale = Vector2(0.36758623, 0.36758623)

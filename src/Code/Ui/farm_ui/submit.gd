@@ -30,10 +30,10 @@ func _refresh():
 	
 		
 func _check():
-	var sum = GameData.Invent.items.get(0) + GameData.Invent.items.get(1) + GameData.Invent.items.get(2)
+	var sum = GameData.Invent.items.get(1) + GameData.Invent.items.get(2) + GameData.Invent.items.get(3)
 	if sum > cost[GameData.GameState]:
 		var index = sum - cost[GameData.GameState];
-		GameData.Invent.RemoveItem(0,GameData.Invent.items.get(0))
-		GameData.Invent.RemoveItem(1,GameData.Invent.items.get(1))
-		GameData.Invent.RemoveItem(2,GameData.Invent.items.get(2))
+		GameData.Invent.RemoveItem(0,GameData.Invent.items.get(1))
+		GameData.Invent.RemoveItem(1,GameData.Invent.items.get(2))
+		GameData.Invent.RemoveItem(2,GameData.Invent.items.get(3))
 		GameData.Invent.AddItem(0,index)
