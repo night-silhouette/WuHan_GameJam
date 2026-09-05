@@ -63,6 +63,7 @@ func sickle():
 		spawn_drop_items(SkillTree.GetPlantNum())
 
 func Watering1():
+
 	water_spritesheet.visible=true
 	pool_spritesheet.visible=true
 	animation_player.play("洒水")
