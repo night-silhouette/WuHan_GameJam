@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wtwbdm0eys3q"
-valid=false
+uid="uid://bqakxj76bb0vh"
+path="res://.godot/imported/tree_00.png-b149871432c60dc3ab7fc61e6dec37c4.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Asset/growth stage/flower_1.PNG"
+source_file="res://Asset/growth stage/tree_00.png"
+dest_files=["res://.godot/imported/tree_00.png-b149871432c60dc3ab7fc61e6dec37c4.ctex"]
 
 [params]
 

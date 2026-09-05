@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buo8wa8py13b3"
-valid=false
+uid="uid://oykr2dddwntw"
+path="res://.godot/imported/mycelium.png-a6669bfae9b4f4f35c4cd14e92c7dc9a.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Asset/growth stage/apple tree_0.PNG"
+source_file="res://Asset/seed/mycelium.png"
+dest_files=["res://.godot/imported/mycelium.png-a6669bfae9b4f4f35c4cd14e92c7dc9a.ctex"]
 
 [params]
 
