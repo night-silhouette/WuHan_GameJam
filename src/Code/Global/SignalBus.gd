@@ -51,3 +51,23 @@ signal DataChange()
 
 
 var IsWatering:int=false
+
+var PickFlag=false
+
+signal IsAutoPick
+
+func _ready() -> void:
+	SkillTree.pick.connect(AutoPick)
+
+		
+		
+
+
+
+
+func AutoPick():
+		while true:
+			await get_tree().create_timer(2.0).timeout
+			PickFlag=true
+			IsAutoPick.emit()
+			
