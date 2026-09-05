@@ -7,13 +7,17 @@ enum ToolMode {
 	WATERING_CAN
 }
 
-var mos: ToolMode = ToolMode.NORMAL
+signal mosChange
+var mos: ToolMode = ToolMode.NORMAL:
+	set(value):
+		mos=value
+		mosChange.emit()
 
 # 存储缩放并转换后的 Texture2D 资源
 var cursor_textures: Dictionary = {}
 
 func _ready() -> void:
-	var target_size = Vector2i(32, 32)
+	var target_size = Vector2i(28, 28)
 	
 	cursor_textures[ToolMode.NORMAL] = load_and_resize_cursor("res://Asset/cursor.png", target_size)
 	cursor_textures[ToolMode.SHOVEL] = load_and_resize_cursor("res://Asset/farming tools1/shovel.png", target_size)
@@ -33,7 +37,7 @@ func change_tool_mode(new_mode: ToolMode) -> void:
 
 func update_cursor(current_mos: ToolMode) -> void:
 	var texture = cursor_textures.get(current_mos, null)
-	var hotspot = Vector2(16, 16) if texture else Vector2.ZERO
+	var hotspot = Vector2(14, 14) if texture else Vector2.ZERO
 	Input.set_custom_mouse_cursor(texture, Input.CURSOR_ARROW, hotspot)
 
 func load_and_resize_cursor(path: String, new_size: Vector2i) -> Texture2D:

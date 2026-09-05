@@ -35,6 +35,15 @@ var PlantMap:Dictionary={
 }
 
 
+@onready var frame_havest: Sprite2D = $FrameHavest
+
+var FrameVisible:bool=false:
+	set(value):
+		FrameVisible=value
+		frame_havest.visible=value
+		
+
+
 var barFlag=false
 func _ready() -> void:
 	Util.Area2dConnectClick(area_2d,func():
@@ -44,13 +53,20 @@ func _ready() -> void:
 			return
 		if Mouse.mos==Mouse.ToolMode.SICKLE:
 			if IfCanDrop():
-			
+				GameData.F.GetPlot(x,y).growthProgress=0
 				spawn_drop_items(1)
 		)
-		
+	area_2d.mouse_entered.connect(func():
+		FrameVisible=true
+		)
+	area_2d.mouse_exited.connect(func():
+		FrameVisible=false
+		)
 func IfCanDrop()->bool:
 	if cropId==Const.CropId.Nil:
 		return false
+	if level!=2:
+		return true
 	return true
 
 func spawn_drop_items(count: int) -> void:

@@ -4,9 +4,12 @@ extends Sprite2D
 @onready var par: FieldPerform = $".."
 
 
-@onready var m: Area2D = $Mushroom/Area2D
-@onready var f: Area2D = $Flower/Area2D
-@onready var a: Area2D = $Apple/Area2D
+
+@onready var m: TextureButton = $Control
+@onready var a: TextureButton = $Control2
+@onready var f: TextureButton = $Control3
+
+
 
 
 func _ready() -> void:
@@ -14,22 +17,24 @@ func _ready() -> void:
 		par.barFlag=false
 		visible=par.barFlag)
 	
-	Util.Area2dConnectClick(m,func():
-		GameData.F.GetPlot(par.x,par.y).CropId=Const.CropId.Mushroom
-		GameData.F.GetPlot(par.x,par.y).growthProgress=0
-		par.barFlag=false
-		visible=par.barFlag
-		)
-	Util.Area2dConnectClick(f,func():
-		GameData.F.GetPlot(par.x,par.y).CropId=Const.CropId.Flower
-		GameData.F.GetPlot(par.x,par.y).growthProgress=0
-		par.barFlag=false
-		visible=par.barFlag
-		)
-	Util.Area2dConnectClick(a,func():
-		GameData.F.GetPlot(par.x,par.y).CropId=Const.CropId.Apple
-		GameData.F.GetPlot(par.x,par.y).growthProgress=0
-		par.barFlag=false
-		visible=par.barFlag
+	m.pressed.connect(func():
+		Planting(Const.CropId.Mushroom)
 		)
 	
+	a.pressed.connect(func():
+		Planting(Const.CropId.Apple)
+		)
+	
+	f.pressed.connect(func():
+		Planting(Const.CropId.Flower)
+		)
+	
+func Planting(CropId:Const.CropId):
+		get_viewport().set_input_as_handled()
+		
+		print(111222)
+		GameData.F.GetPlot(par.x,par.y).CropId=CropId
+		GameData.F.GetPlot(par.x,par.y).growthProgress=0
+		par.barFlag=false
+		visible=par.barFlag
+		

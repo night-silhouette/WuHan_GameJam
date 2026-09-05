@@ -37,7 +37,7 @@ func SetNodeTexture(node: Node, new_texture: Texture2D) -> void:
 #)
 
 #callback是补间动画结束触发的回调	
-func TweenFastToSlow(obj,prop,value,time,callback=func():pass):
+func TweenFastToSlow(obj,prop:String,value,time,callback=func():pass):
 	var tween=create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_CUBIC)	
@@ -46,7 +46,7 @@ func TweenFastToSlow(obj,prop,value,time,callback=func():pass):
 	return tween#tween的引用没有了之后,tween.finished.connect(callback)这个的信号也会随之free,所以可以大胆的对这个tween.kill()
 
 # callback是补间动画结束触发的回调	
-func TweenSlowToFast(obj, prop, value, time, callback = func(): pass):
+func TweenSlowToFast(obj, prop:String, value, time, callback = func(): pass):
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_CUBIC)	

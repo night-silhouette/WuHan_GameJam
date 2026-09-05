@@ -2,7 +2,7 @@ extends RigidBody2D
 class_name Drops
 
 const APPLE = preload("uid://dqkddcl0tssmx")
-const FLOWER = preload("uid://qcc4a4pa0uvf")
+const FLOWER = preload("uid://c1vt6j6be3o0a")
 const MUSHROOM = preload("uid://bpv7jnfrvtqv1")
 
 @onready var sprite: Sprite2D = $sprite
