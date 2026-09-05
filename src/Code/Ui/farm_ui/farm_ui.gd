@@ -6,6 +6,9 @@ extends Control
 func _ready() -> void:
 	_refresh()
 	SignalBus.DataChange.connect(_refresh)
+	$tree.visible= false
+	InputManager.Tab.connect(_on_texture_button_button_down)
+	InputManager.Esc.connect(_on_x_button_button_down)
 		
 func _refresh() :
 	Apple_ui.update(Util.FormatNumber(GameData.Invent.items.get(Const.CropId.Apple)))
@@ -16,7 +19,7 @@ func _refresh() :
 func _on_texture_button_button_down() -> void:
 	$tree.visible = true	
 	$x_button.visible = true	
-
+	
 
 
 func _on_x_button_button_down() -> void:

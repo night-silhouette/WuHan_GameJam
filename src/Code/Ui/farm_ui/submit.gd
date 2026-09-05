@@ -10,6 +10,7 @@ var cost := [1000000,1000000000,1000000000000]
 
 func _ready() -> void:
 	_refresh()
+	SignalBus.DataChange.connect(_check)
 
 func _refresh():
 	

@@ -1,7 +1,9 @@
 class_name Inventory
 extends Resource
-
+# 游戏三个阶段的腐烂间隔（秒）：阶段1=120s, 阶段2=60s, 阶段3=30s
+const time := [120.0, 60.0, 30.0]
 # 背包里存储的是各种物品的 ID 或数量字典
+var rot_timer: float = 0.0
 @export var items: Dictionary = {
 	Const.CropId.Flower: 0,
 	Const.CropId.Apple: 0,
@@ -24,6 +26,33 @@ func RemoveItem(itemId: int, amount: int = 1) -> void:
 			items[itemId] = 0
 	SignalBus.DataChange.emit()
 	print("背包更新，当前物品: ", items)
+
+func UpdateRot(delta: float) -> void:
+	var stage: int = GameData.game_stage  # 当前游戏阶段 1/2/3
+	rot_timer += delta
+
+	# 没到当前阶段的腐烂间隔
+	if rot_timer < time[stage - 1]:
+		return
+
+	rot_timer = 0.0
+
+	# 到时间，对所有有库存的作物扣除
+	for crop_id in [Const.CropId.Flower, Const.CropId.Apple, Const.CropId.Mushroom]:
+		var current: int = items.get(crop_id, 0)
+		if current <= 0:
+			continue
+
+		# 腐烂率 = 基础率(游戏阶段) × 该作物抗性倍率
+		var rate: float = SkillTree.get_rot_rate(crop_id, stage)
+
+		var lost: int = ceil(current * rate)
+		if lost <= 0:
+			continue
+
+		items[crop_id] = max(0, current - lost)
+		SignalBus.DataChange.emit()
+		SignalBus.InventoryRot.emit(crop_id, lost)
 
 # 存盘（保存当前资源实例到本地文件）
 func SaveGame() -> void:

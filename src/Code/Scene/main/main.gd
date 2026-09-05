@@ -9,3 +9,5 @@ func _process(delta: float) -> void:
 			Value*=Const.WateringBaseSpeed
 		c.growthProgress+=Value
 		)
+	##腐烂函数
+	GameData.Invent.UpdateRot(delta)

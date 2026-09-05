@@ -206,11 +206,11 @@ func upgrade_rot_resistance(good: int) -> Dictionary:
 func get_rot_interval(stage: int) -> float:
 	match stage:
 		1:
-			return 30.0
+			return 120.0
 		2:
-			return 20.0
+			return 60.0
 		3:
-			return 10.0
+			return 30.0
 
 	return 30.0
 	

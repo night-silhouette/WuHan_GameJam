@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://blpfdd3p6udlo"]
+[gd_scene load_steps=13 format=3 uid="uid://blpfdd3p6udlo"]
 
 [ext_resource type="PackedScene" uid="uid://47xcidhbguon" path="res://Code/Ui/farm_ui/tree.tscn" id="1_ps6g6"]
 [ext_resource type="Script" uid="uid://c5xnowyw283mu" path="res://Code/Ui/farm_ui/farm_ui.gd" id="1_vjcro"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d23qv4f2hxh10" path="res://Code/Ui/defaultUi/set.tscn" id="2_hejn8"]
 [ext_resource type="Texture2D" uid="uid://c1vt6j6be3o0a" path="res://Asset/plants/flower.png" id="3_xcc2n"]
 [ext_resource type="PackedScene" uid="uid://bflc80k5cx7ny" path="res://Code/Scene/Component/back.tscn" id="8_0fehq"]
+[ext_resource type="PackedScene" uid="uid://c5t7uu7tctyoq" path="res://Code/Scene/Component/Message.tscn" id="8_ta4oh"]
 [ext_resource type="PackedScene" uid="uid://clk0mr7wijo8j" path="res://Code/Ui/farm_ui/submit.tscn" id="8_vjcro"]
 [ext_resource type="PackedScene" uid="uid://b6qihdxaxdu3u" path="res://Code/Ui/farm_ui/goods_ui.tscn" id="8_xcc2n"]
 [ext_resource type="PackedScene" uid="uid://8g5net32v5tm" path="res://Code/Ui/farm_ui/x_button.tscn" id="9_ta4oh"]
@@ -72,6 +73,14 @@ position = Vector2(133.54126, 95.875755)
 scale = Vector2(0.09152203, 0.09152203)
 texture = ExtResource("12_5ad3e")
 
+[node name="TextureRect" parent="." instance=ExtResource("8_ta4oh")]
+layout_mode = 0
+offset_left = 996.00006
+offset_top = 459.0
+offset_right = 2996.0
+offset_bottom = 2459.0
+scale = Vector2(0.09444908, 0.09585676)
+
 [node name="submit" parent="." instance=ExtResource("8_vjcro")]
 layout_mode = 0
 offset_left = 923.9999
@@ -104,6 +113,11 @@ scale = Vector2(2.601575, 2.601575)
 position = Vector2(25.753633, 21.52542)
 scale = Vector2(0.10161063, 0.10161063)
 texture = ExtResource("14_tnk2j")
+
+[node name="Control4" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 646.0
 
 [connection signal="button_down" from="x_button" to="." method="_on_x_button_button_down"]
 [connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
