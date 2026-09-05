@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://blpfdd3p6udlo"]
+[gd_scene load_steps=9 format=3 uid="uid://blpfdd3p6udlo"]
 
 [ext_resource type="PackedScene" uid="uid://47xcidhbguon" path="res://Code/Ui/farm_ui/tree.tscn" id="1_ps6g6"]
 [ext_resource type="Script" uid="uid://c5xnowyw283mu" path="res://Code/Ui/farm_ui/farm_ui.gd" id="1_vjcro"]
 [ext_resource type="PackedScene" uid="uid://d23qv4f2hxh10" path="res://Code/Ui/defaultUi/set.tscn" id="2_hejn8"]
 [ext_resource type="PackedScene" uid="uid://bflc80k5cx7ny" path="res://Code/Scene/Component/back.tscn" id="3_xcc2n"]
 [ext_resource type="PackedScene" uid="uid://8g5net32v5tm" path="res://Code/Ui/farm_ui/x_button.tscn" id="5_0fehq"]
-[ext_resource type="Texture2D" uid="uid://cyoy86fb5t664" path="res://Asset/submit/submit.png" id="5_cxs3k"]
-[ext_resource type="Texture2D" uid="uid://d3pre7y74pp8w" path="res://Asset/submit/submit_baby .png" id="6_vjcro"]
+[ext_resource type="PackedScene" uid="uid://clk0mr7wijo8j" path="res://Code/Ui/farm_ui/submit.tscn" id="7_xcc2n"]
 [ext_resource type="PackedScene" uid="uid://b6qihdxaxdu3u" path="res://Code/Ui/farm_ui/goods_ui.tscn" id="8_xcc2n"]
 [ext_resource type="Texture2D" uid="uid://cko1iv2l8d2cu" path="res://Asset/tree/tree_UI.png" id="14_tnk2j"]
 
@@ -70,17 +69,13 @@ offset_right = 330.7373
 offset_bottom = -452.82437
 scale = Vector2(0.29204464, 0.29204464)
 
-[node name="Submit" type="Sprite2D" parent="."]
-z_index = 3
-position = Vector2(1032, 531)
-scale = Vector2(0.5409109, 0.5409109)
-texture = ExtResource("5_cxs3k")
-
-[node name="SubmitBaby" type="Sprite2D" parent="."]
-z_index = 106
-position = Vector2(1048.0322, 545.30273)
-scale = Vector2(0.6109255, 0.6109255)
-texture = ExtResource("6_vjcro")
+[node name="submit" parent="." instance=ExtResource("7_xcc2n")]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 453.0
+offset_right = 950.0
+offset_bottom = 453.0
+scale = Vector2(0.44005832, 0.44005832)
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0

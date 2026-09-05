@@ -8,10 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://c1vt6j6be3o0a" path="res://Asset/plants/flower.png" id="6_ncq6d"]
 [ext_resource type="Texture2D" uid="uid://bpv7jnfrvtqv1" path="res://Asset/plants/mushroom.png" id="7_trncn"]
 
-[node name="submit" type="Control"]
+[node name="submit" type="Control" node_paths=PackedStringArray("label")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_fru51")
+label = NodePath("Control/Label")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -23,63 +24,68 @@ texture = ExtResource("1_qa4qr")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 177.0
-offset_top = 153.0
-offset_right = 592.0
-offset_bottom = 586.0
-scale = Vector2(0.48719823, 0.48719823)
+offset_left = 134.00002
+offset_top = 110.00001
+offset_right = 549.0
+offset_bottom = 543.0
+scale = Vector2(0.37184313, 0.37184313)
 
 [node name="Sprite2D" type="Sprite2D" parent="TextureButton"]
 position = Vector2(160.0991, 207.30779)
 scale = Vector2(1.824496, 1.824496)
 texture = ExtResource("2_df1ke")
 
-[node name="Toolbar" type="TextureRect" parent="."]
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Toolbar" type="TextureRect" parent="Control"]
 self_modulate = Color(0.8474744, 0.84747446, 0.84747446, 1)
 layout_mode = 0
-offset_left = 101.0
-offset_top = -89.99994
-offset_right = 1081.0
-offset_bottom = 3520.0
+offset_left = 130.0
+offset_top = 292.00003
+offset_right = 1110.0
+offset_bottom = 3902.0
 scale = Vector2(0.17474918, 0.029485378)
 texture = ExtResource("4_uwdqm")
 
-[node name="unit" type="TextureRect" parent="."]
+[node name="unit" type="TextureRect" parent="Control"]
 modulate = Color(0.78352344, 0.7835234, 0.7835234, 1)
 layout_mode = 0
-offset_left = 286.0
-offset_top = -83.99997
-offset_right = 1286.0
-offset_bottom = 1106.0
+offset_left = 315.0
+offset_top = 298.00003
+offset_right = 1315.0
+offset_bottom = 1488.0
 scale = Vector2(0.062269114, 0.062269114)
 texture = ExtResource("5_o51pj")
 
-[node name="unit2" type="TextureRect" parent="."]
+[node name="unit2" type="TextureRect" parent="Control"]
 modulate = Color(0.78352344, 0.7835234, 0.7835234, 1)
 layout_mode = 0
-offset_left = 351.0
-offset_top = -51.99997
-offset_right = 1351.0
-offset_bottom = 1138.0
+offset_left = 380.0
+offset_top = 330.00003
+offset_right = 1380.0
+offset_bottom = 1520.0
 scale = Vector2(0.0867138, 0.0867138)
 texture = ExtResource("6_ncq6d")
 
-[node name="unit3" type="TextureRect" parent="."]
+[node name="unit3" type="TextureRect" parent="Control"]
 modulate = Color(0.78352344, 0.7835234, 0.7835234, 1)
 layout_mode = 0
-offset_left = 352.0
-offset_top = -124.0
-offset_right = 1642.0
-offset_bottom = 1116.0
+offset_left = 381.0
+offset_top = 258.0
+offset_right = 1671.0
+offset_bottom = 1498.0
 scale = Vector2(0.0564145, 0.0564145)
 texture = ExtResource("7_trncn")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 137.0
-offset_top = -74.0
-offset_right = 177.0
-offset_bottom = -50.0
+offset_left = 166.0
+offset_top = 308.0
+offset_right = 206.0
+offset_bottom = 332.0
 scale = Vector2(2.544895, 3.0868776)
 text = "9"
 horizontal_alignment = 1
