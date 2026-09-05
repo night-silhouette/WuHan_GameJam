@@ -3,7 +3,7 @@ const GOODS_COUNT := 3
 var tree_level = 0;
 # 初始等级
 var value_level := [0, 0, 0]
-var field_level := 1
+var field_level := 0
 var rot_level := [0, 0, 0]
 
 # 共享等级

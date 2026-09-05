@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://blpfdd3p6udlo"]
+[gd_scene load_steps=8 format=3 uid="uid://blpfdd3p6udlo"]
 
 [ext_resource type="PackedScene" uid="uid://47xcidhbguon" path="res://Code/Ui/farm_ui/tree.tscn" id="1_ps6g6"]
+[ext_resource type="Texture2D" uid="uid://dqkddcl0tssmx" path="res://Asset/plants/apple.png" id="2_b65w0"]
+[ext_resource type="Texture2D" uid="uid://c1vt6j6be3o0a" path="res://Asset/plants/flower.png" id="3_xcc2n"]
+[ext_resource type="Texture2D" uid="uid://bpv7jnfrvtqv1" path="res://Asset/plants/mushroom.png" id="4_0fehq"]
+[ext_resource type="Texture2D" uid="uid://cyoy86fb5t664" path="res://Asset/submit/submit.png" id="5_cxs3k"]
+[ext_resource type="Texture2D" uid="uid://d3pre7y74pp8w" path="res://Asset/submit/submit_baby .png" id="6_vjcro"]
+[ext_resource type="Texture2D" uid="uid://bwkxo3x3qcqsf" path="res://Asset/toolbar.PNG" id="7_ta4oh"]
 
 [node name="Farm_UI" type="Control"]
 layout_mode = 3
@@ -12,4 +18,80 @@ grow_vertical = 2
 
 [node name="tree" parent="." instance=ExtResource("1_ps6g6")]
 layout_mode = 1
-scale = Vector2(0.9997365, 0.9997365)
+offset_left = 96.0
+offset_top = 169.0
+offset_right = 96.0
+offset_bottom = 169.0
+scale = Vector2(0.7872231, 0.7872231)
+
+[node name="Apple" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 197.99998
+offset_top = 16.0
+offset_right = 1198.0
+offset_bottom = 1206.0
+scale = Vector2(0.045047473, 0.045047473)
+texture = ExtResource("2_b65w0")
+
+[node name="Flower" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 9.000001
+offset_right = 1482.0
+offset_bottom = 1009.0
+scale = Vector2(0.0753811, 0.0753811)
+texture = ExtResource("3_xcc2n")
+
+[node name="Mushroom" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 785.0
+offset_top = 15.0
+offset_right = 2075.0
+offset_bottom = 1255.0
+scale = Vector2(0.042196147, 0.042196147)
+texture = ExtResource("4_0fehq")
+
+[node name="Submit" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 886.00006
+offset_top = 384.00006
+offset_right = 1352.0
+offset_bottom = 851.00006
+scale = Vector2(0.5800894, 0.5800894)
+texture = ExtResource("5_cxs3k")
+
+[node name="SubmitBaby" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 378.0
+offset_right = 1299.0
+offset_bottom = 811.0
+scale = Vector2(0.7283873, 0.7283873)
+texture = ExtResource("6_vjcro")
+
+[node name="Toolbar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 18.000006
+offset_right = 1257.0
+offset_bottom = 3628.0
+scale = Vector2(0.121678755, 0.018092372)
+texture = ExtResource("7_ta4oh")
+
+[node name="Toolbar2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 14.000006
+offset_right = 1567.0
+offset_bottom = 3624.0
+scale = Vector2(0.121678755, 0.018092372)
+texture = ExtResource("7_ta4oh")
+
+[node name="Toolbar3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 18.000002
+offset_right = 1864.0
+offset_bottom = 3628.0
+scale = Vector2(0.121678755, 0.018092372)
+texture = ExtResource("7_ta4oh")
