@@ -2,7 +2,7 @@ class_name Crop
 extends RefCounted
 
 
-
+var IsWatering:bool = false
 var IsUnlocked: bool = false   # 是否已解锁
 var CropId:Const.CropId  = Const.CropId.Nil        # 作物ID
 var growthProgress: float = 0.0: # 生长进度

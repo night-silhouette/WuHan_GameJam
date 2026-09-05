@@ -14,9 +14,23 @@ var planting_level := 0
 
 var auto_water := false
 var auto_havest := false
-var auto_plant := false
 
-var apple = false
+signal pick
+var auto_plant := false:
+	set(value):
+		auto_plant=value
+		if auto_plant==true:
+			pick.emit()
+
+signal a
+var apple = false:
+	set(value):
+		apple=value
+		if apple==true:
+			a.emit()
+
+
+
 signal f
 var flower = false:
 	set(value):

@@ -27,9 +27,20 @@ func _ready() -> void:
 	gravity_scale = 0.0
 	linear_damp = 4.0
 	
+	SignalBus.IsAutoPick.connect(func():
+		if SignalBus.PickFlag:
+			SignalBus.PickFlag=false
+			GameData.Invent.AddItem(CropId,SkillTree.GetValue(CropId))
+			queue_free()
+	)
+	
 	area_2d.mouse_entered.connect(func():
 		if Mouse.mos==Mouse.ToolMode.NORMAL:
 			GameData.Invent.AddItem(CropId,SkillTree.GetValue(CropId))
 			queue_free()
 		)
- 
+ 	
+
+
+		
+		

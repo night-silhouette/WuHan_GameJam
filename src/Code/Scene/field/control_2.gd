@@ -1,3 +1,5 @@
 extends TextureButton
+
+
 func _ready() -> void:
-	if SkillTree.
+	SkillTree.a.connect(func():self.visible=true)

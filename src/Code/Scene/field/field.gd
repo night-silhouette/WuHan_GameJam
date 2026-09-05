@@ -67,13 +67,14 @@ func Watering1():
 	water_spritesheet.visible=true
 	pool_spritesheet.visible=true
 	animation_player.play("洒水")
-	SignalBus.IsWatering=true
+	GameData.F.GetPlot(x,y).IsWatering=true	
+	
 	
 func Watering2():
 	water_spritesheet.visible=false
 	pool_spritesheet.visible=false
 	animation_player.stop()
-	SignalBus.IsWatering=false
+	GameData.F.GetPlot(x,y).IsWatering=false
 
 #------------------------------------------------------------------------------------------------------------------------#
 

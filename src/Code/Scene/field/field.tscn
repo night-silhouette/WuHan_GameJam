@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bf4dvmrxmrg3j"]
+[gd_scene load_steps=18 format=3 uid="uid://bf4dvmrxmrg3j"]
 
 [ext_resource type="Script" uid="uid://5ysu3xowrsgf" path="res://Code/Scene/field/field.gd" id="1_rts7j"]
 [ext_resource type="Texture2D" uid="uid://cxd358kbpn8xn" path="res://Asset/farmland.PNG" id="1_uo4ho"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bbt1sli76udgj" path="res://Asset/stages/mushroom_0-export.png" id="5_22gak"]
 [ext_resource type="Script" uid="uid://cucwdw3ab8wti" path="res://Code/Scene/field/control.gd" id="5_lhv6h"]
 [ext_resource type="Texture2D" uid="uid://c71ytq01ps0gp" path="res://Asset/seed/flowerseed_00.png" id="6_lm8bb"]
+[ext_resource type="Script" uid="uid://d2tinfwdyakt6" path="res://Code/Scene/field/control_2.gd" id="7_b5egg"]
 [ext_resource type="Texture2D" uid="uid://ra1o7tr8hfbv" path="res://Asset/seed/apple seed.png" id="7_eooqv"]
 [ext_resource type="Script" uid="uid://dmkcg4syhwxcs" path="res://Code/Scene/field/control_3.gd" id="8_8dmq5"]
 [ext_resource type="Texture2D" uid="uid://clq0m0q6k7vdo" path="res://Asset/frame_havest.png" id="8_lm8bb"]
@@ -169,10 +170,12 @@ scale = Vector2(1.3908811, 1.3908811)
 texture = ExtResource("5_22gak")
 
 [node name="Control2" type="TextureButton" parent="Toolbar"]
+visible = false
 offset_left = -492.58572
 offset_top = 849.3806
 offset_right = 368.94754
 offset_bottom = 1668.5255
+script = ExtResource("7_b5egg")
 
 [node name="Apple" type="Sprite2D" parent="Toolbar/Control2"]
 position = Vector2(499.0903, 403.2219)
