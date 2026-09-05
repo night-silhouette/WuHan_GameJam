@@ -7,15 +7,7 @@
 
 [node name="tree" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -60.000004
-offset_top = -13.0
-offset_right = -60.0
-offset_bottom = -13.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 scale = Vector2(1.0616475, 1.0927745)
 script = ExtResource("1_qritd")
 free_mode = true
@@ -30,10 +22,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 64.41223
-offset_top = 11.963364
-offset_right = 832.41223
-offset_bottom = 443.96338
+offset_left = 64.993324
+offset_top = 1.830204
+offset_right = 1984.9933
+offset_bottom = 1081.8302
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5698295, 0.54664844)

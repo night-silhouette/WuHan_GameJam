@@ -15,9 +15,10 @@ func _refresh() :
 
 func _on_texture_button_button_down() -> void:
 	$tree.visible = true	
-
+	$x_button.visible = true	
 
 
 
 func _on_x_button_button_down() -> void:
 	$tree.visible = false
+	$x_button.visible = false
