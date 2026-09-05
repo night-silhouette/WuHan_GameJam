@@ -4,6 +4,8 @@
 
 [node name="Root" type="Node"]
 script = ExtResource("1_3fusu")
+initial_scene = "uid://u8wvw864746n"
+initial_ui = "uid://blpfdd3p6udlo"
 
 [node name="Sence_root" type="Node2D" parent="."]
 
@@ -14,3 +16,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1

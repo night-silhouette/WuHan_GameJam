@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://mb306perjogh" path="res://Asset/back_hover.png" id="6_0fehq"]
 [ext_resource type="Texture2D" uid="uid://d3pre7y74pp8w" path="res://Asset/submit/submit_baby .png" id="6_vjcro"]
 [ext_resource type="Texture2D" uid="uid://b42ny0vdju87e" path="res://Asset/back_press.png" id="7_cxs3k"]
-[ext_resource type="PackedScene" uid="uid://c0o2rhl6f8wx1" path="res://Code/Ui/farm_ui/goods_ui.tscn" id="8_xcc2n"]
+[ext_resource type="PackedScene" path="res://Code/Ui/farm_ui/goods_ui.tscn" id="8_xcc2n"]
 [ext_resource type="Texture2D" uid="uid://cko1iv2l8d2cu" path="res://Asset/tree/tree_UI.png" id="14_tnk2j"]
 
 [node name="Farm_UI" type="Control"]
@@ -22,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_vjcro")
 
 [node name="Main" parent="." instance=ExtResource("1_h4m0b")]

@@ -123,7 +123,6 @@ z_index = 3
 position = Vector2(584, 322.99237)
 scale = Vector2(0.63700885, 0.6036897)
 texture = ExtResource("12_xvedc")
-metadata/_edit_lock_ = true
 
 [node name="toolFrame" type="Sprite2D" parent="."]
 z_index = 7
