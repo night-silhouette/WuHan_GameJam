@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf4dvmrxmrg3j"]
+[gd_scene load_steps=13 format=3 uid="uid://bf4dvmrxmrg3j"]
 
 [ext_resource type="Script" uid="uid://5ysu3xowrsgf" path="res://Code/Scene/field/field.gd" id="1_rts7j"]
 [ext_resource type="Texture2D" uid="uid://cxd358kbpn8xn" path="res://Asset/farmland.PNG" id="1_uo4ho"]
@@ -11,6 +11,18 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rts7j"]
 size = Vector2(1471.4478, 1392.9773)
+
+[sub_resource type="Animation" id="Animation_lm8bb"]
+resource_name = "洒水"
+
+[sub_resource type="Animation" id="Animation_eooqv"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wybve"]
+_data = {
+&"RESET": SubResource("Animation_eooqv"),
+&"洒水": SubResource("Animation_lm8bb")
+}
 
 [node name="Field" type="Control"]
 layout_mode = 3
@@ -87,3 +99,8 @@ z_index = 1
 position = Vector2(50.000004, 50.000004)
 scale = Vector2(0.42146644, 0.42146644)
 texture = ExtResource("8_lm8bb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wybve")
+}

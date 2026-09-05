@@ -49,3 +49,6 @@ signal HoverOnly()
 
 
 #endregion
+
+
+var IsWatering:int=false

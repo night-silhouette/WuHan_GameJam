@@ -86,7 +86,39 @@ func FormatNumber(num: float) -> String:
 			s = s.left(s.length() - 2)
 		return s + suffixes[idx]	
 	
+
+class AreaHoldHelper extends Node:
+	var area: Area2D
+	var hold_callback: Callable
+	var release_callback: Callable
+	var is_inside := false
+	var is_holding := false
 	
+	func _init(p_area: Area2D, p_hold_cb: Callable, p_release_cb: Callable) -> void:
+		area = p_area
+		hold_callback = p_hold_cb
+		release_callback = p_release_cb
+		
+	func _ready() -> void:
+		area.mouse_entered.connect(func(): is_inside = true)
+		area.mouse_exited.connect(func(): is_inside = false)
+		
+	func _input(event: InputEvent) -> void:
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed and is_inside:
+				is_holding = true
+			elif not event.pressed and is_holding:
+				is_holding = false
+				if release_callback.is_valid():
+					release_callback.call()
+				
+	func _process(delta: float) -> void:
+		if is_holding and hold_callback.is_valid():
+			hold_callback.call()
+
+func Area2dConnectHold(area2d: Area2D, hold_callback: Callable, release_callback: Callable = Callable()) -> void:
+	var helper = AreaHoldHelper.new(area2d, hold_callback, release_callback)
+	area2d.add_child(helper)
 	
 	
 	

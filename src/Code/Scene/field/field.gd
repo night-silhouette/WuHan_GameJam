@@ -56,17 +56,28 @@ func _ready() -> void:
 				GameData.F.GetPlot(x,y).growthProgress=0
 				spawn_drop_items(1)
 		)
+	
+		
 	area_2d.mouse_entered.connect(func():
 		FrameVisible=true
 		)
 	area_2d.mouse_exited.connect(func():
 		FrameVisible=false
 		)
+		
+	Util.Area2dConnectHold(area_2d,func():
+		if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
+			SignalBus.IsWatering=true,
+		func():
+			if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
+				SignalBus.IsWatering=false)
+		
+		
 func IfCanDrop()->bool:
 	if cropId==Const.CropId.Nil:
 		return false
 	if level!=2:
-		return true
+		return false
 	return true
 
 func spawn_drop_items(count: int) -> void:
