@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://47xcidhbguon"]
+[gd_scene load_steps=7 format=3 uid="uid://47xcidhbguon"]
 
 [ext_resource type="Script" uid="uid://dc4fqa0iixxg3" path="res://Code/Ui/farm_ui/tree.gd" id="1_qritd"]
 [ext_resource type="Texture2D" uid="uid://dm0rinrhn1ytq" path="res://Asset/tree/tree_6.png" id="2_qritd"]
 [ext_resource type="Texture2D" uid="uid://ddeom82umg3gu" path="res://Asset/tree/tree_1.png" id="2_yr246"]
+[ext_resource type="AudioStream" uid="uid://bstror4aka41x" path="res://Music/skillpoint.ogg" id="5_5xxss"]
 [ext_resource type="PackedScene" uid="uid://btuvxmhx7brid" path="res://Code/Ui/farm_ui/dot.tscn" id="5_qjk4c"]
+[ext_resource type="AudioStream" uid="uid://dmvnoxfgq2rcd" path="res://Music/ButtonBack.ogg" id="6_rm4ia"]
 
 [node name="tree" type="Control"]
 layout_mode = 3
@@ -184,6 +186,14 @@ offset_right = 695.2929
 offset_bottom = 164.04306
 scale = Vector2(0.3210393, 0.3210393)
 metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5xxss")
+bus = &"sfx"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rm4ia")
+bus = &"sfx"
 
 [connection signal="button_down" from="apple" to="." method="_on_apple_button_down"]
 [connection signal="button_down" from="flower" to="." method="_on_flower_button_down"]

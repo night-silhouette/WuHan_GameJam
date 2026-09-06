@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://egiaf7udty61"]
+
+[ext_resource type="Texture2D" uid="uid://cj0857h3ne5qo" path="res://Asset/hignlight.png" id="1_cc4hp"]
+[ext_resource type="Script" uid="uid://c1hw8wqoelxb7" path="res://Code/Scene/status/light.gd" id="2_ltqkh"]
+
+[node name="light" type="Sprite2D"]
+modulate = Color(1.3528494, 1.3528494, 1.3528494, 0.2901961)
+position = Vector2(383, 180)
+scale = Vector2(0.80653, 0.80653)
+texture = ExtResource("1_cc4hp")
+script = ExtResource("2_ltqkh")
