@@ -1,7 +1,7 @@
 extends Control
 class_name FieldPerform
 
-
+var tex
 
 @onready var collect: AudioStreamPlayer2D = $collect
 
@@ -116,7 +116,8 @@ func _ready() -> void:
 			if Mouse.mos==Mouse.ToolMode.WATERING_CAN:
 				SignWatering2.emit(self)
 				Watering2())
-				
+	
+		
 		
 func IfCanDrop()->bool:
 	if cropId==Const.CropId.Nil:

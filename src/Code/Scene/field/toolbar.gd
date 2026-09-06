@@ -35,8 +35,6 @@ func _ready() -> void:
 	
 func Planting(CropId:Const.CropId):
 		get_viewport().set_input_as_handled()
-		
-		print(111222)
 		GameData.F.GetPlot(par.x,par.y).CropId=CropId
 		GameData.F.GetPlot(par.x,par.y).growthProgress=0
 		par.barFlag=false
