@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7pqvtbjnaw2d"
-path="res://.godot/imported/可疑的钱币.png-1f86f929d86a0ac74a202a40fb7c03c3.ctex"
+uid="uid://cnr7cptvryoru"
+path="res://.godot/imported/自我.png-5da1b6381a125da275b7d706cc36db43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/scence 3/可疑的钱币.png"
-dest_files=["res://.godot/imported/可疑的钱币.png-1f86f929d86a0ac74a202a40fb7c03c3.ctex"]
+source_file="res://Asset/开始页面/自我.png"
+dest_files=["res://.godot/imported/自我.png-5da1b6381a125da275b7d706cc36db43.ctex"]
 
 [params]
 
