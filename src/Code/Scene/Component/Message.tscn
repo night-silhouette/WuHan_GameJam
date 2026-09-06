@@ -1,8 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5t7uu7tctyoq"]
 
 [ext_resource type="Texture2D" uid="uid://u3qhoo1j8xwx" path="res://Asset/文本框 暗.png" id="1_2a22i"]
-[ext_resource type="Script" uid="uid://54ow5e311llg" path="res://Code/Util/text_fix.gd" id="2_2a22i"]
 [ext_resource type="Script" uid="uid://bqejncgpkepfj" path="res://Code/Scene/Component/message.gd" id="2_44v6c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i0enu"]
+font_size = 206
+font_color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect"]
 offset_right = 1080.0
@@ -10,12 +13,13 @@ offset_bottom = 1080.0
 texture = ExtResource("1_2a22i")
 script = ExtResource("2_44v6c")
 
-[node name="LabelFix" type="Label" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 230.0
-offset_top = 304.0
-offset_right = 1418.0
-offset_bottom = 1697.0
-script = ExtResource("2_2a22i")
-auto_text = "hello word"
-metadata/_custom_type_script = "uid://54ow5e311llg"
+offset_left = 231.0
+offset_top = 323.0
+offset_right = 1374.0
+offset_bottom = 1640.0
+text = "金钱不够"
+label_settings = SubResource("LabelSettings_i0enu")
+horizontal_alignment = 1
+vertical_alignment = 1
