@@ -127,6 +127,8 @@ offset_bottom = 646.0
 mouse_filter = 2
 script = ExtResource("13_tnk2j")
 crop_size = 61.15
+spin_speed = null
+gravity = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control4"]
 stream = SubResource("AudioStreamMP3_tnk2j")

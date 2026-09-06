@@ -97,5 +97,5 @@ label_settings = SubResource("LabelSettings_fru51")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
 [connection signal="button_down" from="TextureButton" to="." method="_next_status_down"]
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]

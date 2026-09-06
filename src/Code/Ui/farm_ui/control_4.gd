@@ -22,6 +22,7 @@ var _falling: Array = []   # 正在下落的作物列表
 
 func _ready() -> void:
 	SignalBus.InventoryRot.connect(_on_inventory_rot)
+	SignalBus.StageRain(apple_count: int, flower_count: int, mushroom_count: int)
 
 func _on_inventory_rot(crop_id: int, lost: int) -> void:
 	if lost <= 0:

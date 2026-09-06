@@ -20,8 +20,7 @@ signal TextBox(Message:String)
 
 signal Over()
 
-
-
+signal StageRain(apple_count: int, flower_count: int, mushroom_count: int)
 
 
 
