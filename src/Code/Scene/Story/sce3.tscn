@@ -1,0 +1,126 @@
+[gd_scene load_steps=13 format=3 uid="uid://dphkrkmojysto"]
+
+[ext_resource type="Script" uid="uid://bab3o8jdx1ox8" path="res://Code/Scene/Story/sce_3.gd" id="1_q532i"]
+[ext_resource type="Texture2D" uid="uid://ce0keagymye23" path="res://Asset/scence 3/background.PNG" id="2_yragw"]
+[ext_resource type="Texture2D" uid="uid://dyeeeupnufpfd" path="res://Asset/scence 3/静态摆放示意.PNG" id="3_7xqm1"]
+[ext_resource type="Texture2D" uid="uid://ctattt1o5ue64" path="res://Asset/scence 3/houses.png" id="4_y4j1m"]
+[ext_resource type="Texture2D" uid="uid://bye8u1twatrp3" path="res://Asset/scence 3/door.png" id="5_83npv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obvu1"]
+size = Vector2(258, 264)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gx1c4"]
+size = Vector2(221.5, 286)
+
+[sub_resource type="Animation" id="Animation_wx4hx"]
+resource_name = "house"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Houses:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_8qp7i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Houses:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(586, 320)]
+}
+
+[sub_resource type="Animation" id="Animation_yragw"]
+resource_name = "openDoor"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(586, 320), Vector2(585, 156)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_20cw1"]
+_data = {
+&"RESET": SubResource("Animation_8qp7i"),
+&"house": SubResource("Animation_wx4hx"),
+&"openDoor": SubResource("Animation_yragw")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q532i"]
+size = Vector2(91, 159.5)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_q532i")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(578, 322)
+texture = ExtResource("2_yragw")
+
+[node name="静态摆放示意" type="Sprite2D" parent="."]
+position = Vector2(80, 1050)
+texture = ExtResource("3_7xqm1")
+
+[node name="Houses" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(581, 335)
+texture = ExtResource("4_y4j1m")
+hframes = 2
+
+[node name="Area2D" type="Area2D" parent="Houses"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Houses/Area2D"]
+position = Vector2(-308, 32)
+shape = SubResource("RectangleShape2D_obvu1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Houses/Area2D"]
+position = Vector2(289.25, 28)
+shape = SubResource("RectangleShape2D_gx1c4")
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(586, 320)
+texture = ExtResource("5_83npv")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_20cw1")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(585, 146)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(52, 269)
+shape = SubResource("RectangleShape2D_q532i")

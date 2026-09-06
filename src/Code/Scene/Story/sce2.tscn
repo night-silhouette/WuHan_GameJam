@@ -1,0 +1,122 @@
+[gd_scene load_steps=13 format=3 uid="uid://bsc5c72iy0ds8"]
+
+[ext_resource type="Texture2D" uid="uid://bfgaoxgavqest" path="res://Asset/scene 2/background.png" id="1_7htt1"]
+[ext_resource type="Script" uid="uid://kekx7fi73oji" path="res://Code/Scene/Story/sce_2.gd" id="1_dh6s4"]
+[ext_resource type="Texture2D" uid="uid://xgqqj1y1rgo2" path="res://Asset/scene 2/desk.png" id="3_80i6a"]
+[ext_resource type="Texture2D" uid="uid://4vfdv21rg1wi" path="res://Asset/scene 2/door.png" id="4_c88vl"]
+[ext_resource type="Texture2D" uid="uid://c441m4v3bvb0m" path="res://Asset/scene 2/book.png" id="5_8ycv7"]
+[ext_resource type="Script" uid="uid://tjlgabvsmihs" path="res://Code/Scene/Story/book.gd" id="6_dh6s4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i46dm"]
+size = Vector2(198, 210)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80i6a"]
+size = Vector2(61, 66)
+
+[sub_resource type="Animation" id="Animation_6wixw"]
+resource_name = "openDoor"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_ha4w0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Book:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_c88vl"]
+resource_name = "book"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Book:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p6ha5"]
+_data = {
+&"RESET": SubResource("Animation_ha4w0"),
+&"book": SubResource("Animation_c88vl"),
+&"openDoor": SubResource("Animation_6wixw")
+}
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-4, -14)
+script = ExtResource("1_dh6s4")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(578, 325)
+texture = ExtResource("1_7htt1")
+
+[node name="Desk" type="Sprite2D" parent="."]
+position = Vector2(567, 338)
+texture = ExtResource("3_80i6a")
+hframes = 2
+
+[node name="Door" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(584, 327)
+texture = ExtResource("4_c88vl")
+hframes = 2
+
+[node name="Area2D" type="Area2D" parent="Door"]
+
+[node name="CollisionShapeD" type="CollisionShape2D" parent="Door/Area2D"]
+position = Vector2(-349, 76)
+shape = SubResource("RectangleShape2D_i46dm")
+
+[node name="Book" type="Sprite2D" parent="."]
+position = Vector2(563, 343)
+texture = ExtResource("5_8ycv7")
+hframes = 2
+script = ExtResource("6_dh6s4")
+
+[node name="Area2D" type="Area2D" parent="Book"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Book/Area2D"]
+position = Vector2(-10, -217)
+shape = SubResource("RectangleShape2D_80i6a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_p6ha5")
+}
