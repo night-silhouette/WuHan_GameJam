@@ -8,7 +8,8 @@ func _ready() -> void:
 	$"../AudioStreamPlayer".play()
 	animation_player.animation_finished.connect(func(t):
 		if t=="openDoor":
-			SignalBus.Over.emit()
+			SignalBus.ChangeSence.emit("res://Code/Scene/main/main.tscn")
+			SignalBus.ChangeUi.emit("res://Code/Ui/farm_ui/farm_ui.tscn")
 			$Door/AudioStreamPlayer.play()
 	)
 

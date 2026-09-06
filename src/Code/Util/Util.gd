@@ -120,7 +120,14 @@ func Area2dConnectHold(area2d: Area2D, press_callback: Callable, release_callbac
 	area2d.add_child(helper)
 	
 	
-	
+func visible_manage():
+
+	match GameData.GameState :
+		1:$chlid_sence.visible = true
+		2:$student_sence.visible = true	
+		3:$adult_sence.visible = true	
+		
+	SignalBus.ChangeUi.emit("res://Code/Ui/defaultUi/default_ui.tscn")
 	
 	
 	

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu7jv210ffa0b"]
+
+[ext_resource type="Texture2D" uid="uid://4cm116tnhi6q" path="res://Asset/end_flower.png" id="1_dtmt5"]
+[ext_resource type="Script" uid="uid://d2vebtymgf27h" path="res://Code/Scene/end_flower.gd" id="2_xcrb4"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_left = -22.0
+offset_top = 2.0
+offset_right = 4578.0
+offset_bottom = 2502.0
+scale = Vector2(0.25967172, 0.25967172)
+texture = ExtResource("1_dtmt5")
+script = ExtResource("2_xcrb4")

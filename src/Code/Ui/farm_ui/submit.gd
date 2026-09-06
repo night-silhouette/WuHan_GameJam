@@ -53,7 +53,7 @@ func _check():
 		GameData.GameState += 1
 
 		# 最终阶段结束后做结局判定
-		if GameData.GameState >= 3:
+		if GameData.GameState >= 4:
 			var counts := {
 				Const.CropId.Apple: apple,
 				Const.CropId.Flower: flower,
@@ -64,9 +64,14 @@ func _check():
 				if counts[c] > counts[best]:
 					best = c
 			match best:
-				Const.CropId.Apple:   SignalBus.ChangeSence();
-				Const.CropId.Flower:  SignalBus.ChangeSence();
-				Const.CropId.Mushroom: SignalBus.ChangeSence();	
+				Const.CropId.Apple:   SignalBus.ChangeSence.emit("res://Code/Scene/end_apple.tscn");
+				Const.CropId.Flower:  SignalBus.ChangeSence.emit("res://Code/Scene/end_flower.tscn");
+				Const.CropId.Mushroom: SignalBus.ChangeSence.emit("res://Code/Scene/end_mushroom.tscn");	
+				pass
+		Util.setTime(10,func( ): SignalBus.Ready.emit())
+		
+		
 
+	
 func _next_status_down() -> void:
 	SignalBus.InventoryRot.emit()

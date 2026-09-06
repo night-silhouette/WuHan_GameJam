@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxgxypbj10n70"]
+
+[ext_resource type="Texture2D" uid="uid://t6fu7xl5tdu1" path="res://Asset/end_apple.png" id="1_cs1nx"]
+[ext_resource type="Script" uid="uid://ck4i5q62cbea0" path="res://Code/Scene/end_apple.gd" id="2_mryay"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_left = -27.0
+offset_top = -1.0
+offset_right = 4573.0
+offset_bottom = 2499.0
+scale = Vector2(0.26126683, 0.26126683)
+texture = ExtResource("1_cs1nx")
+script = ExtResource("2_mryay")

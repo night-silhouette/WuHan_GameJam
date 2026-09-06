@@ -6,12 +6,14 @@
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -7
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -274.99997
+offset_top = -250.99998
+offset_right = -234.99997
+offset_bottom = -210.99998
 scale = Vector2(42.860462, 29.82533)
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Node2D" parent="." instance=ExtResource("1_ikusv")]
-position = Vector2(222, 143)
-scale = Vector2(0.62338305, 0.62338305)
+position = Vector2(208.00002, 90)
+scale = Vector2(0.6613502, 0.6613502)

@@ -109,7 +109,6 @@ z_index = -10
 position = Vector2(576.5013, 324.0632)
 scale = Vector2(0.5994779, 0.599883)
 texture = ExtResource("10_ymkik")
-metadata/_edit_lock_ = true
 
 [node name="Fence" type="Sprite2D" parent="."]
 z_index = 2

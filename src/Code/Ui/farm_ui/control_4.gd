@@ -22,7 +22,7 @@ var _falling: Array = []   # 正在下落的作物列表
 
 func _ready() -> void:
 	SignalBus.InventoryRot.connect(_on_inventory_rot)
-	SignalBus.StageRain(apple_count: int, flower_count: int, mushroom_count: int)
+	SignalBus.StageRain.connect(_on_stage_rain)
 
 func _on_inventory_rot(crop_id: int, lost: int) -> void:
 	if lost <= 0:
@@ -46,6 +46,43 @@ func _rain_delay(t: float) -> float:
 	var max_d: float = 0.25
 	var min_d: float = 0.03
 	return max_d * (1.0 - intensity) + min_d * intensity
+# 每阶段结束：按比例下一场混合雨
+func _on_stage_rain(apple_count: int, flower_count: int, mushroom_count: int) -> void:
+	var total := apple_count + flower_count + mushroom_count
+	if total <= 0:
+		return
+
+	# 雨的总掉落量固定（视觉可控，别掉几十万个）
+	var rain_total := 40
+
+	# 按提交比例分配三种作物各掉多少
+	var a_n := int(round(float(rain_total) * apple_count / total))
+	var f_n := int(round(float(rain_total) * flower_count / total))
+	var m_n := int(round(float(rain_total) * mushroom_count / total))
+
+	# 构造成混合列表
+	var drops: Array = []
+	for i in a_n: drops.append(Const.CropId.Apple)
+	for i in f_n: drops.append(Const.CropId.Flower)
+	for i in m_n: drops.append(Const.CropId.Mushroom)
+	drops.shuffle()   # 打乱，三种作物混合掉落
+
+	# 共享同一个下雨节奏
+	var spawn_time := 0.0
+	for i in drops.size():
+		var t := float(i) / float(max(drops.size() - 1, 1))
+		spawn_time += _rain_delay(t)
+		var crop_id: int = drops[i]
+		var delay := spawn_time
+		get_tree().create_timer(delay).timeout.connect(
+			func(): _spawn_by_crop(crop_id)
+		)
+
+func _spawn_by_crop(crop_id: int) -> void:
+	var tex: Texture2D = _crop_textures.get(crop_id)
+	if tex == null:
+		return
+	_spawn(tex)   # 复用你现有的 _spawn
 
 func _spawn(tex: Texture2D) -> void:
 	var rect := TextureRect.new()

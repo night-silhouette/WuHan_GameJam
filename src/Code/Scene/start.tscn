@@ -1,0 +1,139 @@
+[gd_scene load_steps=7 format=3 uid="uid://cduwpqewoe3sf"]
+
+[ext_resource type="Script" uid="uid://de1vttpmuthoo" path="res://Code/Scene/start.gd" id="1_2dirw"]
+[ext_resource type="PackedScene" uid="uid://cc31u6aqtjmvq" path="res://Code/Scene/Story/封面.tscn" id="1_lx55p"]
+[ext_resource type="FontFile" uid="uid://cnxjr0vyiwrmu" path="res://Asset/PF频凡胡涂体 PFanHuTuTi 0.680.ttf" id="2_2dirw"]
+[ext_resource type="Texture2D" uid="uid://c8p6vgto41lvd" path="res://Asset/masaike.png" id="2_87u55"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_87u55"]
+font = ExtResource("2_2dirw")
+font_size = 486
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xu4uy"]
+line_spacing = 3.705
+font_size = 241
+font_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(521.99994, 264)
+scale = Vector2(0.079976864, 0.079976864)
+script = ExtResource("1_2dirw")
+
+[node name="Masaike" type="Sprite2D" parent="."]
+position = Vector2(662.6926, 1100.3182)
+scale = Vector2(9.347567, 9.347567)
+texture = ExtResource("2_87u55")
+metadata/_edit_lock_ = true
+
+[node name="封面" parent="." instance=ExtResource("1_lx55p")]
+position = Vector2(600.17413, -3.0517578e-05)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -5614.122
+offset_top = 1825.5278
+offset_right = -5155.122
+offset_bottom = 2324.5278
+rotation = -0.13037048
+scale = Vector2(2.0419657, 2.0419657)
+text = "你"
+label_settings = SubResource("LabelSettings_87u55")
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -4013.6602
+offset_top = 2575.7446
+offset_right = -3554.6602
+offset_bottom = 3074.7446
+rotation = -0.1948832
+scale = Vector2(2.0419657, 2.0419657)
+text = "想"
+label_settings = SubResource("LabelSettings_87u55")
+metadata/_edit_lock_ = true
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -2850.8237
+offset_top = 525.15186
+offset_right = -2374.8237
+offset_bottom = 1024.1519
+rotation = -0.13037048
+scale = Vector2(2.0419657, 2.0419657)
+text = "吃"
+label_settings = SubResource("LabelSettings_87u55")
+metadata/_edit_lock_ = true
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -2338.1755
+offset_top = -937.7711
+offset_right = -1879.1755
+offset_bottom = -438.77112
+rotation = -0.13037048
+scale = Vector2(2.0419657, 2.0419657)
+text = "出"
+label_settings = SubResource("LabelSettings_87u55")
+metadata/_edit_lock_ = true
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 2550.7383
+offset_top = -1863.0387
+offset_right = 3009.7383
+offset_bottom = -1364.0387
+rotation = -0.13037048
+scale = Vector2(2.0419657, 2.0419657)
+text = "怎"
+label_settings = SubResource("LabelSettings_87u55")
+metadata/_edit_lock_ = true
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 3050.8828
+offset_top = -425.1233
+offset_right = 3567.8828
+offset_bottom = 73.87671
+rotation = -0.13037048
+scale = Vector2(2.0419657, 2.0419657)
+text = "样"
+label_settings = SubResource("LabelSettings_87u55")
+metadata/_edit_lock_ = true
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 4126.1934
+offset_top = 562.6625
+offset_right = 4585.1934
+offset_bottom = 1061.6625
+rotation = -0.13037048
+scale = Vector2(2.0419657, 2.0419657)
+text = "的"
+label_settings = SubResource("LabelSettings_87u55")
+metadata/_edit_lock_ = true
+
+[node name="Label8" type="Label" parent="."]
+offset_left = 4263.7334
+offset_top = 2275.6577
+offset_right = 4722.7334
+offset_bottom = 2774.6577
+rotation = -0.13037048
+scale = Vector2(2.0419657, 2.0419657)
+text = "人"
+label_settings = SubResource("LabelSettings_87u55")
+metadata/_edit_lock_ = true
+
+[node name="Label9" type="Label" parent="."]
+offset_left = 5839.19
+offset_top = 1975.5715
+offset_right = 6325.19
+offset_bottom = 2598.5718
+rotation = -0.13037048
+scale = Vector2(2.0419657, 2.0419657)
+text = "生"
+label_settings = SubResource("LabelSettings_87u55")
+metadata/_edit_lock_ = true
+
+[node name="Label10" type="Label" parent="."]
+offset_left = 6139.2764
+offset_top = 4438.7837
+offset_right = 9436.277
+offset_bottom = 5055.7837
+text = "任意键开始游戏"
+label_settings = SubResource("LabelSettings_xu4uy")
+metadata/_edit_lock_ = true

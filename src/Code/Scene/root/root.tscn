@@ -5,8 +5,8 @@
 
 [node name="Root" type="Node"]
 script = ExtResource("1_3fusu")
-initial_scene = "uid://u8wvw864746n"
-initial_ui = "uid://blpfdd3p6udlo"
+initial_scene = "uid://cduwpqewoe3sf"
+initial_ui = "uid://uebcixs8ihh2"
 
 [node name="Sence_root" type="Node2D" parent="."]
 

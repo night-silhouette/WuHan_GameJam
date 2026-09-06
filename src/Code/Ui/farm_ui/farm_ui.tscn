@@ -143,4 +143,5 @@ offset_bottom = 1.0
 
 [connection signal="button_down" from="Set" to="." method="_on_set_button_down"]
 [connection signal="button_down" from="x_button" to="." method="_on_x_button_button_down"]
+[connection signal="button_down" from="back" to="." method="_on_back_button_down"]
 [connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]

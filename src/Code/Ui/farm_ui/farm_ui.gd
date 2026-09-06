@@ -44,3 +44,15 @@ func _on_button_button_down() -> void:
 	SignalBus.InventoryRot.emit(1,20)
 	SignalBus.InventoryRot.emit(2,50)
 	SignalBus.InventoryRot.emit(3,39)
+
+
+func _on_back_button_down() -> void:
+	match GameData.GameState:
+		1:
+			SignalBus.ChangeSence.emit("res://Code/Scene/status/chlid_sence.tscn")
+		2:
+			SignalBus.ChangeSence.emit("res://Code/Scene/status/student_sence.tscn")
+		3:
+			SignalBus.ChangeSence.emit("res://Code/Scene/status/adult_sence.tscn")
+			
+	SignalBus.ChangeUi.emit("res://Code/Ui/defaultUi/default_ui.tscn")

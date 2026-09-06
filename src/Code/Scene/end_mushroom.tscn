@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj8qrs038k1ec"]
+
+[ext_resource type="Texture2D" uid="uid://b1t4v5avg6n8b" path="res://Asset/end_mushroom.png" id="1_7xwyk"]
+[ext_resource type="Script" uid="uid://bovavb4r878q4" path="res://Code/Scene/end_mushroom.gd" id="2_2oskf"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_left = -37.999996
+offset_top = -3.9999998
+offset_right = 4562.0
+offset_bottom = 2496.0
+scale = Vector2(0.26187932, 0.26187932)
+texture = ExtResource("1_7xwyk")
+script = ExtResource("2_2oskf")

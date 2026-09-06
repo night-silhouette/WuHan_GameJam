@@ -12,3 +12,10 @@ func _process(delta: float) -> void:
 		)
 	##腐烂函数
 	GameData.Invent.UpdateRot(delta)
+
+
+
+	
+	
+
+		

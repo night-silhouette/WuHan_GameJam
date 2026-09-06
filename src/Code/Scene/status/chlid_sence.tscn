@@ -9,9 +9,12 @@ position = Vector2(-117, -53)
 scale = Vector2(1.2459713, 1.2459713)
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -174.16132
+offset_top = -58.58883
+offset_right = -134.16132
+offset_bottom = -18.588829
 scale = Vector2(40.756096, 20.045454)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Sce1" parent="." instance=ExtResource("1_smwc0")]
