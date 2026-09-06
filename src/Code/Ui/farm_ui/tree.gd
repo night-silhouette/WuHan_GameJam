@@ -110,7 +110,7 @@ func init_dots() -> void:
 
 	var p_max: int = s.planting_level >= 7
 	plant.set_dot_data(
-		"种植范围 %d" % min(s.planting_level + 2, 7),
+		"拾取范围 %d" % min(s.planting_level + 2, 7),
 		-1 if p_max else s.planting_level, tex_mushroom, 0 if p_max else s.get_palent_upgrade_cost())
 
 	var q_lv: float = s.quantity_level + 1

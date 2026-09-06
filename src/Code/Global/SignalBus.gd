@@ -14,10 +14,9 @@ signal DataChange()
 
 signal Setback()
 
+signal InventoryRot()
 
-
-
-
+signal TextBox(Message:String)
 
 
 

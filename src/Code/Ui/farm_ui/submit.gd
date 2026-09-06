@@ -13,16 +13,14 @@ func _ready() -> void:
 	SignalBus.DataChange.connect(_check)
 
 func _refresh():
-	
-		
 	match GameData.GameState:
-		0:
+		1:
 			button.texture = baby
 			label.text = Util.FormatNumber(cost[0])
-		1:
+		2:
 			button.texture = gaokao
 			label.text = Util.FormatNumber(cost[1])
-		2:
+		3:
 			button.texture = graduate
 			label.text = Util.FormatNumber(cost[2])
 			
@@ -37,3 +35,7 @@ func _check():
 		GameData.Invent.RemoveItem(1,GameData.Invent.items.get(1))
 		GameData.Invent.RemoveItem(2,GameData.Invent.items.get(2))
 		GameData.Invent.AddItem(0,index)
+
+
+func _next_status_down() -> void:
+	SignalBus.InventoryRot.emit()

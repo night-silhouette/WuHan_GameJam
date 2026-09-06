@@ -8,6 +8,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_2mbjn"]
 font = ExtResource("4_0hpqs")
+font_size = 396
 font_color = Color(0, 0, 0, 1)
 
 [node name="Set_sence" type="Control"]
@@ -57,8 +58,9 @@ scale = Vector2(2.7428489, 2.7428489)
 
 [node name="Label" type="Label" parent="long_button"]
 layout_mode = 0
-offset_right = 111.562805
-offset_bottom = 24.0
+offset_right = 2082.7305
+offset_bottom = 575.0
+scale = Vector2(0.050764836, 0.049937334)
 text = "退出游戏"
 label_settings = SubResource("LabelSettings_2mbjn")
 horizontal_alignment = 1
@@ -74,9 +76,10 @@ scale = Vector2(2.7428489, 2.7428489)
 
 [node name="Label" type="Label" parent="long_button3"]
 layout_mode = 0
-offset_right = 111.562805
-offset_bottom = 24.0
-text = "保存"
+offset_right = 2192.9985
+offset_bottom = 575.0
+scale = Vector2(0.05087228, 0.05087228)
+text = "保存游戏"
 label_settings = SubResource("LabelSettings_2mbjn")
 horizontal_alignment = 1
 vertical_alignment = 1
