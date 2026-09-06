@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://co7l2jv04at8s"]
 
 [ext_resource type="Script" uid="uid://im7ndhxvkijr" path="res://Code/Scene/root/root.gd" id="1_3fusu"]
-[ext_resource type="AudioStream" uid="uid://cqwu0jnglvasc" path="res://Music/GrowMaintheme.ogg" id="2_86jnv"]
+[ext_resource type="AudioStream" uid="uid://bqxpo4rprci5c" path="res://Music/GrowMaintheme.ogg" id="2_86jnv"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_3fusu")

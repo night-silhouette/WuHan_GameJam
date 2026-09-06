@@ -177,8 +177,10 @@ func manage(goods: int, cost: float) -> int:
 		return 0
 	if GameData.Invent.items.get(goods, 0) >= cost:
 		GameData.Invent.RemoveItem(goods, cost)
+		$AudioStreamPlayer.play()
 		return 0
 	else:
+		$AudioStreamPlayer2.play()
 		SignalBus.MessagePopu.emit("缺少了什么")
 		return 1
 
@@ -190,8 +192,10 @@ func manage_three(cost: float) -> int:
 		GameData.Invent.RemoveItem(0, cost)
 		GameData.Invent.RemoveItem(1, cost)
 		GameData.Invent.RemoveItem(2, cost)
+		$AudioStreamPlayer.play()
 		return 0
 	else:
+		$AudioStreamPlayer2.play()
 		SignalBus.MessagePopu.emit("缺少了什么")
 		return 1
 
@@ -199,6 +203,7 @@ func manage_three(cost: float) -> int:
 func _on_apple_button_down() -> void:
 	SkillTree.apple = true
 	apple.set_dot_data("解锁苹果种植", 1, tex_apple, 0)
+	$AudioStreamPlayer.play()
 	refresh_dots()
 
 func _on_flower_button_down() -> void:

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjndg36pc7ev0"]
+[gd_scene load_steps=4 format=3 uid="uid://cjndg36pc7ev0"]
 
 [ext_resource type="PackedScene" uid="uid://qi874xrja3kq" path="res://Code/Scene/Story/sce1.tscn" id="1_smwc0"]
+[ext_resource type="AudioStream" uid="uid://dj0vp6o2h70pm" path="res://Music/BabyCry.ogg" id="2_vllf1"]
+[ext_resource type="PackedScene" uid="uid://egiaf7udty61" path="res://Code/Scene/status/light.tscn" id="3_dtmcu"]
 
 [node name="chlid_sence" type="Node2D"]
 position = Vector2(-117, -53)
@@ -15,3 +17,15 @@ color = Color(0, 0, 0, 1)
 [node name="Sce1" parent="." instance=ExtResource("1_smwc0")]
 position = Vector2(185, 71)
 scale = Vector2(0.6064501, 0.6064501)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vllf1")
+bus = &"sfx"
+
+[node name="light" parent="." instance=ExtResource("3_dtmcu")]
+position = Vector2(533.72015, 383.6364)
+scale = Vector2(0.079937406, 0.079937406)
+
+[node name="light2" parent="." instance=ExtResource("3_dtmcu")]
+position = Vector2(459.0796, 386.84677)
+scale = Vector2(0.09612682, 0.09612682)

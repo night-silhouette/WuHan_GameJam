@@ -5,6 +5,7 @@ extends Node2D
 func _ready() -> void:
 	Util.Area2dConnectClick(area_2d,func():animation_player.play("openDoor")
 		)
+	$"../AudioStreamPlayer".play()
 	animation_player.animation_finished.connect(func(t):
 		if t=="openDoor":
 			SignalBus.Over.emit()
