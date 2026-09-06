@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cc31u6aqtjmvq"]
+
+[ext_resource type="Texture2D" uid="uid://cnr7cptvryoru" path="res://Asset/开始页面/自我.png" id="1_0cjht"]
+[ext_resource type="Texture2D" uid="uid://ddbn7odycpqpw" path="res://Asset/开始页面/花.png" id="2_fwggv"]
+[ext_resource type="Texture2D" uid="uid://3s4so6c24wb3" path="res://Asset/开始页面/苹果.png" id="3_0jygy"]
+[ext_resource type="Texture2D" uid="uid://c6l5kx3l2omm6" path="res://Asset/开始页面/蘑菇.png" id="4_cyu26"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w7kaw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0cjht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fwggv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0jygy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cyu26")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="封面" type="Node2D"]
+position = Vector2(668, 280)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w7kaw")
+frame_progress = 0.25855872

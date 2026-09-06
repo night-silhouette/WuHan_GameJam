@@ -8,4 +8,10 @@ func _ready() -> void:
 func _on_long_button_button_down() -> void:
 	get_tree().quit()
 	
+
 	
+	
+
+
+func _on_long_button_3_button_down() -> void:
+	GameData.Invent.SaveGame()
