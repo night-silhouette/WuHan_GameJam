@@ -10,6 +10,7 @@ extends Sprite2D
 @onready var f: TextureButton = $Control3
 
 
+@onready var AudioDig: AudioStreamPlayer2D = $"../dig"
 
 
 func _ready() -> void:
@@ -19,14 +20,17 @@ func _ready() -> void:
 	
 	m.pressed.connect(func():
 		Planting(Const.CropId.Mushroom)
+		AudioDig.play()
 		)
 	
 	a.pressed.connect(func():
 		Planting(Const.CropId.Apple)
+		AudioDig.play()
 		)
 	
 	f.pressed.connect(func():
 		Planting(Const.CropId.Flower)
+		AudioDig.play()
 		)
 	
 func Planting(CropId:Const.CropId):

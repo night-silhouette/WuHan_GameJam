@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bf4dvmrxmrg3j"]
+[gd_scene load_steps=22 format=3 uid="uid://bf4dvmrxmrg3j"]
 
 [ext_resource type="Script" uid="uid://5ysu3xowrsgf" path="res://Code/Scene/field/field.gd" id="1_rts7j"]
 [ext_resource type="Texture2D" uid="uid://cxd358kbpn8xn" path="res://Asset/farmland.PNG" id="1_uo4ho"]
@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://clq0m0q6k7vdo" path="res://Asset/frame_havest.png" id="8_lm8bb"]
 [ext_resource type="Texture2D" uid="uid://dnup4p7y1edke" path="res://Asset/water spritesheet.png" id="9_wybve"]
 [ext_resource type="Texture2D" uid="uid://dncqc87rrna38" path="res://Asset/pool spritesheet.png" id="10_lhv6h"]
+[ext_resource type="AudioStream" uid="uid://dt06suncfwqd3" path="res://Music/Dig.ogg" id="14_2uv5i"]
+[ext_resource type="AudioStream" uid="uid://bo02kqqi4ali4" path="res://Music/CropCollect.ogg" id="15_hkqr4"]
+[ext_resource type="AudioStream" uid="uid://vbo375bny5mi" path="res://Music/WateringPlants.ogg" id="16_77tmu"]
+[ext_resource type="AudioStream" uid="uid://jrjup6ofyhdu" path="res://Music/turnpoints.ogg" id="17_qkiy0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rts7j"]
 size = Vector2(1471.4478, 1392.9773)
@@ -228,3 +232,20 @@ position = Vector2(52, 52)
 scale = Vector2(0.093843274, 0.093843274)
 texture = ExtResource("10_lhv6h")
 hframes = 4
+
+[node name="dig" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_2uv5i")
+bus = &"sfx"
+
+[node name="collect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_hkqr4")
+bus = &"sfx"
+
+[node name="watering" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_77tmu")
+autoplay = true
+bus = &"sfx"
+
+[node name="turnpoint" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_qkiy0")
+bus = &"sfx"

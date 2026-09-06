@@ -1,17 +1,25 @@
 extends Control
 class_name FieldPerform
 
+
+
+@onready var collect: AudioStreamPlayer2D = $collect
+
 @onready var area_2d: Area2D = $Area2D
 @onready var plant: Sprite2D = $Plant
+@onready var watering: AudioStreamPlayer2D = $watering
+@onready var turnpoint: AudioStreamPlayer2D = $turnpoint
 
 @export var x:int 
 @export var y:int
 @export var level:int=0:
 	set(value):
+		if value==2 && level!=value:
+			turnpoint.play()
 		level=value
 		if cropId!=Const.CropId.Nil:
 			plant.texture=PlantMap[Vector2(cropId,level)]
-			
+
 @export var cropId:Const.CropId=Const.CropId.Nil:
 	set(value):
 		cropId=value
@@ -61,6 +69,7 @@ func sickle():
 	if IfCanDrop():
 		GameData.F.GetPlot(x,y).growthProgress=0
 		spawn_drop_items(SkillTree.GetPlantNum())
+		collect.play()
 
 func Watering1():
 
@@ -68,14 +77,14 @@ func Watering1():
 	pool_spritesheet.visible=true
 	animation_player.play("洒水")
 	GameData.F.GetPlot(x,y).IsWatering=true	
-	
+	watering.play()
 	
 func Watering2():
 	water_spritesheet.visible=false
 	pool_spritesheet.visible=false
 	animation_player.stop()
 	GameData.F.GetPlot(x,y).IsWatering=false
-
+	watering.stop()
 #------------------------------------------------------------------------------------------------------------------------#
 
 func _ready() -> void:

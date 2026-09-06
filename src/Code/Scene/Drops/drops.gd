@@ -20,9 +20,16 @@ var map:Dictionary={
 		
 @onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
 
+var mapString:Dictionary={
+	Const.CropId.Apple:"苹果",
+	Const.CropId.Mushroom:"蘑菇",
+	Const.CropId.Flower:"花"
+}
+@onready var pickup: AudioStreamPlayer2D = $pickup
 func _ready() -> void:
 	
 	sprite.texture=map[CropId]
+	
 
 	# 俯视角下确保关闭垂直重力，并开启线性阻尼（模拟地面摩擦力使它停下）
 	gravity_scale = 0.0
@@ -32,13 +39,22 @@ func _ready() -> void:
 		if SignalBus.PickFlag:
 			SignalBus.PickFlag=false
 			GameData.Invent.AddItem(CropId,SkillTree.GetValue(CropId))
-			queue_free()
+			var msg=mapString[CropId]+"+"+str(SkillTree.GetValue(CropId))
+			SignalBus.MessagePopu.emit(msg)
+			pickup.play()
+			Util.setTime(0.1,queue_free)
+			
+
 	)
 	
 	area_2d.mouse_entered.connect(func():
 		if Mouse.mos==Mouse.ToolMode.NORMAL:
 			GameData.Invent.AddItem(CropId,SkillTree.GetValue(CropId))
-			queue_free()
+			var msg=mapString[CropId]+"+"+str(SkillTree.GetValue(CropId))
+			SignalBus.MessagePopu.emit(msg)
+			pickup.play()
+			
+			Util.setTime(0.1,queue_free)
 		)
 	collision_shape_2d.shape.radius+=SkillTree.GetPalentRange()*40
 	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhma1jsxh2bcr"]
+[gd_scene load_steps=5 format=3 uid="uid://dhma1jsxh2bcr"]
 
 [ext_resource type="Script" uid="uid://ci8ktygxevuxq" path="res://Code/Scene/Drops/drops.gd" id="1_aik5k"]
 [ext_resource type="Texture2D" uid="uid://dqkddcl0tssmx" path="res://Asset/plants/apple.png" id="2_h8hw6"]
+[ext_resource type="AudioStream" uid="uid://k7nfc24muwem" path="res://Music/Pickup.ogg" id="3_h8hw6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fy0vu"]
 radius = 338.84
@@ -24,3 +25,7 @@ scale = Vector2(0.13231316, 0.13231316)
 position = Vector2(0, 1.5258789e-05)
 scale = Vector2(0.23251234, 0.23251234)
 shape = SubResource("CircleShape2D_fy0vu")
+
+[node name="pickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_h8hw6")
+bus = &"sfx"

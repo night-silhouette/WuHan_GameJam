@@ -40,6 +40,11 @@ func SizeChange(s:int)->void:
 		f.x=j%s
 		f.y=j/s
 		j+=1
+	
+	Util.setTime(0.1,func():
+		for f in FieldActiveList:
+			GameData.F.GetPlot(f.x,f.y).CropId=Const.CropId.Nil
+		)
 
 func RangeOp(Obj:Vector2,size:int)->Array[Vector2]:
 	var ex:int

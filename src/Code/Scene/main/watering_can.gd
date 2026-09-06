@@ -4,3 +4,5 @@ extends Sprite2D
 func _ready() -> void:
 	Util.Area2dConnectClick(area_2d,func():Mouse.change_tool_mode(Mouse.ToolMode.WATERING_CAN))
 	
+	
+	
