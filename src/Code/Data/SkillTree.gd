@@ -65,7 +65,6 @@ var auto_havest_cost= 100000
 signal filed_expand()
 ##获取价值
 func GetValue(CropId: int) -> float:
-	
 	var good:int = CropId - 1
 	var own_level :int = value_level[good]
 
@@ -74,7 +73,7 @@ func GetValue(CropId: int) -> float:
 		if i != good:
 			other_level += value_level[i]
 
-	return pow(2.0, own_level) * pow(1.15, other_level)
+	return pow(2.0, own_level) * pow(1.10, other_level)   # 原来是 1.15
 	
 
 func upgrade_value(good: int) -> float:
@@ -88,8 +87,7 @@ func upgrade_value(good: int) -> float:
 ##获取升级费用
 func get_value_upgrade_cost(good: int) -> float:
 	var level :int = value_level[good-1]
-
-	return 9.95 * pow(4.275, level)
+	return 9.95 * pow(3.5, level)   # 原来是 4.275
 	
 	
 ##获取数量
@@ -144,9 +142,10 @@ func upgrade_quantity() -> Dictionary:
 
 
 
+
 ##水壶速度
 func GetWateringSpeed() -> float:
-	return pow(2.0, 0.25 * watering_level)
+	return pow(2.0, 0.25 * min(watering_level, 14))
 	
 ##水壶大小
 func GetWateringRange() -> int:

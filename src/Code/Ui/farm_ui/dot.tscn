@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://btuvxmhx7brid"]
+[gd_scene load_steps=11 format=3 uid="uid://btuvxmhx7brid"]
 
 [ext_resource type="Texture2D" uid="uid://dh1l66atwqq64" path="res://Asset/tree/dot.png" id="1_8hp2t"]
 [ext_resource type="Texture2D" uid="uid://b6v7euagufudq" path="res://Asset/tree/dot_unlock .png" id="2_viuf3"]
@@ -9,15 +9,21 @@
 [ext_resource type="Texture2D" uid="uid://dqkddcl0tssmx" path="res://Asset/plants/apple.png" id="8_k35yy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8iq5c"]
-font_size = 131
+font_size = 831
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rdori"]
+font_size = 411
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_e4ltv"]
-font_color = Color(0, 0, 0, 1)
+font_size = 256
+font_color = Color(0.54901963, 0.1764706, 0.050980393, 1)
 
 [node name="TextureButton" type="TextureButton"]
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(1.2719735, 1.2719735)
 mouse_filter = 1
 texture_normal = ExtResource("2_viuf3")
 texture_pressed = ExtResource("1_8hp2t")
@@ -46,11 +52,11 @@ metadata/_edit_lock_ = true
 
 [node name="level" type="Label" parent="Textbox"]
 layout_mode = 0
-offset_left = 125.24336
-offset_top = 117.41566
-offset_right = 792.87585
-offset_bottom = 295.98517
-scale = Vector2(1.7630947, 1.784607)
+offset_left = 60.150764
+offset_top = 52.63182
+offset_right = 4216.151
+offset_bottom = 1256.6318
+scale = Vector2(0.3021802, 0.30586725)
 label_settings = SubResource("LabelSettings_8iq5c")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -59,31 +65,31 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 97.74473
 offset_top = 533.8369
-offset_right = 765.37726
-offset_bottom = 1321.6973
-scale = Vector2(1.7630947, 1.784607)
-label_settings = SubResource("LabelSettings_8iq5c")
+offset_right = 3115.205
+offset_bottom = 3906.191
+scale = Vector2(0.39868382, 0.40354836)
+label_settings = SubResource("LabelSettings_rdori")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Toolbar" type="TextureRect" parent="."]
-self_modulate = Color(0.8474744, 0.84747446, 0.84747446, 1)
+self_modulate = Color(0.84705883, 0.84705883, 0.84705883, 1)
 layout_mode = 0
-offset_left = 18.999994
-offset_top = 125.0
-offset_right = 999.0
-offset_bottom = 3735.0
-scale = Vector2(0.057658773, 0.014441271)
+offset_left = -17.44642
+offset_top = 155.2714
+offset_right = 962.5536
+offset_bottom = 3765.2715
+scale = Vector2(0.08957857, 0.022435933)
 texture = ExtResource("7_rdori")
 
 [node name="unit" type="TextureRect" parent="."]
 modulate = Color(0.78352344, 0.7835234, 0.7835234, 1)
 layout_mode = 0
-offset_left = 85.0
-offset_top = 123.00001
-offset_right = 1085.0
-offset_bottom = 1313.0
+offset_left = 88.06909
+offset_top = 160.20187
+offset_right = 1088.0691
+offset_bottom = 1350.2019
 scale = Vector2(0.045719415, 0.045719415)
 texture = ExtResource("8_k35yy")
 
@@ -91,10 +97,10 @@ texture = ExtResource("8_k35yy")
 visible = false
 modulate = Color(0.78352344, 0.7835234, 0.7835234, 1)
 layout_mode = 0
-offset_left = 125.000015
-offset_top = 147.0
-offset_right = 1125.0
-offset_bottom = 1337.0
+offset_left = 130.49051
+offset_top = 183.8455
+offset_right = 1130.4905
+offset_bottom = 1373.8455
 scale = Vector2(0.045719415, 0.045719415)
 texture = ExtResource("8_k35yy")
 
@@ -102,20 +108,20 @@ texture = ExtResource("8_k35yy")
 visible = false
 modulate = Color(0.78352344, 0.7835234, 0.7835234, 1)
 layout_mode = 0
-offset_left = 122.00001
-offset_top = 94.0
-offset_right = 1122.0
-offset_bottom = 1284.0
+offset_left = 127.4905
+offset_top = 130.8455
+offset_right = 1127.4905
+offset_bottom = 1320.8455
 scale = Vector2(0.045719415, 0.045719415)
 texture = ExtResource("8_k35yy")
 
 [node name="num" type="Label" parent="."]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 119.0
-offset_right = 61.0
-offset_bottom = 167.0
-scale = Vector2(1.2983118, 1.2983118)
+offset_left = -18.082138
+offset_top = 145.44328
+offset_right = 693.9859
+offset_bottom = 862.6341
+scale = Vector2(0.122858874, 0.122858874)
 text = "70M"
 label_settings = SubResource("LabelSettings_e4ltv")
 horizontal_alignment = 1

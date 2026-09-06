@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://clk0mr7wijo8j"]
+[gd_scene load_steps=9 format=3 uid="uid://clk0mr7wijo8j"]
 
 [ext_resource type="Script" uid="uid://dmq4gopdcy16y" path="res://Code/Ui/farm_ui/submit.gd" id="1_fru51"]
 [ext_resource type="Texture2D" uid="uid://cyoy86fb5t664" path="res://Asset/submit/submit.png" id="1_qa4qr"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dqkddcl0tssmx" path="res://Asset/plants/apple.png" id="5_o51pj"]
 [ext_resource type="Texture2D" uid="uid://c1vt6j6be3o0a" path="res://Asset/plants/flower.png" id="6_ncq6d"]
 [ext_resource type="Texture2D" uid="uid://bpv7jnfrvtqv1" path="res://Asset/plants/mushroom.png" id="7_trncn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fru51"]
+font_size = 446
+font_color = Color(0, 0, 0, 1)
 
 [node name="submit" type="Control" node_paths=PackedStringArray("label")]
 layout_mode = 3
@@ -20,6 +24,7 @@ offset_left = 2.0
 offset_top = -2.0
 offset_right = 468.0
 offset_bottom = 465.0
+mouse_filter = 2
 texture = ExtResource("1_qa4qr")
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -82,13 +87,15 @@ texture = ExtResource("7_trncn")
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 166.0
-offset_top = 308.0
-offset_right = 206.0
-offset_bottom = 332.0
-scale = Vector2(2.544895, 3.0868776)
+offset_left = 145.0
+offset_top = 291.0
+offset_right = 1027.2946
+offset_bottom = 876.0
+scale = Vector2(0.15641034, 0.18972082)
 text = "9"
+label_settings = SubResource("LabelSettings_fru51")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_down" from="TextureButton" to="." method="_next_status_down"]
