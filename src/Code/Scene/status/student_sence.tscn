@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://lstcvofpkrl"]
+
+[ext_resource type="PackedScene" uid="uid://bsc5c72iy0ds8" path="res://Code/Scene/Story/sce2.tscn" id="1_ikusv"]
+
+[node name="student_sence" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -7
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(42.860462, 29.82533)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Node2D" parent="." instance=ExtResource("1_ikusv")]
+position = Vector2(222, 143)
+scale = Vector2(0.62338305, 0.62338305)

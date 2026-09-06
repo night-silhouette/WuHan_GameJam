@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://blwfrhfxjj1hg"]
+
+[ext_resource type="PackedScene" uid="uid://dphkrkmojysto" path="res://Code/Scene/Story/sce3.tscn" id="1_ejw0i"]
+
+[node name="adult_sence" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(54.19045, 34.081345)
+mouse_filter = 2
+
+[node name="Node2D" parent="." instance=ExtResource("1_ejw0i")]
+position = Vector2(234.00002, 229.00002)
+scale = Vector2(0.54699904, 0.54699904)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://uebcixs8ihh2"]
+[gd_scene load_steps=6 format=3 uid="uid://uebcixs8ihh2"]
 
 [ext_resource type="Script" uid="uid://bxfva8mixgft" path="res://Code/Ui/defaultUi/default_ui.gd" id="1_kdk03"]
 [ext_resource type="Texture2D" uid="uid://irn6k7qce5re" path="res://Asset/textbox4.png" id="2_8ahs4"]
 [ext_resource type="Script" uid="uid://f1cfh4nxuuyg" path="res://Code/Ui/defaultUi/textbox.gd" id="3_8xcjy"]
+[ext_resource type="AudioStream" uid="uid://b2boi6clk6g8a" path="res://Music/TextSound.ogg" id="4_vhwkr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8xcjy"]
 font_size = 51
@@ -37,3 +38,6 @@ scale = Vector2(0.99456483, 0.99456483)
 text = "你以为捡到了额外的薪水，凑了过去，其实这是欢乐豆。"
 label_settings = SubResource("LabelSettings_8xcjy")
 autowrap_mode = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="textbox"]
+stream = ExtResource("4_vhwkr")

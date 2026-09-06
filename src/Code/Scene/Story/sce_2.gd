@@ -1,6 +1,6 @@
 extends Node2D
 @onready var area_2d: Area2D = $Door/Area2D
-signal Over
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready():
@@ -9,6 +9,6 @@ func _ready():
 		)
 	animation_player.animation_finished.connect(func(t):
 		if t=="openDoor":
-			Over.emit()
+			SignalBus.Over.emit()
+			$Door/AudioStreamPlayer.play()
 		)
-	

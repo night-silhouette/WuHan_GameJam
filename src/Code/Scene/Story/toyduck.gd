@@ -5,5 +5,5 @@ extends Sprite2D
 
 func _ready() -> void:
 	Util.Area2dConnectClick(area_2d,func():
-		animation_player.play("鸭子")
+		animation_player.play("book")
 		)

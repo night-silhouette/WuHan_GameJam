@@ -18,6 +18,8 @@ signal InventoryRot()
 
 signal TextBox(Message:String)
 
+signal Over()
+
 
 
 

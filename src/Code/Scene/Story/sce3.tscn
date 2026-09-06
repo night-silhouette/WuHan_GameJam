@@ -2,31 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bab3o8jdx1ox8" path="res://Code/Scene/Story/sce_3.gd" id="1_q532i"]
 [ext_resource type="Texture2D" uid="uid://ce0keagymye23" path="res://Asset/scence 3/background.PNG" id="2_yragw"]
-[ext_resource type="Texture2D" uid="uid://dyeeeupnufpfd" path="res://Asset/scence 3/静态摆放示意.PNG" id="3_7xqm1"]
 [ext_resource type="Texture2D" uid="uid://ctattt1o5ue64" path="res://Asset/scence 3/houses.png" id="4_y4j1m"]
 [ext_resource type="Texture2D" uid="uid://bye8u1twatrp3" path="res://Asset/scence 3/door.png" id="5_83npv"]
+[ext_resource type="AudioStream" uid="uid://cpomc775f6h5l" path="res://Music/DoorOpen.ogg" id="5_q532i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obvu1"]
 size = Vector2(258, 264)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gx1c4"]
 size = Vector2(221.5, 286)
-
-[sub_resource type="Animation" id="Animation_wx4hx"]
-resource_name = "house"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Houses:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.23333333, 0.53333336),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 0]
-}
 
 [sub_resource type="Animation" id="Animation_8qp7i"]
 length = 0.001
@@ -53,6 +37,22 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(586, 320)]
+}
+
+[sub_resource type="Animation" id="Animation_wx4hx"]
+resource_name = "house"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Houses:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
 }
 
 [sub_resource type="Animation" id="Animation_yragw"]
@@ -88,10 +88,6 @@ script = ExtResource("1_q532i")
 position = Vector2(578, 322)
 texture = ExtResource("2_yragw")
 
-[node name="静态摆放示意" type="Sprite2D" parent="."]
-position = Vector2(80, 1050)
-texture = ExtResource("3_7xqm1")
-
 [node name="Houses" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(581, 335)
@@ -113,6 +109,9 @@ position = Vector2(586, 320)
 texture = ExtResource("5_83npv")
 hframes = 2
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Door"]
+stream = ExtResource("5_q532i")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_20cw1")
@@ -124,3 +123,20 @@ position = Vector2(585, 146)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(52, 269)
 shape = SubResource("RectangleShape2D_q532i")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 690.00006
+offset_top = 432.0
+offset_right = 730.00006
+offset_bottom = 472.0
+scale = Vector2(1.0723938, 0.62293226)
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 417.0
+offset_top = 253.0
+offset_right = 457.0
+offset_bottom = 293.0
+scale = Vector2(4.102709, 6.2191796)
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_down" from="TextureButton2" to="." method="_on_texture_button_2_button_down"]
