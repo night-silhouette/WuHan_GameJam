@@ -10,7 +10,6 @@ layout_mode = 3
 anchors_preset = 0
 scale = Vector2(1.0616475, 1.0927745)
 script = ExtResource("1_qritd")
-free_mode = true
 
 [node name="Tree1" type="Sprite2D" parent="."]
 position = Vector2(616.96564, 254.39833)
