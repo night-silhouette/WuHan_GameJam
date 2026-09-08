@@ -188,10 +188,10 @@ func manage(goods: int, cost: float) -> int:
 func manage_three(cost: float) -> int:
 	if free_mode:
 		return 0
-	if GameData.Invent.items.get(0, 0) >= cost and GameData.Invent.items.get(1, 0) >= cost and GameData.Invent.items.get(2, 0) >= cost:
-		GameData.Invent.RemoveItem(0, cost)
+	if GameData.Invent.items.get(1, 0) >= cost and GameData.Invent.items.get(2, 0) >= cost and GameData.Invent.items.get(3, 0) >= cost:
 		GameData.Invent.RemoveItem(1, cost)
 		GameData.Invent.RemoveItem(2, cost)
+		GameData.Invent.RemoveItem(3, cost)
 		$AudioStreamPlayer.play()
 		return 0
 	else:
@@ -221,42 +221,42 @@ func _on_mashroom_button_down() -> void:
 	refresh_dots()
 
 func _on_apple_value_button_down() -> void:
-	var i = manage(Const.CropId.Apple, SkillTree.get_value_upgrade_cost(Const.CropId.Apple))
+	var i = manage(Const.CropId.Apple, int( SkillTree.get_value_upgrade_cost(Const.CropId.Apple)))
 	if i == 0:
 		SkillTree.upgrade_value(Const.CropId.Apple)
 	init_dots()
 	refresh_dots()
 
 func _on_flower_value_button_down() -> void:
-	var i = manage(Const.CropId.Flower, SkillTree.get_value_upgrade_cost(Const.CropId.Flower))
+	var i = manage(Const.CropId.Flower,int(SkillTree.get_value_upgrade_cost(Const.CropId.Flower)))
 	if i == 0:
 		SkillTree.upgrade_value(Const.CropId.Flower)
 	init_dots()
 	refresh_dots()
 
 func _on_mashroom_value_button_down() -> void:
-	var i = manage(Const.CropId.Mushroom, SkillTree.get_value_upgrade_cost(Const.CropId.Mushroom))
+	var i = manage(Const.CropId.Mushroom,int( SkillTree.get_value_upgrade_cost(Const.CropId.Mushroom)))
 	if i == 0:
 		SkillTree.upgrade_value(Const.CropId.Mushroom)
 	init_dots()
 	refresh_dots()
 
 func _on_auto_havest_button_down() -> void:
-	var i = manage(Const.CropId.Mushroom, SkillTree.auto_havest_cost)
+	var i = manage(Const.CropId.Mushroom,int( SkillTree.auto_havest_cost))
 	if i == 0:
 		SkillTree.auto_havest = true
 	init_dots()
 	refresh_dots()
 
 func _on_auto_plant_button_down() -> void:
-	var i = manage(Const.CropId.Flower, SkillTree.auto_plant_cost)
+	var i = manage(Const.CropId.Flower,int( SkillTree.auto_plant_cost))
 	if i == 0:
 		SkillTree.auto_plant = true
 	init_dots()
 	refresh_dots()
 
 func _on_auto_water_button_down() -> void:
-	var i = manage_three(SkillTree.auto_water_cost)
+	var i = manage_three(int(SkillTree.auto_water_cost))
 	if i == 0:
 		SkillTree.auto_water = true
 	init_dots()
@@ -276,7 +276,7 @@ func _on_havest_button_down() -> void:
 	if SkillTree.havesting_level >= 7:
 		SignalBus.MessagePopu.emit("已升满")
 		return
-	var i = manage(Const.CropId.Flower, SkillTree.get_havest_upgrade_cost())
+	var i = manage(Const.CropId.Flower,int( SkillTree.get_havest_upgrade_cost()))
 	if i == 0:
 		SkillTree.havesting_level += 1
 	init_dots()
@@ -286,14 +286,14 @@ func _on_plant_button_down() -> void:
 	if SkillTree.planting_level >= 7:
 		SignalBus.MessagePopu.emit("已升满")
 		return
-	var i = manage(Const.CropId.Mushroom, SkillTree.get_palent_upgrade_cost())
+	var i = manage(Const.CropId.Mushroom,int( SkillTree.get_palent_upgrade_cost()))
 	if i == 0:
 		SkillTree.planting_level += 1
 	init_dots()
 	refresh_dots()
 
 func _on_quantity_button_down() -> void:
-	var i = manage_three(SkillTree.get_quantity_upgrade_cost() / 3.0)
+	var i = manage_three(int (SkillTree.get_quantity_upgrade_cost() / 3.0))
 	if i == 0:
 		SkillTree.upgrade_quantity()
 	init_dots()
@@ -303,7 +303,7 @@ func _on_field_button_down() -> void:
 	if SkillTree.field_level >= 7:
 		SignalBus.MessagePopu.emit("已升满")
 		return
-	var i = manage_three(SkillTree.get_field_upgrade_cost())
+	var i = manage_three(int (SkillTree.get_field_upgrade_cost()))
 	if i == 0:
 		SkillTree.upgrade_field()
 		SkillTree.filed_expand.emit()
@@ -311,21 +311,21 @@ func _on_field_button_down() -> void:
 	refresh_dots()
 
 func _on_apple_rot_button_down() -> void:
-	var i = manage(Const.CropId.Flower, SkillTree.GetRotUpgradeCost(Const.CropId.Apple))
+	var i = manage(Const.CropId.Flower,int( SkillTree.GetRotUpgradeCost(Const.CropId.Apple)))
 	if i == 0:
 		SkillTree.upgrade_rot_resistance(Const.CropId.Apple)
 	init_dots()
 	refresh_dots()
 
 func _on_flower_rot_button_down() -> void:
-	var i = manage(Const.CropId.Mushroom, SkillTree.GetRotUpgradeCost(Const.CropId.Flower))
+	var i = manage(Const.CropId.Mushroom,int( SkillTree.GetRotUpgradeCost(Const.CropId.Flower)))
 	if i == 0:
-		SkillTree.upgrade_rot_resistance(Const.CropId.Flower)
+		SkillTree.upgrade_rot_resistance(int(Const.CropId.Flower))
 	init_dots()
 	refresh_dots()
 
 func _on_mashroom_rot_button_down() -> void:
-	var i = manage(Const.CropId.Apple, SkillTree.GetRotUpgradeCost(Const.CropId.Mushroom))
+	var i = manage(Const.CropId.Apple, int (SkillTree.GetRotUpgradeCost(Const.CropId.Mushroom)))
 	if i == 0:
 		SkillTree.upgrade_rot_resistance(Const.CropId.Mushroom)
 	init_dots()
