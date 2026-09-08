@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dlfuekbmnlbac" path="res://Code/Ui/defaultUi/mask.gd" id="1_0rniy"]
 [ext_resource type="Script" uid="uid://dto3xdefmsbid" path="res://Code/Ui/defaultUi/set_sence.gd" id="1_2mbjn"]
-[ext_resource type="Texture2D" uid="uid://dcf8hkagwfgm0" path="res://Asset/文本框 亮.png" id="1_ekp3r"]
 [ext_resource type="PackedScene" uid="uid://o1tbccs42pjl" path="res://Code/Ui/long_button.tscn" id="1_fk4rr"]
+[ext_resource type="Texture2D" uid="uid://bdusetolh8wfk" path="res://Asset/textbox.png" id="3_2mbjn"]
 [ext_resource type="FontFile" uid="uid://bbo1p0cp00e6h" path="res://Asset/ZhengGeDianHei-16.ttf" id="4_0hpqs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2mbjn"]
@@ -45,7 +45,7 @@ offset_right = 2958.791
 offset_bottom = 2087.122
 scale = Vector2(0.26462045, 0.33231905)
 mouse_filter = 0
-texture = ExtResource("1_ekp3r")
+texture = ExtResource("3_2mbjn")
 
 [node name="long_button" parent="." instance=ExtResource("1_fk4rr")]
 layout_mode = 0

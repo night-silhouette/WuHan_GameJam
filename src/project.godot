@@ -41,6 +41,10 @@ gdscript/warnings/return_value_discarded=1
 
 window/stretch/mode="canvas_items"
 
+[editor]
+
+run/main_run_args="\"D:\\WuHan_GameJam\\src\\bin\\123.exe\""
+
 [gui]
 
 theme/custom_font="uid://dnododl6eek7c"

@@ -20,7 +20,7 @@ extends Control
 
 # 货币图标
 @onready var tex_apple: Texture2D = preload("res://Asset/plants/apple.png")
-@onready var tex_flower: Texture2D = preload("res://Asset/plants/flower.PNG")
+@onready var tex_flower: Texture2D = preload("res://Asset/plants/flower.png")
 @onready var tex_mushroom: Texture2D = preload("res://Asset/plants/mushroom.png")
 
 # 调试开关：开启后所有技能消耗为 0，可随意点击

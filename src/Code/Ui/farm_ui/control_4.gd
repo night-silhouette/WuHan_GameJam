@@ -7,7 +7,7 @@ extends Control
 # ================================================
 
 const TEX_APPLE := preload("res://Asset/plants/apple.png")
-const TEX_FLOWER := preload("res://Asset/plants/flower.PNG")
+const TEX_FLOWER := preload("res://Asset/plants/flower.png")
 const TEX_MUSHROOM := preload("res://Asset/plants/mushroom.png")
 
 var _crop_textures := {
