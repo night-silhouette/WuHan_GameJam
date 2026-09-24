@@ -10,11 +10,19 @@ var cost := [1000000,1000000000,1000000000000]
 var apple: = 0
 var flower:  = 0
 var mushroom: = 0
+var preview_finished := false
 func _ready() -> void:
 	_refresh()
 	SignalBus.DataChange.connect(_check)
 
+func _preview_controller() -> Node:
+	return get_node_or_null("/root/FinalPreviewController")
+
 func _refresh():
+	if _preview_controller() != null:
+		button.texture = preload("res://Asset/submit/submit_graduate.png")
+		label.text = "1T"
+		return
 	match GameData.GameState:
 		1:
 			button.texture = baby
@@ -30,6 +38,17 @@ func _refresh():
 	
 		
 func _check():
+	var preview := _preview_controller()
+	if preview != null:
+		if preview_finished or GameData.GameState != 3:
+			return
+		var total: int = 0
+		for crop_id in [Const.CropId.Apple, Const.CropId.Flower, Const.CropId.Mushroom]:
+			total += int(GameData.Invent.items.get(crop_id, 0))
+		if total >= 1000000000000:
+			preview_finished = true
+			preview.call_deferred("finish_current")
+		return
 	var a = GameData.Invent.items.get(Const.CropId.Apple, 0)
 	var f = GameData.Invent.items.get(Const.CropId.Flower, 0)
 	var m = GameData.Invent.items.get(Const.CropId.Mushroom, 0)
@@ -74,4 +93,8 @@ func _check():
 
 	
 func _next_status_down() -> void:
-	SignalBus.InventoryRot.emit()
+	var preview := _preview_controller()
+	if preview != null:
+		preview._show_choices()
+	else:
+		SignalBus.InventoryRot.emit()
