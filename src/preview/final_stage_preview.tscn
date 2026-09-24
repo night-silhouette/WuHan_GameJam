@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://Code/Scene/root/root.tscn" id="1_root"]
+[ext_resource type="Script" path="res://preview/final_stage_preview.gd" id="2_entry"]
+
+[node name="FinalStagePreview" instance=ExtResource("1_root")]
+script = ExtResource("2_entry")
+initial_scene = "res://Code/Scene/status/adult_sence.tscn"
+initial_ui = "res://Code/Ui/defaultUi/default_ui.tscn"

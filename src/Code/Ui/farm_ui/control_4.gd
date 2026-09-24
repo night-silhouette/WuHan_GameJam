@@ -32,7 +32,8 @@ func _on_inventory_rot(crop_id: int, lost: int) -> void:
 		return
 
 	var spawn_time: float = 0.0
-	var n: int = lost
+	# Animate a bounded sample; the inventory still loses the full amount.
+	var n: int = mini(lost, 40)
 	for i in n:
 		var t: float = float(i) / float(max(n - 1, 1))
 		spawn_time += _rain_delay(t)
@@ -86,6 +87,7 @@ func _spawn_by_crop(crop_id: int) -> void:
 
 func _spawn(tex: Texture2D) -> void:
 	var rect := TextureRect.new()
+	rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	rect.texture = tex
 	rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 
