@@ -26,6 +26,7 @@ GameData="*res://Code/Global/GameData.gd"
 Mouse="*res://Code/Global/mouse.gd"
 SkillTree="*res://Code/Data/SkillTree.gd"
 InputManager="*res://Code/Global/InputManager.gd"
+GestureInput="*res://GestureControl/gesture_input.gd"
 
 [debug]
 
