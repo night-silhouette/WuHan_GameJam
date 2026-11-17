@@ -14,6 +14,9 @@ import venv
 def main():
     folder = Path(__file__).resolve().parent
     args = sys.argv[1:]
+    if "--parent-pid" in args:
+        from gesture_camera import watch_parent
+        watch_parent(int(args[args.index("--parent-pid") + 1]))
     if "--simulate" in args:
         return subprocess.call([sys.executable, str(folder / "gesture_camera.py"), *args])
     env = folder / ".venv"

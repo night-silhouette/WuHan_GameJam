@@ -1,6 +1,6 @@
 extends Node
-## Optional local-only gesture input. The camera is never opened by Godot.
-## Start gesture_camera.py separately; F8 toggles gesture input in the game.
+## Local gesture input. Camera service follows the game process lifetime.
+## F8 toggles gesture input; the camera preview can be closed with Q/Esc.
 
 const PORT: int = 47823
 const TIMEOUT_MS: int = 1500
@@ -22,6 +22,23 @@ var _latched_tool: String = ""
 var _pending_tool: String = ""
 var _label: Label
 var _status: String = "等待摄像头程序"
+var _camera_pid: int = -1
+
+func _start_camera() -> void:
+	# Python must stay outside a PCK: native libraries cannot execute inside it.
+	var folder: String = ProjectSettings.globalize_path("res://GestureControl")
+	if OS.has_feature("standalone"):
+		folder = OS.get_executable_path().get_base_dir().path_join("GestureControl")
+	var launcher: String = folder.path_join("launch.py")
+	if not FileAccess.file_exists(launcher):
+		_status = "未找到摄像头程序，鼠标仍可用"
+		return
+	var python_path: String = folder.path_join(".venv/Scripts/python.exe" if OS.get_name() == "Windows" else ".venv/bin/python")
+	if not FileAccess.file_exists(python_path):
+		python_path = "python" if OS.get_name() == "Windows" else "python3"
+	var args := PackedStringArray([launcher, "--parent-pid", str(OS.get_process_id())])
+	_camera_pid = OS.create_process(python_path, args)
+	_status = "正在启动摄像头（首次可能安装依赖）" if _camera_pid > 0 else "摄像头启动失败，请检查 Python"
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -42,6 +59,8 @@ func _ready() -> void:
 	if not _bound:
 		_status = "端口占用，手势不可用（鼠标仍可用）"
 		push_warning("GestureControl: cannot bind localhost UDP port %d, error %d" % [PORT, error])
+	if _bound and DisplayServer.get_name() != "headless":
+		_start_camera()
 	_update_label()
 
 func _input(event: InputEvent) -> void:
@@ -59,7 +78,7 @@ func _process(_delta: float) -> void:
 	while _udp.get_available_packet_count() > 0 and count < 64:
 		count += 1
 		var packet: PackedByteArray = _udp.get_packet()
-		if packet.size() > 1024 or _udp.get_packet_address() != "127.0.0.1":
+		if packet.size() > 1024 or _udp.get_packet_ip() != "127.0.0.1":
 			continue
 		var decoded: Variant = JSON.parse_string(packet.get_string_from_utf8())
 		if not decoded is Dictionary:
@@ -107,3 +126,6 @@ func _update_label() -> void:
 
 func _exit_tree() -> void:
 	_udp.close()
+	if _camera_pid > 0 and OS.is_process_running(_camera_pid):
+		OS.kill(_camera_pid)
+	_camera_pid = -1

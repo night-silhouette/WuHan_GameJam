@@ -27,10 +27,10 @@ def hand(extended, thumb=False):
 
 class GestureTests(unittest.TestCase):
     def test_mapping(self):
-        self.assertEqual(classify(hand([False]*4)), "SHOVEL")
+        self.assertEqual(classify(hand([False]*4)), "WATERING_CAN")
         self.assertEqual(classify(hand([False]*4, True)), "NORMAL")
         self.assertEqual(classify(hand([True, True, False, False])), "SICKLE")
-        self.assertEqual(classify(hand([True]*4, True)), "WATERING_CAN")
+        self.assertEqual(classify(hand([True]*4, True)), "SHOVEL")
         self.assertIsNone(classify(hand([True, False, False, False])))
 
     def test_rotated_hand(self):

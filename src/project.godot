@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="WuHan_GameJam"
 run/main_scene="uid://co7l2jv04at8s"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 
 [audio]
 
@@ -27,6 +31,7 @@ Mouse="*res://Code/Global/mouse.gd"
 SkillTree="*res://Code/Data/SkillTree.gd"
 InputManager="*res://Code/Global/InputManager.gd"
 GestureInput="*res://GestureControl/gesture_input.gd"
+_mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
 
 [debug]
 
@@ -45,6 +50,10 @@ window/stretch/mode="canvas_items"
 [editor]
 
 run/main_run_args="\"D:\\WuHan_GameJam\\src\\bin\\123.exe\""
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_ai/plugin.cfg")
 
 [gui]
 

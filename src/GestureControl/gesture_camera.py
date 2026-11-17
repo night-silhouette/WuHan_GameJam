@@ -14,6 +14,38 @@ import socket
 import sys
 import time
 import urllib.request
+import os
+import threading
+
+
+def watch_parent(pid):
+    """Exit even when Godot is stopped forcibly by the editor debugger."""
+    if pid <= 0:
+        return
+    def monitor():
+        if os.name == "nt":
+            import ctypes
+            from ctypes import wintypes
+            kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+            kernel.OpenProcess.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
+            kernel.OpenProcess.restype = wintypes.HANDLE
+            kernel.WaitForSingleObject.argtypes = [wintypes.HANDLE, wintypes.DWORD]
+            kernel.WaitForSingleObject.restype = wintypes.DWORD
+            kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+            handle = kernel.OpenProcess(0x00100000, False, pid)
+            if not handle:
+                os._exit(0)
+            kernel.WaitForSingleObject(handle, 0xFFFFFFFF)
+            kernel.CloseHandle(handle)
+            os._exit(0)
+        else:
+            while True:
+                try:
+                    os.kill(pid, 0)
+                except ProcessLookupError:
+                    os._exit(0)
+                threading.Event().wait(0.5)
+    threading.Thread(target=monitor, daemon=True).start()
 
 MODEL_URL = "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task"
 TOOLS = ("NORMAL", "SHOVEL", "SICKLE", "WATERING_CAN")
@@ -53,14 +85,14 @@ def classify(points):
                   and distance(points[4], points[5]) > palm * 0.65)
     thumb_closed = distance(points[4], points[5]) < palm * 0.60
     if all(extended) and thumb_open:
-        return "WATERING_CAN"
+        return "SHOVEL"
     if extended[0] and extended[1] and folded[2] and folded[3]:
         return "SICKLE"
     if all(folded):
         if thumb_open:
             return "NORMAL"
         if thumb_closed:
-            return "SHOVEL"
+            return "WATERING_CAN"
     return None
 
 
@@ -138,7 +170,7 @@ def run_camera(args, sock):
                    (15,16),(13,17),(0,17),(17,18),(18,19),(19,20))
     try:
         with vision.HandLandmarker.create_from_options(options) as detector:
-            print("Camera started. Fist=SHOVEL, V=SICKLE, open palm=WATERING_CAN, thumb=NORMAL. Q/Esc closes.")
+            print("Camera started. Fist=WATERING_CAN, V=SICKLE, open palm=SHOVEL, thumb=NORMAL.")
             while True:
                 ok, frame = capture.read()
                 if not ok:
@@ -163,36 +195,42 @@ def run_camera(args, sock):
                     from types import SimpleNamespace
                     points = [SimpleNamespace(x=p.x, y=p.y*height/width, z=p.z) for p in landmarks]
                     candidate = classify(points)
-                    pixels = [(int(p.x*width), int(p.y*height)) for p in landmarks]
-                    for a,b in connections:
-                        cv2.line(frame, pixels[a], pixels[b], (70,180,70), 2)
-                    for p in pixels:
-                        cv2.circle(frame, p, 4, (30,100,230), -1)
+                    if args.preview:
+                        pixels = [(int(p.x*width), int(p.y*height)) for p in landmarks]
+                        for a,b in connections:
+                            cv2.line(frame, pixels[a], pixels[b], (70,180,70), 2)
+                        for p in pixels:
+                            cv2.circle(frame, p, 4, (30,100,230), -1)
                 confirmed = stable.update(candidate, now)
                 # Heartbeat repeats only a stable pose. Godot deduplicates switches.
                 if now-last_send >= 0.1:
                     send(sock, args.port, confirmed, "tracking" if candidate else "no_gesture")
                     last_send = now
-                text = f"Pose: {candidate or 'unknown'}  Hold: {stable.progress(now):.0%}"
-                cv2.putText(frame, text, (15,30), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255,255,255), 2)
-                cv2.putText(frame, "Fist: shovel | V: sickle | Palm: water | Thumb: normal", (15,58), cv2.FONT_HERSHEY_SIMPLEX, 0.47, (255,255,255), 1)
-                cv2.imshow("Gesture Control - Q to quit", frame)
-                key = cv2.waitKey(1) & 0xff
-                if key in (ord("q"), 27) or cv2.getWindowProperty("Gesture Control - Q to quit", cv2.WND_PROP_VISIBLE) < 1:
-                    break
+                if args.preview:
+                    text = f"Pose: {candidate or 'unknown'}  Hold: {stable.progress(now):.0%}"
+                    cv2.putText(frame, text, (15,30), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255,255,255), 2)
+                    cv2.putText(frame, "Fist: water | V: sickle | Palm: shovel | Thumb: normal", (15,58), cv2.FONT_HERSHEY_SIMPLEX, 0.47, (255,255,255), 1)
+                    cv2.imshow("Gesture Control - Q to quit", frame)
+                    key = cv2.waitKey(1) & 0xff
+                    if key in (ord("q"), 27) or cv2.getWindowProperty("Gesture Control - Q to quit", cv2.WND_PROP_VISIBLE) < 1:
+                        break
     finally:
         capture.release()
-        cv2.destroyAllWindows()
+        if args.preview:
+            cv2.destroyAllWindows()
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--preview", action="store_true", help="Show a camera window for debugging; hidden by default")
     parser.add_argument("--camera", type=int, default=0)
     parser.add_argument("--port", type=int, default=47823)
     parser.add_argument("--hold", type=float, default=0.45)
     parser.add_argument("--model", default=str(Path(__file__).parent / "models" / "hand_landmarker.task"))
     parser.add_argument("--simulate", choices=TOOLS, help="Send a tool for 2 seconds without opening the camera")
+    parser.add_argument("--parent-pid", type=int, default=0, help="Exit automatically when the owning game stops")
     args = parser.parse_args()
+    watch_parent(args.parent_pid)
     if args.hold <= 0 or not 1 <= args.port <= 65535:
         parser.error("--hold must be positive and --port must be 1..65535")
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
